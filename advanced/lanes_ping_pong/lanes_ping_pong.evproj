@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.2.0" version-extra="devel">
+ <presentationParams>
+  <parameter name="presenceInterval" value="0"/>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="lostTimeout" value="0.5"/>
+  <parameter name="detectors">
+   <field name="dashdot">
+    <field name="max_error" value="0.05"/>
+    <field name="pattern_size" value="32"/>
+    <field name="inversion" value="normal"/>
+   </field>
+   <field name="image">
+    <field name="grid_rows" value="4"/>
+    <field name="grid_cols" value="4"/>
+   </field>
+  </parameter>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="cam">
+   <field name="fx" value="auto"/>
+   <field name="fy" value="auto"/>
+   <field name="cx" value="auto"/>
+   <field name="cy" value="auto"/>
+   <field name="distortion" length="4">
+    <item index="1" value="auto"/>
+    <item index="2" value="auto"/>
+    <item index="3" value="auto"/>
+    <item index="4" value="auto"/>
+   </field>
+  </parameter>
+  <parameter name="useMainCamera" value="false"/>
+  <parameter name="clearColor">
+   <field name="x" value="1"/>
+   <field name="y" value="0.50196078431373"/>
+   <field name="z" value="0.25098039215686"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_lanes_ping_pong">
+  <resource id="5b2253ba-d65-d2d-53a-622" kind="script" local="true" forceExport="true" existence="user">
+   <filename value="main.lua"/>
+  </resource>
+  <resource id="5b225452-e97-7f5-72c-84b" kind="script" local="true" forceExport="true" existence="user">
+   <filename value="lanes_ping_pong.lua"/>
+  </resource>
+ </resources>
+ <reactors>
+  <reactor id="5b225295-57ac-caad-6dfa" name="Label" type="rect.text">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="100.000000%"/>
+    <field name="y" value="200.000000%c"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Check output in console ;)"/>
+   <parameter name="text.font_id" value="OpenSans-Regular"/>
+   <parameter name="text.font_size" value="4.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5b225295-57ac-caad-6dfa"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="System" name="System" type="system">
+   <parameter name="albumName" value="evi_app"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="scene" name="Scene" type="node.scene">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="1">
+    <item index="1" value="HeadUpDisplay"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+ </reactors>
+ <exportParameters/>
+</Project>

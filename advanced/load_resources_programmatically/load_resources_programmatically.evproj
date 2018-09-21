@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.2.0" version-extra="devel">
+ <presentationParams>
+  <parameter name="presenceInterval" value="0"/>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="lostTimeout" value="0.5"/>
+  <parameter name="detectors">
+   <field name="dashdot">
+    <field name="max_error" value="0.05"/>
+    <field name="pattern_size" value="32"/>
+    <field name="inversion" value="normal"/>
+   </field>
+   <field name="image">
+    <field name="grid_rows" value="4"/>
+    <field name="grid_cols" value="4"/>
+   </field>
+  </parameter>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="cam">
+   <field name="fx" value="auto"/>
+   <field name="fy" value="auto"/>
+   <field name="cx" value="auto"/>
+   <field name="cy" value="auto"/>
+   <field name="distortion" length="4">
+    <item index="1" value="auto"/>
+    <item index="2" value="auto"/>
+    <item index="3" value="auto"/>
+    <item index="4" value="auto"/>
+   </field>
+  </parameter>
+  <parameter name="useMainCamera" value="false"/>
+  <parameter name="clearColor">
+   <field name="x" value="0.8"/>
+   <field name="y" value="0.8"/>
+   <field name="z" value="0.8"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_load_resources_programmatically">
+  <resource id="5ba22d29-7ee-de1-75f-b107" kind="image" local="true" forceExport="true" existence="user">
+   <filename value="ev_pattern.png"/>
+   <source value="/Users/laptabrok/Projects/ev_evi-trunk/data/ev_studio/resources/patterns/ev_pattern.png"/>
+  </resource>
+  <resource id="5ba22d34-f72-744-9e9-be6" kind="model" local="true" forceExport="true" existence="user">
+   <filename value="ev_model.fbx"/>
+   <source value="/Users/laptabrok/Projects/ev_evi-trunk/data/ev_studio/resources/models/ev_model.fbx"/>
+   <optimizations/>
+  </resource>
+  <resource id="5ba22ddc-6910-9c6-be2-6be" kind="script" local="true" forceExport="true" existence="user">
+   <filename value="main.lua"/>
+  </resource>
+  <resource id="5ba3a509-a15-337-8aa-4cb" kind="video" local="true" forceExport="true" existence="user">
+   <filename value="ev_logo_360p_vp9_4-2-0_nosound.webm"/>
+   <source value="/Users/laptabrok/Projects/ev_evi-trunk/data/ev_studio/resources/video/ev_logo_360p_vp9_4-2-0_nosound.webm"/>
+  </resource>
+  <resource id="5ba3a898-1e5-d32-644-582" kind="audio" local="true" forceExport="true" existence="user">
+   <filename value="start.ogg"/>
+   <source value="/Users/laptabrok/Projects/ev_evi-trunk/data/ev_studio/resources/audio/start.ogg"/>
+  </resource>
+  <resource id="5ba3bf6b-186-ce7-78a-751" kind="script" local="true" forceExport="true" existence="user">
+   <filename value="load_audio.lua"/>
+  </resource>
+  <resource id="5ba3bf6b-334-69e-84d-9d9" kind="script" local="true" forceExport="true" existence="user">
+   <filename value="load_image.lua"/>
+  </resource>
+  <resource id="5ba3bf6b-5a8-271-10cb-c13" kind="script" local="true" forceExport="true" existence="user">
+   <filename value="load_model.lua"/>
+  </resource>
+  <resource id="5ba3bf6b-c78-3d6-78b-e35" kind="script" local="true" forceExport="true" existence="user">
+   <filename value="load_video.lua"/>
+  </resource>
+ </resources>
+ <reactors>
+  <reactor id="5ba22cfd-d21e-5195-21013" name="logo_image" type="rect.image">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="20.000000%"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="5.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5ba22cff-97ef-bd74-10fa4" name="logo_model" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="-0.3"/>
+    <field name="z" value="-1"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.3"/>
+    <field name="y" value="0.3"/>
+    <field name="z" value="0.3"/>
+   </parameter>
+   <parameter name="model"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5ba3a4eb-108e5-5e51-3848" name="logo_video" type="rect.video">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="right-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="30.000000%"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="-5.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId"/>
+   <parameter name="playMode" value="once"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5ba3a4f4-b10102-9138-3554" name="start_sound" type="audio">
+   <parameter name="audioResource"/>
+   <parameter name="volume" value="1"/>
+   <parameter name="playMode" value="once"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="2">
+    <item index="1" value="5ba3a4eb-108e5-5e51-3848"/>
+    <item index="2" value="5ba22cfd-d21e-5195-21013"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="scene" name="Scene" type="node.scene">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="2">
+    <item index="1" value="5ba22cff-97ef-bd74-10fa4"/>
+    <item index="2" value="HeadUpDisplay"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+ </reactors>
+ <exportParameters last="dir">
+  <parameters format="exe" filename="/Users/laptabrok/Projects/evtoolbox_examples-git/load_resources_programmatically/load_resources_programmatically.exe" appName="load_resources_programmatically - EVI Windows App" appId="load.resources.programmatically" arch="x64" version="1.0" build="1" appIconPath="/Users/laptabrok/Projects/ev_evi-trunk/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/./studio_data//AppIcon.png" loadingImagePath="/Users/laptabrok/Projects/ev_evi-trunk/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/./studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="false" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameShift.centering="true"/>
+  <parameters format="dir" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameShift.centering="true"/>
+ </exportParameters>
+</Project>
