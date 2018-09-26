@@ -23,8 +23,6 @@
 --                                                                           --
 -------------------------------------------------------------------------------
 
--- Simple particle system example
-
 -- EV Toolbox 3.2.0-beta6
 
 loginfo("Enabling multitouch manipulator...")
