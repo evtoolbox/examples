@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.2.0" version-extra="devel">
+ <presentationParams>
+  <parameter name="presenceInterval" value="0"/>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="lostTimeout" value="0.5"/>
+  <parameter name="detectors">
+   <field name="dashdot">
+    <field name="max_error" value="0.05"/>
+    <field name="pattern_size" value="32"/>
+    <field name="inversion" value="normal"/>
+   </field>
+   <field name="image">
+    <field name="grid_rows" value="4"/>
+    <field name="grid_cols" value="4"/>
+   </field>
+  </parameter>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="cam">
+   <field name="fx" value="auto"/>
+   <field name="fy" value="auto"/>
+   <field name="cx" value="auto"/>
+   <field name="cy" value="auto"/>
+   <field name="distortion" length="4">
+    <item index="1" value="auto"/>
+    <item index="2" value="auto"/>
+    <item index="3" value="auto"/>
+    <item index="4" value="auto"/>
+   </field>
+  </parameter>
+  <parameter name="useMainCamera" value="true"/>
+  <parameter name="clearColor">
+   <field name="x" value="0.69411764705882"/>
+   <field name="y" value="0.69411764705882"/>
+   <field name="z" value="0.69411764705882"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_rotate_model">
+  <resource id="57f52905-d46-787-792-fd4" kind="image" local="true" existence="user">
+   <filename value="ev_pattern.png"/>
+  </resource>
+  <resource id="57f52910-c5f-c22-72e-855" kind="model" local="true" existence="user">
+   <filename value="ev_model.fbx"/>
+   <optimizations/>
+  </resource>
+  <resource id="5be41e95-666-9ad-6f5-c9d" kind="script" local="true" forceExport="true" existence="user">
+   <filename value="main.lua"/>
+  </resource>
+  <resource id="5be41f87-eee-393-210f-d102" kind="model" local="false" existence="user">
+   <filename value="axes.osgt"/>
+   <source value="/Users/laptabrok/Projects/ev_evi/trunk/data/package_example/resources/axes.osgt"/>
+   <optimizations/>
+  </resource>
+  <resource id="5be454e1-44a-fe3-8dc-bea" kind="image" local="true" existence="user">
+   <filename value="clockwise.png"/>
+  </resource>
+  <resource id="5be4556e-f6c-edf-2c9-996" kind="image" local="true" existence="user">
+   <filename value="counter-clockwise.png"/>
+  </resource>
+  <resource id="5be45892-7f7-bf3-96e-1d5" kind="script" local="true" forceExport="true" existence="user">
+   <filename value="rotate_model.lua"/>
+  </resource>
+ </resources>
+ <reactors>
+  <reactor id="57f528fb-366d-c13a-334a" name="Метка" type="node.marker">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="1">
+    <item index="1" value="57f528fd-5893-3a64-ae67"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="markerType" value="dashdot"/>
+   <parameter name="pattern" value="57f52905-d46-787-792-fd4"/>
+   <parameter name="gridSize">
+    <field name="x" value="4"/>
+    <field name="y" value="4"/>
+   </parameter>
+   <parameter name="markerPhysSize" value="0.064"/>
+   <parameter name="enabled" value="true"/>
+   <parameter name="autoShow" value="true"/>
+   <parameter name="autoHide" value="true"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="57f528fd-5893-3a64-ae67" name="logo" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="1.862645149231e-09"/>
+    <field name="y" value="7.4083916842937e-05"/>
+    <field name="z" value="0.0040679154917598"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.08"/>
+    <field name="y" value="0.08"/>
+    <field name="z" value="0.08"/>
+   </parameter>
+   <parameter name="model" value="57f52910-c5f-c22-72e-855"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5be45427-f887-6b34-cde7" name="touch_zone" type="node.rect">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="2">
+    <item index="1" value="5be4551f-510d6-294c-a881"/>
+    <item index="2" value="5be454a6-fd38-ba97-da37"/>
+   </parameter>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-bottom"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="95.000000%"/>
+    <field name="y" value="12.000000%"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0.3"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="2.500000%w"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5be454a6-fd38-ba97-da37" name="clockwise_icon" type="rect.image">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="false"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="right-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="keep-aspect"/>
+    <field name="y" value="60.000000%"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="-20.000000%h"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5be454e1-44a-fe3-8dc-bea"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5be4551f-510d6-294c-a881" name="counter_clockwise_icon" type="rect.image">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="false"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="keep-aspect"/>
+    <field name="y" value="60.000000%"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="20.000000%h"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5be4556e-f6c-edf-2c9-996"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5be45427-f887-6b34-cde7"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="scene" name="Scene" type="node.scene">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="2">
+    <item index="1" value="57f528fb-366d-c13a-334a"/>
+    <item index="2" value="HeadUpDisplay"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+ </reactors>
+ <exportParameters last="ipa">
+  <parameters format="ipa" filename="/Users/laptabrok/Documents/rotate_model.ipa" appName="rotate_model - EVI iOS App" appId="ru.EligoVision.rotate.model" arch="" version="1.0" build="1" appIconPath="/Users/laptabrok/Projects/ev_evi/trunk/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//AppIcon.png" loadingImagePath="/Users/laptabrok/Projects/ev_evi/trunk/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="false" cameraDescription="Дополненная реальность ждет!" appStoreDistribution="false" photolibraryDescription="Снимки будут сохранены в Фото!" deviceMotionDescription="Необходимо для отслеживания движений" supportedOrientations.UIInterfaceOrientationPortrait="true" supportedOrientations.UIInterfaceOrientationPortraitUpsideDown="true" supportedOrientations.UIInterfaceOrientationLandscapeRight="true" supportedOrientations.UIInterfaceOrientationLandscapeLeft="true"/>
+  <parameters format="exe" filename="/Users/laptabrok/Projects/evtoolbox-examples-git/advanced/rotate_model/rotate_model.exe" appName="rotate_model - EVI Windows App" appId="rotate.model" arch="x64" version="1.0" build="1" appIconPath="/Users/laptabrok/Projects/ev_evi/trunk/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//AppIcon.png" loadingImagePath="/Users/laptabrok/Projects/ev_evi/trunk/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="false" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameShift.centering="true"/>
+ </exportParameters>
+</Project>
