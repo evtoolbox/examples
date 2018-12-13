@@ -32,7 +32,7 @@ local clickPoint			= nil -- { x = 0, y = 0}
 local initialMatrix			= nil -- osg.Quat()
 
 
-touchZone:subscibeEvent("onDown", function()
+touchZone:subscribeEvent("onDown", function()
 	loginfo("Rotation began!")
 	rotateModeEnabled = true
 	initialMatrix = logoModel:getMatrix()
