@@ -35,11 +35,11 @@
     <item index="4" value="auto"/>
    </field>
   </parameter>
-  <parameter name="useMainCamera" value="true"/>
+  <parameter name="useMainCamera" value="false"/>
   <parameter name="clearColor">
-   <field name="x" value="0.7"/>
-   <field name="y" value="0.7"/>
-   <field name="z" value="0.7"/>
+   <field name="x" value="0.8078431372549"/>
+   <field name="y" value="0.36078431372549"/>
+   <field name="z" value="0"/>
    <field name="w" value="1"/>
   </parameter>
  </presentationParams>
@@ -53,9 +53,13 @@
   <resource id="5bc9ad4a-b79-139-8b3-639" kind="script" local="true" forceExport="true" existence="user">
    <filename value="setup_for_vr.lua"/>
   </resource>
+  <resource id="OpenSans-Regular" kind="font" local="false" forceExport="true" visible="false" existence="internal_modified">
+   <filename value="OpenSans-Regular.ttf"/>
+   <source value="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data/fonts/OpenSans-Regular.ttf"/>
+  </resource>
  </resources>
  <reactors>
-  <reactor id="5bc9aace-11d5-9102e-8fe7" name="grid" type="rect.image">
+  <reactor id="5bc9aace-11d5-9102e-8fe7" name="grid_orange" type="rect.image">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
    <parameter name="children" length="0"/>
@@ -67,10 +71,10 @@
     <field name="y" value="keep-aspect"/>
    </parameter>
    <parameter name="rect.color">
-    <field name="red" value="0"/>
-    <field name="green" value="0"/>
+    <field name="red" value="0.8078431372549"/>
+    <field name="green" value="0.36078431372549"/>
     <field name="blue" value="0"/>
-    <field name="alpha" value="0.75"/>
+    <field name="alpha" value="1"/>
    </parameter>
    <parameter name="rect.shift">
     <field name="x" value="0.000000px"/>
@@ -87,43 +91,11 @@
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5bc9aad1-46b5-f964-c1047" name="magenta" type="node.rect">
+  <reactor id="5bc9aade-af9c-1ac9-18108" name="transform_bottom" type="node.transform">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="0"/>
-   <parameter name="layer" value="0.01"/>
-   <parameter name="rect.position" value="center-center"/>
-   <parameter name="rect.size">
-    <field name="policy" value="simple"/>
-    <field name="x" value="2048.000000px"/>
-    <field name="y" value="keep-aspect"/>
-   </parameter>
-   <parameter name="rect.color">
-    <field name="red" value="0.9843137254902"/>
-    <field name="green" value="0.007843137254902"/>
-    <field name="blue" value="1"/>
-    <field name="alpha" value="0.5"/>
-   </parameter>
-   <parameter name="rect.shift">
-    <field name="x" value="0.000000px"/>
-    <field name="y" value="0.000000px"/>
-   </parameter>
-   <parameter name="rect.padding">
-    <field name="top" value="0.000000px"/>
-    <field name="right" value="0.000000px"/>
-    <field name="bottom" value="keep-aspect"/>
-    <field name="left" value="keep-aspect"/>
-   </parameter>
-   <parameter name="rect.scalePolicy" value="inherit"/>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
-  </reactor>
-  <reactor id="5bc9aade-af9c-1ac9-18108" name="transform_bottom_magenta" type="node.transform">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="2">
-    <item index="1" value="5bc9aad1-46b5-f964-c1047"/>
-    <item index="2" value="5bc9aace-11d5-9102e-8fe7"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5bfe60de-38bd-b9ad-849f"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="0"/>
@@ -141,45 +113,13 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="true"/>
-  </reactor>
-  <reactor id="5bc9ab68-38c2-49f8-d7a4" name="orange" type="node.rect">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="0"/>
-   <parameter name="layer" value="0.01"/>
-   <parameter name="rect.position" value="center-center"/>
-   <parameter name="rect.size">
-    <field name="policy" value="simple"/>
-    <field name="x" value="2048.000000px"/>
-    <field name="y" value="keep-aspect"/>
-   </parameter>
-   <parameter name="rect.color">
-    <field name="red" value="0.9921568627451"/>
-    <field name="green" value="0.50196078431373"/>
-    <field name="blue" value="0.031372549019608"/>
-    <field name="alpha" value="0.5"/>
-   </parameter>
-   <parameter name="rect.shift">
-    <field name="x" value="0.000000px"/>
-    <field name="y" value="0.000000px"/>
-   </parameter>
-   <parameter name="rect.padding">
-    <field name="top" value="0.000000px"/>
-    <field name="right" value="0.000000px"/>
-    <field name="bottom" value="keep-aspect"/>
-    <field name="left" value="keep-aspect"/>
-   </parameter>
-   <parameter name="rect.scalePolicy" value="inherit"/>
-   <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5bc9ab68-64fc-a96e-2cf3" name="transform_top_orange" type="node.transform">
+  <reactor id="5bc9ab68-64fc-a96e-2cf3" name="transform_top" type="node.transform">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="2">
-    <item index="1" value="5bc9ab68-38c2-49f8-d7a4"/>
-    <item index="2" value="5bc9aace-11d5-9102e-8fe7"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5bc9aace-11d5-9102e-8fe7"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="0"/>
@@ -197,14 +137,13 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5bc9abf1-8ba9-c1d3-a578" name="transform_front_green" type="node.transform">
+  <reactor id="5bc9abf1-8ba9-c1d3-a578" name="transform_front" type="node.transform">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="2">
-    <item index="1" value="5bc9abf1-99a4-eebe-b10ee"/>
-    <item index="2" value="5bc9aace-11d5-9102e-8fe7"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5bfe5f5c-ffb1-5eaf-5e99"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="0"/>
@@ -222,45 +161,13 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="true"/>
-  </reactor>
-  <reactor id="5bc9abf1-99a4-eebe-b10ee" name="green" type="node.rect">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="0"/>
-   <parameter name="layer" value="0.01"/>
-   <parameter name="rect.position" value="center-center"/>
-   <parameter name="rect.size">
-    <field name="policy" value="simple"/>
-    <field name="x" value="2048.000000px"/>
-    <field name="y" value="keep-aspect"/>
-   </parameter>
-   <parameter name="rect.color">
-    <field name="red" value="0.12941176470588"/>
-    <field name="green" value="1"/>
-    <field name="blue" value="0.023529411764706"/>
-    <field name="alpha" value="0.5"/>
-   </parameter>
-   <parameter name="rect.shift">
-    <field name="x" value="0.000000px"/>
-    <field name="y" value="0.000000px"/>
-   </parameter>
-   <parameter name="rect.padding">
-    <field name="top" value="0.000000px"/>
-    <field name="right" value="0.000000px"/>
-    <field name="bottom" value="keep-aspect"/>
-    <field name="left" value="keep-aspect"/>
-   </parameter>
-   <parameter name="rect.scalePolicy" value="inherit"/>
-   <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5bc9ac55-d178-67bb-10c10b" name="transform_left_red" type="node.transform">
+  <reactor id="5bc9ac55-d178-67bb-10c10b" name="transform_left" type="node.transform">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="2">
-    <item index="1" value="5bc9ac55-f543-f295-2edc"/>
-    <item index="2" value="5bc9aace-11d5-9102e-8fe7"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5bfe6077-fe53-32e5-9529"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="-1"/>
@@ -278,76 +185,13 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="true"/>
-  </reactor>
-  <reactor id="5bc9ac55-f543-f295-2edc" name="red" type="node.rect">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="0"/>
-   <parameter name="layer" value="0.01"/>
-   <parameter name="rect.position" value="center-center"/>
-   <parameter name="rect.size">
-    <field name="policy" value="simple"/>
-    <field name="x" value="2048.000000px"/>
-    <field name="y" value="keep-aspect"/>
-   </parameter>
-   <parameter name="rect.color">
-    <field name="red" value="0.9843137254902"/>
-    <field name="green" value="0.007843137254902"/>
-    <field name="blue" value="0.027450980392157"/>
-    <field name="alpha" value="0.5"/>
-   </parameter>
-   <parameter name="rect.shift">
-    <field name="x" value="0.000000px"/>
-    <field name="y" value="0.000000px"/>
-   </parameter>
-   <parameter name="rect.padding">
-    <field name="top" value="0.000000px"/>
-    <field name="right" value="0.000000px"/>
-    <field name="bottom" value="keep-aspect"/>
-    <field name="left" value="keep-aspect"/>
-   </parameter>
-   <parameter name="rect.scalePolicy" value="inherit"/>
-   <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5bc9ac73-25ce-1293-8c109" name="blue" type="node.rect">
+  <reactor id="5bc9ac73-eb5b-f841-3fc8" name="transform_right" type="node.transform">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="0"/>
-   <parameter name="layer" value="0.01"/>
-   <parameter name="rect.position" value="center-center"/>
-   <parameter name="rect.size">
-    <field name="policy" value="simple"/>
-    <field name="x" value="2048.000000px"/>
-    <field name="y" value="keep-aspect"/>
-   </parameter>
-   <parameter name="rect.color">
-    <field name="red" value="0"/>
-    <field name="green" value="0"/>
-    <field name="blue" value="1"/>
-    <field name="alpha" value="0.5"/>
-   </parameter>
-   <parameter name="rect.shift">
-    <field name="x" value="0.000000px"/>
-    <field name="y" value="0.000000px"/>
-   </parameter>
-   <parameter name="rect.padding">
-    <field name="top" value="0.000000px"/>
-    <field name="right" value="0.000000px"/>
-    <field name="bottom" value="keep-aspect"/>
-    <field name="left" value="keep-aspect"/>
-   </parameter>
-   <parameter name="rect.scalePolicy" value="inherit"/>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
-  </reactor>
-  <reactor id="5bc9ac73-eb5b-f841-3fc8" name="transform_right_blue" type="node.transform">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="2">
-    <item index="1" value="5bc9ac73-25ce-1293-8c109"/>
-    <item index="2" value="5bc9aace-11d5-9102e-8fe7"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5bfe60ac-3bbc-92f5-2456"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="1"/>
@@ -365,14 +209,13 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5bc9acd6-a3d5-746b-96105" name="transform_back_yellow" type="node.transform">
+  <reactor id="5bc9acd6-a3d5-746b-96105" name="transform_back" type="node.transform">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="2">
-    <item index="1" value="5bc9acd6-e86c-e1eb-510d3"/>
-    <item index="2" value="5bc9aace-11d5-9102e-8fe7"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5bfe5fe8-bb19-9bb6-58e5"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="0"/>
@@ -390,13 +233,13 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5bc9acd6-e86c-e1eb-510d3" name="yellow" type="node.rect">
+  <reactor id="5bfe5f5c-ffb1-5eaf-5e99" name="grid_green" type="rect.image">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
    <parameter name="children" length="0"/>
-   <parameter name="layer" value="0.01"/>
+   <parameter name="layer" value="0"/>
    <parameter name="rect.position" value="center-center"/>
    <parameter name="rect.size">
     <field name="policy" value="simple"/>
@@ -404,10 +247,10 @@
     <field name="y" value="keep-aspect"/>
    </parameter>
    <parameter name="rect.color">
-    <field name="red" value="1"/>
-    <field name="green" value="1"/>
-    <field name="blue" value="0.03921568627451"/>
-    <field name="alpha" value="0.5"/>
+    <field name="red" value="0.30588235294118"/>
+    <field name="green" value="0.60392156862745"/>
+    <field name="blue" value="0.023529411764706"/>
+    <field name="alpha" value="1"/>
    </parameter>
    <parameter name="rect.shift">
     <field name="x" value="0.000000px"/>
@@ -420,8 +263,141 @@
     <field name="left" value="keep-aspect"/>
    </parameter>
    <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5bc9ab09-6e9-269-82e-99c"/>
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5bfe5fe8-bb19-9bb6-58e5" name="grid_yellow" type="rect.image">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="2048.000000px"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.76862745098039"/>
+    <field name="green" value="0.62745098039216"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5bc9ab09-6e9-269-82e-99c"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5bfe6077-fe53-32e5-9529" name="grid_red" type="rect.image">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="2048.000000px"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.64313725490196"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5bc9ab09-6e9-269-82e-99c"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5bfe60ac-3bbc-92f5-2456" name="grid_blue" type="rect.image">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="2048.000000px"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.12549019607843"/>
+    <field name="green" value="0.29019607843137"/>
+    <field name="blue" value="0.52941176470588"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5bc9ab09-6e9-269-82e-99c"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5bfe60de-38bd-b9ad-849f" name="grid_magenta" type="rect.image">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="2048.000000px"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.8078431372549"/>
+    <field name="green" value="0.36078431372549"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5bc9ab09-6e9-269-82e-99c"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="System" name="System" type="system">
+   <parameter name="albumName" value="evi_app"/>
+   <field name="exportEnabled" value="true"/>
   </reactor>
   <reactor id="scene" name="Scene" type="node.scene">
    <parameter name="visible" value="true"/>
@@ -438,5 +414,8 @@
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
  </reactors>
- <exportParameters/>
+ <exportParameters last="apk">
+  <parameters format="exe" filename="/root/EligoVision/git/evtoolbox_examples/advanced/vr_scene/vr_scene.exe" appName="vr_scene - EVI Windows App" appId="vr.scene" arch="x64" version="1.0" build="1" appIconPath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="false" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameShift.centering="true"/>
+  <parameters format="apk" filename="/root/EligoVision/git/evtoolbox_examples/advanced/vr_scene/vr2_scene.apk" appName="vr2_scene " appId="ru.eligovision.android.evi.users.vr2.scene" arch="arm" version="1.0" build="1" appIconPath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="true" orientation="landscape"/>
+ </exportParameters>
 </Project>

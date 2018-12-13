@@ -24,29 +24,57 @@
 -------------------------------------------------------------------------------
 
 -- Simple scene in VR
+-- We are in the center of 2x2 (metres) box
 
 -- EV Toolbox 3.2.0-beta7
-
--- Create device and setup view config
-local deviceHMD = EVosgHMD.Device.createBestDevice()
-local viewConfigHMD = EVosgHMD.ViewConfigHMD(deviceHMD)
-viewer:apply(viewConfigHMD)
-
--- Setup manipulator
-local eye		= osg.Vec3(0.0, 0.0, 0.0)
-local center	= osg.Vec3(0.0, 1.0, 0.0)
-local up		= osg.Vec3(0.0, 0.0, 1.0)
-
-local cameraManipulatorHMD = deviceHMD:createCameraManipulator()
-cameraManipulatorHMD:setHomePosition(eye, center, up, false)
-viewer:setCameraManipulator(cameraManipulatorHMD)
-cameraManipulatorHMD:home(0.0)
-
+-- EV Toolbox 3.2.0-beta8 for statsHandler
 
 local scene = reactorController:getReactorByName("Scene")
-scene:subscribeEvent("onScreenClick", function()
-	cameraManipulatorHMD:home(0.0)
-end)
 
 
+local cameraManipulator
+local cameraEye		= osg.Vec3(0.0, 0.0, 0.0)
+local cameraCenter	= osg.Vec3(0.0, 0.0001, 0.0)
+local cameraUp		= osg.Vec3(0.0, 0.0, 1.0)
 
+-- Create device and setup view config
+local hmdDevice = EVosgHMD.Device.createBestDevice()
+
+if hmdDevice then
+	-- Apply Head Mounted Display (HMD) View config
+	local viewConfigHMD = EVosgHMD.ViewConfigHMD(hmdDevice)
+	viewer:apply(viewConfigHMD)
+
+	if statsHandler then
+		statsHandler:reset()	-- Must be reset after applying new view config
+	end
+
+	-- Create gyroscope manipulator
+	cameraManipulator = hmdDevice:createCameraManipulator()
+
+	scene:subscribeEvent("onScreenClick", function()
+		cameraManipulator:home(0.0)
+	end)
+else
+	-- Create trackball manipulator
+	cameraManipulator = osgGA.OrbitManipulator()
+	cameraManipulator:setMinimumDistance(0.0)
+end
+
+
+-- Setup manipulator
+cameraManipulator:setHomePosition(cameraEye, cameraCenter, cameraUp, false)
+viewer:setCameraManipulator(cameraManipulator)
+cameraManipulator:home(0.0)
+
+
+-- Graphics optimization
+
+-- Turn off lighting for the whole scene
+scene.node:getOrCreateStateSet():setMode(GLenum.GL_LIGHTING, osg.StateAttribute.OFF)
+
+
+-- Change statistics level
+if statsHandler then
+	statsHandler:setLevel(1)
+end
