@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.2.0" version-extra="devel">
+ <presentationParams>
+  <parameter name="presenceInterval" value="0"/>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="lostTimeout" value="0.5"/>
+  <parameter name="detectors">
+   <field name="dashdot">
+    <field name="max_error" value="0.05"/>
+    <field name="pattern_size" value="32"/>
+    <field name="inversion" value="normal"/>
+   </field>
+   <field name="image">
+    <field name="grid_rows" value="4"/>
+    <field name="grid_cols" value="4"/>
+   </field>
+  </parameter>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="cam">
+   <field name="fx" value="auto"/>
+   <field name="fy" value="auto"/>
+   <field name="cx" value="auto"/>
+   <field name="cy" value="auto"/>
+   <field name="distortion" length="4">
+    <item index="1" value="auto"/>
+    <item index="2" value="auto"/>
+    <item index="3" value="auto"/>
+    <item index="4" value="auto"/>
+   </field>
+  </parameter>
+  <parameter name="useMainCamera" value="false"/>
+  <parameter name="clearColor">
+   <field name="x" value="0"/>
+   <field name="y" value="0.054901960784314"/>
+   <field name="z" value="0.22745098039216"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_round_rect">
+  <resource id="5c51ca39-824-b4b-629-ea8" kind="script" local="true" forceExport="true" name="main.lua">
+   <filename value="main.lua"/>
+  </resource>
+  <resource id="5c51ce0f-6c3-f45-4a8-333" kind="script" local="true" forceExport="true" name="RoundRectangle.lua">
+   <filename value="RoundRectangle.lua"/>
+  </resource>
+  <resource id="Play-Bold" kind="font" local="false" forceExport="false" name="Play-Bold.ttf">
+   <filename value="Play-Bold.ttf"/>
+   <source value="${STUDIO_RESOURCES_DIR}/fonts/Play-Bold.ttf"/>
+  </resource>
+ </resources>
+ <reactors>
+  <reactor id="5c51c8a2-c2d4-87f2-2675" name="rectangle" type="node.rect">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="50.000000%v"/>
+    <field name="y" value="25.000000%vw"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.30588235294118"/>
+    <field name="green" value="0.60392156862745"/>
+    <field name="blue" value="0.023529411764706"/>
+    <field name="alpha" value="0.5"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5c52fb80-baad-9879-4d2f" name="randomizer" type="counter">
+   <parameter name="initialValue" value="0"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="5c53015e-7fc5-39bb-b3aa" name="text" type="rect.text">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="false"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.02"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="100.000000%c"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="8.000000%"/>
+    <field name="right" value="6.000000%"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="RoundRect"/>
+   <parameter name="text.font_id" value="Play-Bold"/>
+   <parameter name="text.font_size" value="3.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="2">
+    <item index="1" value="5c51c8a2-c2d4-87f2-2675"/>
+    <item index="2" value="5c53015e-7fc5-39bb-b3aa"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="scene" name="Scene" type="node.scene">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="1">
+    <item index="1" value="HeadUpDisplay"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+ </reactors>
+ <exportParameters last="apk">
+ </exportParameters>
+</Project>
