@@ -32,9 +32,6 @@ RoundRectangle = class("RoundRectangle")
 	:field("_radiusUniform")		-- Vec2f (relative to aspect of rectangle)
 	:field("_smoothEdge0")
 	:field("_smoothEdge0Uniform")	-- Float
-
-	:property{"radius", getter = "getRadius", setter = "setRadius"}
-	:property{"smooth", getter = "getSmooth", setter = "setSmooth"}
 :done()
 
 function RoundRectangle:_construct(rectReactor)
