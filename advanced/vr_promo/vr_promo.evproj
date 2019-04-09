@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Project version="3.2.0" version-extra="devel_x64">
+<Project version="3.2.0" version-extra="devel">
  <presentationParams>
   <parameter name="presenceInterval" value="0"/>
   <parameter name="enableStatistics" value="true"/>
@@ -131,6 +131,22 @@
   </resource>
   <resource id="5cacd56a-e5c-e41-df5-a62" kind="script" local="true" forceExport="true" name="pointer_setup.lua">
    <filename value="pointer_setup.lua"/>
+  </resource>
+  <resource id="5cacdde9-15d-ec8-34b-748" kind="script" local="true" forceExport="true" name="Pointer.lua">
+   <filename value="Pointer.lua"/>
+  </resource>
+  <resource id="5cacddea-2cd-e23-f16-115" kind="script" local="true" forceExport="true" name="wvr_register.lua">
+   <filename value="wvr_register.lua"/>
+  </resource>
+  <resource id="5cacddea-7a8-3d6-cd2-23f" kind="script" local="true" forceExport="true" name="wvr_utils.lua">
+   <filename value="wvr_utils.lua"/>
+  </resource>
+  <resource id="5cacddea-a59-6f7-915-b4a" kind="script" local="true" forceExport="true" name="wvr_setup.lua">
+   <filename value="wvr_setup.lua"/>
+  </resource>
+  <resource id="5cace171-e3b-aeb-e27-3da" kind="model" local="true" forceExport="true" name="vive_focus_controller.FBX">
+   <filename value="vive_focus_controller.FBX"/>
+   <optimizations/>
   </resource>
   <resource id="Rubik-Medium" kind="font" local="false" forceExport="false" name="Rubik-Medium.ttf">
    <filename value="Rubik-Medium.ttf"/>
@@ -890,9 +906,8 @@
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
  </reactors>
- <exportParameters last="exe">
-  <parameters format="exe" filename="E:\shared\vr_scene\ARVR_scene.exe" appName="EV_VR" appId="vr.scene" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="C:/Program Files/EligoVision Toolbox 3.2.0-rc2 Advanced/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="true" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="false" frameShift.centering="true"/>
-  <parameters format="apk" filename="X:\EV_VR\vr_scene\EVVR.apk" appName="EVVR" appId="ru.eligovision.android.evi.users.EVVR.scene" arch="arm" version="1.0" build="1" configurationFile="" appIconPath="C:/Program Files/EligoVision Toolbox 3.2.0-rc2 Advanced/studio_data//AppIcon.png" loadingImagePath="C:/Program Files/EligoVision Toolbox 3.2.0-rc2 Advanced/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="true" orientation="landscape" selectedPreset="1">
+ <exportParameters last="apk">
+  <parameters format="apk" filename="/root/EligoVision/git/evtoolbox_examples/advanced/vr_promo/vr_promo.apk" appName="EVVR" appId="ru.eligovision.vr_promo" arch="arm" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data/LaunchImage.png" hmdSupport="false" runAfterExport="true" orientation="landscape" selectedPreset="2">
    <presets>
     <preset name="User Preset">
      <files>
@@ -904,5 +919,6 @@
     </preset>
    </presets>
   </parameters>
+  <parameters format="exe" filename="E:\shared\vr_scene\ARVR_scene.exe" appName="EV_VR" appId="vr.scene" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="true" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="false" frameShift.centering="true"/>
  </exportParameters>
 </Project>

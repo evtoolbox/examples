@@ -69,15 +69,13 @@ local function handle(intersections)
 	end
 end
 
---[[
-local modelResource = resourceRepository:getResourceByName("vive_focus_controller.FBX")
-local controllerModel = resourceRepository:loadResource(modelResource, "osgModel")
-local focusController = Pointer(controllerModel)
-focusController.onIntersectionsCallback = handle
+if wvr then
+	local modelResource = resourceRepository:getResourceByName("vive_focus_controller.FBX")
+	local controllerModel = resourceRepository:loadResource(modelResource, "osgModel")
+	focusController = Pointer(controllerModel)		-- global
+	focusController.onIntersectionsCallback = handle
 
-local scene = reactorController:getReactorByName("Scene")
-scene.node:addChild(focusController.root)
-if evi.os() ~= "android" then
-	viewer:addEventHandler(focusController.mouseHandler)
+	local scene = reactorController:getReactorByName("Scene")
+	scene.node:addChild(focusController.root)
+--	viewer:addEventHandler(focusController.mouseHandler)
 end
---]]

@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
 --                                                                           --
--- Copyright 2018 EligoVision. Interactive Technologies                      --
+-- Copyright 2018-2019 EligoVision. Interactive Technologies                 --
 --                                                                           --
 -- Permission is hereby granted, free of charge, to any person obtaining a   --
 -- copy of this software and associated documentation files                  --
@@ -23,7 +23,16 @@
 --                                                                           --
 -------------------------------------------------------------------------------
 
+require("wvr_register.lua")
+
 require("labels_animation.lua")
 require("fix_transparency.lua")
-require("setup_manipulator.lua")
--- require("setup_pointer.lua")
+
+if wvr then
+	require("Pointer.lua")
+	require("pointer_setup.lua")
+	require("wvr_utils.lua")
+	require("wvr_setup.lua")
+else
+	require("setup_manipulator.lua")
+end
