@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Project version="3.2.0" version-extra="devel_x64">
+<Project version="3.2.0" version-extra="devel">
  <presentationParams>
   <parameter name="presenceInterval" value="0"/>
   <parameter name="enableStatistics" value="true"/>
@@ -1295,6 +1295,7 @@
   </reactor>
  </reactors>
  <exportParameters last="apk">
+  <parameters format="exe" filename="E:\shared\vr_scene\ARVR_scene.exe" appName="EV_VR" appId="vr.scene" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="true" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="false" frameShift.centering="true"/>
   <parameters format="apk" filename="/root/EligoVision/git/evtoolbox_examples/advanced/vr_promo/vr_promo.apk" appName="EVVR" appId="ru.eligovision.vr_promo" arch="arm" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data/LaunchImage.png" hmdSupport="false" runAfterExport="true" orientation="landscape" selectedPreset="2">
    <presets>
     <preset name="User Preset">
@@ -1307,6 +1308,5 @@
     </preset>
    </presets>
   </parameters>
-  <parameters format="exe" filename="E:\shared\vr_scene\ARVR_scene.exe" appName="EV_VR" appId="vr.scene" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="true" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="false" frameShift.centering="true"/>
  </exportParameters>
 </Project>

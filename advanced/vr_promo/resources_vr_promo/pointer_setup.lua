@@ -52,6 +52,8 @@ local function handle(intersections)
 	end
 
 	lastSelectedReactor = nil
+
+	return nil, true	-- no intersections found, need to restore the ray
 end
 
 local function click()

@@ -133,7 +133,8 @@ function Pointer:calculateIntersection()
 	scene.node:accept(intersectionVisitor)
 
 	if not intersector:containsIntersections() then
-		loginfo("No intersections!")
+		--		loginfo("No intersections!")
+		self:setLaserLength(self.laser.defaultLength)
 	else
 		local intersections = intersector:getIntersections()
 		logdebug("Found intersections:", #intersections)

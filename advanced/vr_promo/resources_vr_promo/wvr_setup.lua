@@ -79,11 +79,17 @@ bus:subscribe(function()
 		logdebug("Event from WVR...")
 
 		if wvrEvent:common():type() == wvr.WVR_EventType_IpdChanged then
-			loginfo("WVR_EventType_IpdChanged")
+			logdebug("WVR_EventType_IpdChanged")
 			-- TODO: calculate ipd
 --			setupViewMatrices()
 		end
-
+		if wvrEvent:common():type() == wvr.WVR_EventType_ButtonPressed then
+			loginfo("WVR_EventType_ButtonPressed", wvrEvent:input():inputId())
+--			if wvrEvent:input():inputId() == wvr.WVR_InputId_Alias1_Trigger then
+--				loginfo("Trigger button pressed")
+				focusController:onButtonPressed()
+--			end
+		end
 	end
 
 	-- Head Mounted Display
