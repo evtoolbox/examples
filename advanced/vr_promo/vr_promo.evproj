@@ -252,8 +252,9 @@
   <reactor id="5cab5ba1-b847-15bc-6966" name="transform_timer" type="node.transform">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="1">
+   <parameter name="children" length="2">
     <item index="1" value="5ca24cca-6117-cdea-7591"/>
+    <item index="2" value="5cacde4f-d764-4963-45f3"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="0"/>
@@ -271,7 +272,7 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
   <reactor id="5cab6966-3bbc-af48-efab" name="sync_timer" type="timer">
    <field name="exportEnabled" value="true"/>
@@ -310,8 +311,9 @@
   <reactor id="5cab7627-2a1c-db11-d5b6" name="transform_text" type="node.transform">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="1">
+   <parameter name="children" length="2">
     <item index="1" value="5cab7627-11c3-cb3e-71ed"/>
+    <item index="2" value="5cacdea2-b3c1-bb1f-972d"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="0"/>
@@ -329,13 +331,14 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
   <reactor id="5cac6f31-af9b-e2ff-2ed7" name="transform_audio" type="node.transform">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="1">
+   <parameter name="children" length="2">
     <item index="1" value="5cac6f31-d493-1286-6484"/>
+    <item index="2" value="5cacdd71-c868-189b-69fc"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="0"/>
@@ -353,7 +356,7 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
   <reactor id="5cac6f31-d493-1286-6484" name="object/audio" type="node.model">
    <parameter name="visible" value="true"/>
@@ -454,7 +457,7 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <field name="sectionItemCollapsed" value="true"/>
   </reactor>
   <reactor id="5cacb7c1-7644-9742-bd1a" name="transform_image" type="node.transform">
    <parameter name="visible" value="true"/>
@@ -482,7 +485,7 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
   <reactor id="5cacb7c2-84b9-936e-bcdd" name="object/image" type="node.model">
    <parameter name="visible" value="true"/>
@@ -846,8 +849,9 @@
   <reactor id="5caccfe6-3142-133e-9f8c" name="transform_counter" type="node.transform">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="1">
+   <parameter name="children" length="2">
     <item index="1" value="5cacce0c-66ca-52cd-92c7"/>
+    <item index="2" value="5cacdb18-ecae-66e9-3a71"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="0"/>
@@ -865,13 +869,14 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
   <reactor id="5cacd74b-64b4-8b6a-91d9" name="transform/model" type="node.transform">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="1">
+   <parameter name="children" length="2">
     <item index="1" value="5ca5fed3-dfae-3c84-de79"/>
+    <item index="2" value="5cacdc41-bb9a-de89-945b"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="0"/>
@@ -889,7 +894,342 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cacdb18-767c-d57c-e4de" name="label/counter" type="rect.text">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="100.000000%c"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.43529411764706"/>
+    <field name="green" value="0.74901960784314"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="18.000000px"/>
+    <field name="right" value="26.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Счетчик"/>
+   <parameter name="text.font_id" value="Rubik-Medium"/>
+   <parameter name="text.font_size" value="7.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cacdb18-ecae-66e9-3a71" name="scale/counter" type="node.transform">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5cacdb18-767c-d57c-e4de"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0.010628010456084"/>
+    <field name="y" value="0.72833045044688"/>
+    <field name="z" value="-0.17214524550688"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cacdc41-bb9a-de89-945b" name="scale/model" type="node.transform">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5cacdc41-dc2f-c9d7-24bd"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0.20910993538792"/>
+    <field name="y" value="8.1634194290789"/>
+    <field name="z" value="-1.2037893594082"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="3.8356958332924"/>
+    <field name="y" value="3.8356958332924"/>
+    <field name="z" value="3.8356958332924"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cacdc41-dc2f-c9d7-24bd" name="label/model" type="rect.text">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="100.000000%c"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.43529411764706"/>
+    <field name="green" value="0.74901960784314"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="18.000000px"/>
+    <field name="right" value="26.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Модель"/>
+   <parameter name="text.font_id" value="Rubik-Medium"/>
+   <parameter name="text.font_size" value="7.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cacdd71-b92c-77df-7f94" name="label/audio" type="rect.text">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="100.000000%c"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.43529411764706"/>
+    <field name="green" value="0.74901960784314"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="18.000000px"/>
+    <field name="right" value="26.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Аудио"/>
+   <parameter name="text.font_id" value="Rubik-Medium"/>
+   <parameter name="text.font_size" value="7.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cacdd71-c868-189b-69fc" name="scale/audio" type="node.transform">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5cacdd71-b92c-77df-7f94"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0.010628010456084"/>
+    <field name="y" value="0.72833045044688"/>
+    <field name="z" value="-0.17214524550688"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cacde4f-d764-4963-45f3" name="scale/timer" type="node.transform">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="false"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5cacde4f-eb18-7922-ab27"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0.010628010456084"/>
+    <field name="y" value="0.94713215713512"/>
+    <field name="z" value="-0.17214524550688"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="true"/>
+  </reactor>
+  <reactor id="5cacde4f-eb18-7922-ab27" name="label/timer" type="rect.text">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="100.000000%c"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.43529411764706"/>
+    <field name="green" value="0.74901960784314"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="18.000000px"/>
+    <field name="right" value="26.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Таймер"/>
+   <parameter name="text.font_id" value="Rubik-Medium"/>
+   <parameter name="text.font_size" value="7.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cacdea2-352a-324b-da54" name="label/text" type="rect.text">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="100.000000%c"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.43529411764706"/>
+    <field name="green" value="0.74901960784314"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0.75"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="18.000000px"/>
+    <field name="right" value="26.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Текст"/>
+   <parameter name="text.font_id" value="Rubik-Medium"/>
+   <parameter name="text.font_size" value="7.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cacdea2-b3c1-bb1f-972d" name="scale/text" type="node.transform">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5cacdea2-352a-324b-da54"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0.010628010456084"/>
+    <field name="y" value="0.51012108417237"/>
+    <field name="z" value="-0.17214524550688"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
   <reactor id="System" name="System" type="system">
    <parameter name="albumName" value="evi_app"/>
