@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.2.0" version-extra="devel_x64">
+ <presentationParams>
+  <parameter name="presenceInterval" value="0"/>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="lostTimeout" value="0.5"/>
+  <parameter name="detectors">
+   <field name="dashdot">
+    <field name="max_error" value="0.05"/>
+    <field name="pattern_size" value="32"/>
+    <field name="inversion" value="normal"/>
+   </field>
+   <field name="image">
+    <field name="grid_rows" value="4"/>
+    <field name="grid_cols" value="4"/>
+   </field>
+  </parameter>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.001"/>
+   <field name="far" value="100"/>
+  </parameter>
+  <parameter name="cam">
+   <field name="fx" value="auto"/>
+   <field name="fy" value="auto"/>
+   <field name="cx" value="auto"/>
+   <field name="cy" value="auto"/>
+   <field name="distortion" length="4">
+    <item index="1" value="auto"/>
+    <item index="2" value="auto"/>
+    <item index="3" value="auto"/>
+    <item index="4" value="auto"/>
+   </field>
+  </parameter>
+  <parameter name="useMainCamera" value="false"/>
+  <parameter name="clearColor">
+   <field name="x" value="0.80392156862745"/>
+   <field name="y" value="0.35686274509804"/>
+   <field name="z" value="0"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_vr_promo">
+  <resource id="5bc9ad4a-3f4-975-6ff-654" kind="script" local="true" forceExport="true" name="main.lua">
+   <filename value="main.lua"/>
+  </resource>
+  <resource id="5bc9ad4a-b79-139-8b3-639" kind="script" local="true" forceExport="true" name="setup_manipulator.lua">
+   <filename value="setup_manipulator.lua"/>
+  </resource>
+  <resource id="5ca24caa-269-eb1-136-e61" kind="model" local="true" forceExport="false" name="models.FBX">
+   <filename value="models.FBX"/>
+   <source value="X:\EV_VR\models.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5ca5ff1b-563-274-f58-a9d" kind="model" local="true" forceExport="false" name="sphere.FBX">
+   <filename value="sphere.FBX"/>
+   <source value="X:\EV_VR\sphere.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5ca7536d-f66-226-efb-4db" kind="model" local="true" forceExport="false" name="floor.FBX">
+   <filename value="floor.FBX"/>
+   <source value="X:\EV_VR\floor.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5cab5423-b9a-895-961-7ac" kind="model" local="true" forceExport="false" name="alarm.FBX">
+   <filename value="alarm.FBX"/>
+   <source value="X:\EV_VR\alarm.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5cab7632-455-9d3-ebe-954" kind="model" local="true" forceExport="false" name="text.FBX">
+   <filename value="text.FBX"/>
+   <source value="X:\EV_VR\text.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5cac6f38-88c-7be-368-f7c" kind="model" local="true" forceExport="false" name="sound.fbx">
+   <filename value="sound.fbx"/>
+   <source value="X:\EV_VR\sound.fbx"/>
+   <optimizations/>
+  </resource>
+  <resource id="5cac703e-88c-e14-ff8-f5c" kind="audio" local="true" forceExport="false" name="active.wav">
+   <filename value="active.wav"/>
+   <source value="X:\EV_VR\vr_scene\active.wav"/>
+  </resource>
+  <resource id="5cac7042-7bc-791-912-21d" kind="audio" local="true" forceExport="false" name="seahorse1.wav">
+   <filename value="seahorse1.wav"/>
+   <source value="X:\EV_VR\vr_scene\seahorse1.wav"/>
+  </resource>
+  <resource id="5cac7976-f4d-d1c-7aa-412" kind="audio" local="true" forceExport="false" name="alarm.ogg">
+   <filename value="alarm.ogg"/>
+   <source value="C:\Program Files\EligoVision Toolbox 3.2.0-rc2 Advanced\studio_data\resources\audio\alarm.ogg"/>
+  </resource>
+  <resource id="5cac8fd5-976-ed5-d3b-e19" kind="script" local="true" forceExport="true" name="fix_renderbin.lua">
+   <filename value="fix_renderbin.lua"/>
+  </resource>
+ </resources>
+ <reactors>
+  <reactor id="5ca24cca-6117-cdea-7591" name="object/timer" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="1"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="2"/>
+    <field name="y" value="2"/>
+    <field name="z" value="2"/>
+   </parameter>
+   <parameter name="model" value="5cab5423-b9a-895-961-7ac"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5ca5fed3-dfae-3c84-de79" name="object/model" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="4"/>
+    <field name="z" value="-0.5"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="2"/>
+    <field name="y" value="2"/>
+    <field name="z" value="2"/>
+   </parameter>
+   <parameter name="model" value="5ca24caa-269-eb1-136-e61"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5ca7537a-cb7f-916f-7db7" name="ground" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="model" value="5ca7536d-f66-226-efb-4db"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cab53d7-39ad-abbf-d32d" name="sphere" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="model" value="5ca5ff1b-563-274-f58-a9d"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="true"/>
+  </reactor>
+  <reactor id="5cab5459-1e96-85f3-4a4b" name="alarm_timer" type="timer">
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="5cab5ba1-b847-15bc-6966" name="transform_timer" type="node.transform">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5ca24cca-6117-cdea-7591"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="4"/>
+    <field name="z" value="70"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cab6966-3bbc-af48-efab" name="sync_timer" type="timer">
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="5cab6ea1-aea8-2b4e-f512" name="switch/timer" type="switch">
+   <parameter name="options" length="2">
+    <item index="1" value="play"/>
+    <item index="2" value="stop"/>
+   </parameter>
+   <parameter name="defaultOptionIndex" value="2"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="5cab7627-11c3-cb3e-71ed" name="object/text" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0.5"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="5"/>
+    <field name="z" value="5"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1.5"/>
+    <field name="y" value="1.5"/>
+    <field name="z" value="1.5"/>
+   </parameter>
+   <parameter name="model" value="5cab7632-455-9d3-ebe-954"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cab7627-2a1c-db11-d5b6" name="transform_text" type="node.transform">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5cab7627-11c3-cb3e-71ed"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="4"/>
+    <field name="z" value="-70"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cac6f31-af9b-e2ff-2ed7" name="transform_sound" type="node.transform">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5cac6f31-d493-1286-6484"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="5.9513628267728"/>
+    <field name="y" value="18.869363889576"/>
+    <field name="z" value="-122.35176479406"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cac6f31-d493-1286-6484" name="object/sound" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0.74"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="68.970473553333"/>
+    <field name="y" value="152.91330132117"/>
+    <field name="z" value="147.99250719408"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="2.5"/>
+    <field name="y" value="2.5"/>
+    <field name="z" value="2.5"/>
+   </parameter>
+   <parameter name="model" value="5cac6f38-88c-7be-368-f7c"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cac710d-18df-cc73-27f5" name="switch/sound" type="switch">
+   <parameter name="options" length="2">
+    <item index="1" value="play"/>
+    <item index="2" value="stop"/>
+   </parameter>
+   <parameter name="defaultOptionIndex" value="2"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="5cac7766-68a1-cba2-a627" name="music" type="audio">
+   <parameter name="audioResource" value="5cac703e-88c-e14-ff8-f5c"/>
+   <parameter name="volume" value="2"/>
+   <parameter name="pan" value="0"/>
+   <parameter name="playMode" value="once"/>
+   <parameter name="liveDecoding" value="false"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="5cac7982-2e7e-5db7-73da" name="alarm" type="audio">
+   <parameter name="audioResource" value="5cac7976-f4d-d1c-7aa-412"/>
+   <parameter name="volume" value="1"/>
+   <parameter name="pan" value="0"/>
+   <parameter name="playMode" value="loop"/>
+   <parameter name="liveDecoding" value="false"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="5cac8673-afa5-e2c5-56b3" name="objects" type="node.transform">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="4">
+    <item index="1" value="5cab5ba1-b847-15bc-6966"/>
+    <item index="2" value="5cab7627-2a1c-db11-d5b6"/>
+    <item index="3" value="5cac6f31-af9b-e2ff-2ed7"/>
+    <item index="4" value="5ca5fed3-dfae-3c84-de79"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5cac86b3-4b5e-53a9-86e7" name="environment" type="node.transform">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="false"/>
+   <parameter name="children" length="2">
+    <item index="1" value="5ca7537a-cb7f-916f-7db7"/>
+    <item index="2" value="5cab53d7-39ad-abbf-d32d"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="System" name="System" type="system">
+   <parameter name="albumName" value="evi_app"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="scene" name="Scene" type="node.scene">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="2">
+    <item index="1" value="5cac86b3-4b5e-53a9-86e7"/>
+    <item index="2" value="5cac8673-afa5-e2c5-56b3"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+ </reactors>
+ <exportParameters last="exe">
+  <parameters format="exe" filename="E:\shared\vr_scene\ARVR_scene.exe" appName="EV_VR" appId="vr.scene" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="C:/Program Files/EligoVision Toolbox 3.2.0-rc2 Advanced/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="true" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="false" frameShift.centering="true"/>
+  <parameters format="apk" filename="X:\EV_VR\vr_scene\EVVR.apk" appName="EVVR" appId="ru.eligovision.android.evi.users.EVVR.scene" arch="arm" version="1.0" build="1" configurationFile="" appIconPath="C:/Program Files/EligoVision Toolbox 3.2.0-rc2 Advanced/studio_data//AppIcon.png" loadingImagePath="C:/Program Files/EligoVision Toolbox 3.2.0-rc2 Advanced/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="true" orientation="landscape" selectedPreset="1">
+   <presets>
+    <preset name="User Preset">
+     <files>
+      <file name="AndroidManifest.xml" path="${ANDROID_DATA_DIR}/AndroidManifest.xml.in"/>
+      <file name="build.gradle" path="${ANDROID_DATA_DIR}/build.gradle.in"/>
+      <file name="gradle.properties" path="${ANDROID_DATA_DIR}/gradle.properties.in"/>
+      <file name="local.properties" path="${ANDROID_DATA_DIR}/local.properties.in"/>
+     </files>
+    </preset>
+   </presets>
+  </parameters>
+ </exportParameters>
+</Project>
