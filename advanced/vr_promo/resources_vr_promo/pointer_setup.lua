@@ -27,11 +27,12 @@
 -- selectionUniform:setDataVariance(osg.Object.DYNAMIC)
 
 local reactors = {
-	reactorController:getReactorByName("object/text"),
-	reactorController:getReactorByName("object/model"),
 	reactorController:getReactorByName("object/timer"),
-	reactorController:getReactorByName("object/audio"),
 	reactorController:getReactorByName("object/image"),
+	reactorController:getReactorByName("object/text"),
+	reactorController:getReactorByName("object/audio"),
+	reactorController:getReactorByName("object/counter"),
+	reactorController:getReactorByName("object/model"),
 }
 local lastSelectedReactor = nil
 local function onDownImpl(reactor)

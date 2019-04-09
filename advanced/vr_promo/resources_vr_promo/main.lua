@@ -23,5 +23,7 @@
 --                                                                           --
 -------------------------------------------------------------------------------
 
-require("fix_renderbin.lua")
+require("labels_animation.lua")
+require("fix_transparency.lua")
 require("setup_manipulator.lua")
+-- require("setup_pointer.lua")

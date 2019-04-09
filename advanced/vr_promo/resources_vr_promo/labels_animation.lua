@@ -46,7 +46,7 @@ function Label:_construct(aReactor)
 	self.reactor = aReactor
 	self.pat = osg.PositionAttitudeTransform()
 	EVosgUtil.insertNode(self.pat:asGroup(), self.reactor.node)
-	self.pat:setName("pat_" .. self.reactor.name .. "_rb_50")
+	self.pat:setName("pat_" .. self.reactor.name .. "_rb_125")
 
 	self._impl.duration = ANIMATION_TIME
 	self._impl.callback = osg.NodeCallback(function()
@@ -67,7 +67,6 @@ function Label:_construct(aReactor)
 	end)
 
 	self.pat:setScale(osg.Vec3(0.0, 1.0, 0.0))
-	self.pat:setPosition(self.reactor.trans)
 	self.reactor:hide()
 end
 
@@ -112,35 +111,37 @@ end
 
 
 
--- Text object
-local reactor = reactorController:getReactorByName("object/text")
-local text = reactorController:getReactorByName("scale/text")
-if reactor and text then
-	loginfo("Create label with animation for", reactorName)
-	local label = Label(text)
-	label:show()
-
-	reactor:subscribeEvent("onAnimationStart", function() label:hide() end)
-	reactor:subscribeEvent("onAnimationFinished", function() label:show() end)
-end
-
--- Model object
-local reactor = reactorController:getReactorByName("object/model")
-local text = reactorController:getReactorByName("scale/model")
-if reactor and text then
-	loginfo("Create label with animation for model")
-	local label = Label(text)
-	label:show()
-
-	reactor:subscribeEvent("onAnimationStart", function() label:hide() end)
-	reactor:subscribeEvent("onAnimationFinished", function() label:show() end)
-end
-
 -- Timer object
 local reactor = reactorController:getReactorByName("object/timer")
 local text = reactorController:getReactorByName("scale/timer")
 if reactor and text then
 	loginfo("Create label with animation for timer")
+	local label = Label(text)
+	label:show()
+
+	reactor:subscribeEvent("onAnimationStart", function() label:hide() end)
+	reactor:subscribeEvent("onAnimationFinished", function() label:show() end)
+end
+
+-- Image object
+local reactor = reactorController:getReactorByName("object/image")
+local text = reactorController:getReactorByName("scale/image")
+if reactor and text then
+	loginfo("Create label with animation for image")
+	local label = Label(text)
+	label:show()
+
+	reactor:subscribeEvent("onAnimationStart", function(animationName)
+		if animationName == "start" then label:hide() end
+		if animationName == "end" then label:show() end
+	end)
+end
+
+-- Text object
+local reactor = reactorController:getReactorByName("object/text")
+local text = reactorController:getReactorByName("scale/text")
+if reactor and text then
+	loginfo("Create label with animation for", reactorName)
 	local label = Label(text)
 	label:show()
 
@@ -160,11 +161,23 @@ if reactor and text then
 	reactor:subscribeEvent("onAnimationFinished", function() label:show() end)
 end
 
--- Image object
-local reactor = reactorController:getReactorByName("object/image")
-local text = reactorController:getReactorByName("scale/image")
+-- Counter object
+local reactor = reactorController:getReactorByName("object/counter")
+local text = reactorController:getReactorByName("scale/counter")
 if reactor and text then
-	loginfo("Create label with animation for image")
+	loginfo("Create label with animation for counter")
+	local label = Label(text)
+	label:show()
+
+	reactor:subscribeEvent("onAnimationStart", function() label:hide() end)
+	reactor:subscribeEvent("onAnimationFinished", function() label:show() end)
+end
+
+-- Model object
+local reactor = reactorController:getReactorByName("object/model")
+local text = reactorController:getReactorByName("scale/model")
+if reactor and text then
+	loginfo("Create label with animation for model")
 	local label = Label(text)
 	label:show()
 

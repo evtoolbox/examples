@@ -42,3 +42,6 @@ end
 
 local scene = reactorController:getReactorByName("Scene")
 fixRenderBin(scene.node, "rb_", 22)
+
+local image = reactorController:getReactorByName("object/image")
+if image then image.node:getOrCreateStateSet():setRenderingHint(bit_or(osg.StateSet.TRANSPARENT_BIN)) end
