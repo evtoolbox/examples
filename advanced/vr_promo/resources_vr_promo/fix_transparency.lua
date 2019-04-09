@@ -45,3 +45,14 @@ fixRenderBin(scene.node, "rb_", 22)
 
 local image = reactorController:getReactorByName("object/image")
 if image then image.node:getOrCreateStateSet():setRenderingHint(bit_or(osg.StateSet.TRANSPARENT_BIN)) end
+
+
+scene.node:getOrCreateStateSet():setAttributeAndModes(osg.CullFace(), osg.StateAttribute.ON)
+
+local envNode = reactorController:getReactorByName("environment")
+envNode.node:getOrCreateStateSet():setMode(GLenum.GL_LIGHTING, osg.StateAttribute.OFF)
+
+if wvr then
+	local cs = reactorController:getReactorByName("coord_system")
+	cs.rotate = osg.Vec3(-90.0, 0.0, 0.0)
+end

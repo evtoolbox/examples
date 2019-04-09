@@ -84,10 +84,6 @@
    <filename value="active.wav"/>
    <source value="X:\EV_VR\vr_scene\active.wav"/>
   </resource>
-  <resource id="5cac7042-7bc-791-912-21d" kind="audio" local="true" forceExport="false" name="seahorse1.wav">
-   <filename value="seahorse1.wav"/>
-   <source value="X:\EV_VR\vr_scene\seahorse1.wav"/>
-  </resource>
   <resource id="5cac7976-f4d-d1c-7aa-412" kind="audio" local="true" forceExport="false" name="alarm.ogg">
    <filename value="alarm.ogg"/>
    <source value="C:\Program Files\EligoVision Toolbox 3.2.0-rc2 Advanced\studio_data\resources\audio\alarm.ogg"/>
@@ -197,7 +193,7 @@
     <field name="z" value="2"/>
    </parameter>
    <parameter name="model" value="5ca24caa-269-eb1-136-e61"/>
-   <field name="exportEnabled" value="true"/>
+   <field name="exportEnabled" value="false"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
   <reactor id="5ca7537a-cb7f-916f-7db7" name="ground" type="node.model">
@@ -272,7 +268,7 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <field name="sectionItemCollapsed" value="true"/>
   </reactor>
   <reactor id="5cab6966-3bbc-af48-efab" name="sync_timer" type="timer">
    <field name="exportEnabled" value="true"/>
@@ -331,7 +327,7 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <field name="sectionItemCollapsed" value="true"/>
   </reactor>
   <reactor id="5cac6f31-af9b-e2ff-2ed7" name="transform_audio" type="node.transform">
    <parameter name="visible" value="true"/>
@@ -356,7 +352,7 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <field name="sectionItemCollapsed" value="true"/>
   </reactor>
   <reactor id="5cac6f31-d493-1286-6484" name="object/audio" type="node.model">
    <parameter name="visible" value="true"/>
@@ -485,7 +481,7 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <field name="sectionItemCollapsed" value="true"/>
   </reactor>
   <reactor id="5cacb7c2-84b9-936e-bcdd" name="object/image" type="node.model">
    <parameter name="visible" value="true"/>
@@ -778,7 +774,7 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <field name="sectionItemCollapsed" value="true"/>
   </reactor>
   <reactor id="5caccc7f-d69b-1da4-f525" name="label/image" type="rect.text">
    <parameter name="visible" value="true"/>
@@ -869,7 +865,7 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <field name="sectionItemCollapsed" value="true"/>
   </reactor>
   <reactor id="5cacd74b-64b4-8b6a-91d9" name="transform/model" type="node.transform">
    <parameter name="visible" value="true"/>
@@ -893,7 +889,7 @@
     <field name="y" value="1"/>
     <field name="z" value="1"/>
    </parameter>
-   <field name="exportEnabled" value="true"/>
+   <field name="exportEnabled" value="false"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
   <reactor id="5cacdb18-767c-d57c-e4de" name="label/counter" type="rect.text">
@@ -984,7 +980,7 @@
     <field name="y" value="3.8356958332924"/>
     <field name="z" value="3.8356958332924"/>
    </parameter>
-   <field name="exportEnabled" value="true"/>
+   <field name="exportEnabled" value="false"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
   <reactor id="5cacdc41-dc2f-c9d7-24bd" name="label/model" type="rect.text">
@@ -1027,7 +1023,7 @@
    <parameter name="text.align" value="center-center"/>
    <parameter name="text.auto_wrap" value="false"/>
    <parameter name="text.line_spacing" value="0.15"/>
-   <field name="exportEnabled" value="true"/>
+   <field name="exportEnabled" value="false"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
   <reactor id="5cacdd71-b92c-77df-7f94" name="label/audio" type="rect.text">
@@ -1231,6 +1227,31 @@
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
+  <reactor id="5cace5dd-e39c-e34b-cfc9" name="coord_system" type="node.transform">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="2">
+    <item index="1" value="5cac86b3-4b5e-53a9-86e7"/>
+    <item index="2" value="5cac8673-afa5-e2c5-56b3"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
   <reactor id="System" name="System" type="system">
    <parameter name="albumName" value="evi_app"/>
    <field name="exportEnabled" value="true"/>
@@ -1238,15 +1259,15 @@
   <reactor id="scene" name="Scene" type="node.scene">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="2">
-    <item index="1" value="5cac86b3-4b5e-53a9-86e7"/>
-    <item index="2" value="5cac8673-afa5-e2c5-56b3"/>
+   <parameter name="children" length="1">
+    <item index="1" value="5cace5dd-e39c-e34b-cfc9"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
  </reactors>
  <exportParameters last="apk">
+  <parameters format="exe" filename="E:\shared\vr_scene\ARVR_scene.exe" appName="EV_VR" appId="vr.scene" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="true" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="false" frameShift.centering="true"/>
   <parameters format="apk" filename="/root/EligoVision/git/evtoolbox_examples/advanced/vr_promo/vr_promo.apk" appName="EVVR" appId="ru.eligovision.vr_promo" arch="arm" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data/LaunchImage.png" hmdSupport="false" runAfterExport="true" orientation="landscape" selectedPreset="2">
    <presets>
     <preset name="User Preset">
@@ -1259,6 +1280,5 @@
     </preset>
    </presets>
   </parameters>
-  <parameters format="exe" filename="E:\shared\vr_scene\ARVR_scene.exe" appName="EV_VR" appId="vr.scene" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/root/EligoVision/svn/ev_evi-trunk/build/src/ev_studio/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="true" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="false" frameShift.centering="true"/>
  </exportParameters>
 </Project>
