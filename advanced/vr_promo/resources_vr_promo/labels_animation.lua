@@ -46,7 +46,7 @@ function Label:_construct(aReactor)
 	self.reactor = aReactor
 	self.pat = osg.PositionAttitudeTransform()
 	EVosgUtil.insertNode(self.pat:asGroup(), self.reactor.node)
-	self.pat:setName("pat_" .. self.reactor.name .. "_rb_125")
+	self.pat:setName("pat_" .. self.reactor.name .. "_rb_325")
 
 	self._impl.duration = ANIMATION_TIME
 	self._impl.callback = osg.NodeCallback(function()
@@ -119,8 +119,12 @@ if reactor and text then
 	local label = Label(text)
 	label:show()
 
-	reactor:subscribeEvent("onAnimationStart", function() label:hide() end)
-	reactor:subscribeEvent("onAnimationFinished", function() label:show() end)
+	reactor:subscribeEvent("onAnimationStart", function(animationName)
+		if animationName == "start" then label:hide() end
+		if animationName == "end" then label:show() end
+	end)
+
+	reactorController:getReactorByName("label/timer").rect.color = osg.Vec4(216/255.0, 120/255.0, 95/255.0, 0.75)
 end
 
 -- Image object
@@ -135,6 +139,8 @@ if reactor and text then
 		if animationName == "start" then label:hide() end
 		if animationName == "end" then label:show() end
 	end)
+
+	reactorController:getReactorByName("label/image").rect.color = osg.Vec4(111/255.0, 171/255.0, 70/255.0, 0.75)
 end
 
 -- Text object
@@ -147,18 +153,22 @@ if reactor and text then
 
 	reactor:subscribeEvent("onAnimationStart", function() label:hide() end)
 	reactor:subscribeEvent("onAnimationFinished", function() label:show() end)
+
+	reactorController:getReactorByName("label/text").rect.color = osg.Vec4(51/255.0, 179/255.0, 182/255.0, 0.75)
 end
 
 -- Audio object
-local reactor = reactorController:getReactorByName("object/audio")
+local reactor = reactorController:getReactorByName("music")
 local text = reactorController:getReactorByName("scale/audio")
 if reactor and text then
 	loginfo("Create label with animation for audio")
 	local label = Label(text)
 	label:show()
 
-	reactor:subscribeEvent("onAnimationStart", function() label:hide() end)
-	reactor:subscribeEvent("onAnimationFinished", function() label:show() end)
+	reactor:subscribeEvent("onStart", function() label:hide() end)
+	reactor:subscribeEvent("onStop", function() label:show() end)
+
+	reactorController:getReactorByName("label/audio").rect.color = osg.Vec4(205/255.0, 96/255.0, 191/255.0, 0.75)
 end
 
 -- Counter object
@@ -171,6 +181,8 @@ if reactor and text then
 
 	reactor:subscribeEvent("onAnimationStart", function() label:hide() end)
 	reactor:subscribeEvent("onAnimationFinished", function() label:show() end)
+
+	reactorController:getReactorByName("label/counter").rect.color = osg.Vec4(159/255.0, 129/255.0, 112/255.0, 0.75)
 end
 
 -- Model object
@@ -183,4 +195,6 @@ if reactor and text then
 
 	reactor:subscribeEvent("onAnimationStart", function() label:hide() end)
 	reactor:subscribeEvent("onAnimationFinished", function() label:show() end)
+
+	reactorController:getReactorByName("label/model").rect.color = osg.Vec4(88/255.0, 173/255.0, 240/255.0, 0.75)
 end

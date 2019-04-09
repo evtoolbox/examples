@@ -198,7 +198,7 @@
  </object>
  <object type="Reactor">
   <property name="id" type="long">1563996</property>
-  <property name="relative_position" type="realpoint">1629.000000,3085.000000</property>
+  <property name="relative_position" type="realpoint">1629.000000,3084.000000</property>
   <property name="reactor" type="reactor_info">
    <reactor>5cac7766-68a1-cba2-a627</reactor>
   </property>
