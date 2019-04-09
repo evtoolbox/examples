@@ -25,7 +25,6 @@
 
 -- local selectionUniform = osg.Uniform.Vec4f("ev_LightModelAmbientIntensity", osg.Vec4(2.0, 1.0, -1.0, 0.9))
 -- selectionUniform:setDataVariance(osg.Object.DYNAMIC)
-
 local reactors = {
 	reactorController:getReactorByName("object/timer"),
 	reactorController:getReactorByName("object/image"),
@@ -35,12 +34,7 @@ local reactors = {
 	reactorController:getReactorByName("object/model"),
 }
 local lastSelectedReactor = nil
-local function onDownImpl(reactor)
-	reactor:onDown()
-	-- FIXME: right now we do not process controller's buttons' state
-	--		so we send "onClick" event with the first time intersection
-	reactor:onClick()
-end
+
 local function handle(intersections)
 	for _, intersection in ipairs(intersections) do
 		local nodePath = intersection:nodePath()
@@ -49,24 +43,19 @@ local function handle(intersections)
 				local nodeName = nodePath:at(i):name()
 				if reactor.id == nodeName then
 					logdebug("Intersect", reactor.name)
-					if lastSelectedReactor then
-						if lastSelectedReactor.id == reactor.id then
-							-- reactor:onMove()
-						else
-							lastSelectedReactor:onUp()
-							onDownImpl(reactor)
-							lastSelectedReactor = reactor
-						end
-					else
-						onDownImpl(reactor)
-						lastSelectedReactor = reactor
-					end
+					lastSelectedReactor = reactor
 
 					return intersection
 				end
 			end
 		end
 	end
+
+	lastSelectedReactor = nil
+end
+
+local function click()
+	if lastSelectedReactor then lastSelectedReactor:onClick() end
 end
 
 if wvr then
@@ -74,6 +63,7 @@ if wvr then
 	local controllerModel = resourceRepository:loadResource(modelResource, "osgModel")
 	focusController = Pointer(controllerModel)		-- global
 	focusController.onIntersectionsCallback = handle
+	focusController.onButtonPressedCallback = click
 
 	local scene = reactorController:getReactorByName("Scene")
 	scene.node:addChild(focusController.root)

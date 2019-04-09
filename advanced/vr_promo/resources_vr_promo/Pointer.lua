@@ -44,7 +44,11 @@ Pointer = class("Pointer")
 	:field("lineSegment")
 	:field("root")
 	:field("mouseHandler")
+	-- NOTE: onIntersectionsCallback returns 2 arguments:
+	--		1. osg.Intersection object to set laser length to corresponding
+	--		2. boolean value to reset laser length to default if no appropriate intersection found
 	:field("onIntersectionsCallback")
+	:field("onButtonPressedCallback")
 :done()
 
 function Pointer:_construct(aControllerModel, aOnIntersectionsCallback)
@@ -74,8 +78,8 @@ function Pointer:_createLaser()
 	material:setDiffuse(osg.Material.FRONT_AND_BACK, self.laser.color)
 	material:setEmission(osg.Material.FRONT_AND_BACK, self.laser.color)
 
-	local сylinder = osg.Cylinder(aCenter, aRadius, aLength)
-	local drawable = osg.ShapeDrawable(сylinder)
+	local cylinder = osg.Cylinder(aCenter, aRadius, aLength)
+	local drawable = osg.ShapeDrawable(cylinder)
 	self.laser.geode = osg.Geode()
 	self.laser.geode:addDrawable(drawable)
 	self.laser.geode:getOrCreateStateSet():setAttributeAndModes(material, osg.StateAttribute.ON)
@@ -84,6 +88,12 @@ function Pointer:_createLaser()
 	self.laser.geodePat:addChild(self.laser.geode)
 
 	self.lineSegment = osg.LineSegment(osg.Vec3(0.0, 0.0, 0.0), osg.Vec3(0.0, 0.0, -aLength*1.05))		-- NOTE: -z direction
+end
+
+function Pointer:onButtonPressed()
+	if self.onButtonPressedCallback then
+		self.onButtonPressedCallback()
+	end
 end
 
 function Pointer:setLaserLength(aLength)
