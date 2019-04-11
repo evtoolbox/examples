@@ -32,6 +32,8 @@ local reactors = {
 	reactorController:getReactorByName("object/audio"),
 	reactorController:getReactorByName("object/counter"),
 	reactorController:getReactorByName("object/model"),
+	reactorController:getReactorByName("pic_prev"),
+	reactorController:getReactorByName("pic_next"),
 }
 local lastSelectedReactor = nil
 

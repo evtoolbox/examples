@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Project version="3.2.0" version-extra="devel">
+<Project version="3.2.0" version-extra="devel_x64">
  <presentationParams>
   <parameter name="presenceInterval" value="0"/>
   <parameter name="enableStatistics" value="true"/>
@@ -279,10 +279,10 @@
   </reactor>
   <reactor id="5cab6ea1-aea8-2b4e-f512" name="switch/timer" type="switch">
    <parameter name="options" length="2">
-    <item index="1" value="play"/>
-    <item index="2" value="stop"/>
+    <item index="1" value="playing"/>
+    <item index="2" value="stopped"/>
    </parameter>
-   <parameter name="defaultOptionIndex" value="2"/>
+   <parameter name="defaultOptionIndex" value="1"/>
    <field name="exportEnabled" value="true"/>
   </reactor>
   <reactor id="5cab7627-11c3-cb3e-71ed" name="object/text" type="node.model">
@@ -383,8 +383,8 @@
   </reactor>
   <reactor id="5cac710d-18df-cc73-27f5" name="switch/audio" type="switch">
    <parameter name="options" length="2">
-    <item index="1" value="play"/>
-    <item index="2" value="stop"/>
+    <item index="1" value="playing"/>
+    <item index="2" value="stopped"/>
    </parameter>
    <parameter name="defaultOptionIndex" value="2"/>
    <field name="exportEnabled" value="true"/>
@@ -485,7 +485,7 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
   <reactor id="5cacb7c2-84b9-936e-bcdd" name="object/image" type="node.model">
    <parameter name="visible" value="true"/>
@@ -510,7 +510,7 @@
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5cacbbfe-fadb-7e39-8aff" name="object/pic_next" type="node.model">
+  <reactor id="5cacbbfe-fadb-7e39-8aff" name="pic_next" type="node.model">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
    <parameter name="children" length="0"/>
@@ -533,7 +533,7 @@
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5cacbc19-48a9-5f2d-381d" name="object/pic_prev" type="node.model">
+  <reactor id="5cacbc19-48a9-5f2d-381d" name="pic_prev" type="node.model">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
    <parameter name="children" length="0"/>
@@ -618,8 +618,8 @@
   </reactor>
   <reactor id="5cacc2d1-aef8-81c9-e946" name="switch/picture" type="switch">
    <parameter name="options" length="2">
-    <item index="1" value="play"/>
-    <item index="2" value="stop"/>
+    <item index="1" value="enabled"/>
+    <item index="2" value="disabled"/>
    </parameter>
    <parameter name="defaultOptionIndex" value="2"/>
    <field name="exportEnabled" value="true"/>
@@ -895,7 +895,7 @@
     <field name="z" value="1"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <field name="sectionItemCollapsed" value="true"/>
   </reactor>
   <reactor id="5cacdb18-767c-d57c-e4de" name="label/counter" type="rect.text">
    <parameter name="visible" value="true"/>
@@ -1291,7 +1291,7 @@
     <item index="1" value="5cace5dd-e39c-e34b-cfc9"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <field name="sectionItemCollapsed" value="true"/>
   </reactor>
  </reactors>
  <exportParameters last="apk">
