@@ -43,7 +43,7 @@ EV.Logger.setCatPriority("ev_evi.lua.neuronmocap.server"			, "DEBUG");
 local skeletonNode = reactorController:getReactorByName("skeleton").node
 SkinNode = EVosgUtil.findNamedClassNode("Character", skeletonNode, "Geode"):asGeometry()
 for i, boneName in ipairs(BoneNames) do
-	local node = EVosgUtil.findNamedClassNode(boneName, skeletonNode, "Bone")
+	local node = cast(EVosgUtil.findNamedClassNode(boneName, skeletonNode, "Bone"), osgAnimation.Bone)
 	if not node then
 		logger:critical("Cannot find bone '" .. boneName .. "'")
 		-- error()

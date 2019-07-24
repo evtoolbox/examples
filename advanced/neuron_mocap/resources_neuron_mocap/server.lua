@@ -60,7 +60,14 @@ function createAndStartServer()
 											   frameDataMessage:data(boneIndex + 4),
 											   frameDataMessage:data(boneIndex + 5))
 			
-			bone.node:asTransform():asMatrixTransform():setMatrix(boneMatrix)
+			bone.node:setMatrix(boneMatrix)
+
+			local parent = bone.node:getBoneParent()
+			if parent then
+				bone.node:setMatrixInSkeletonSpace(boneMatrix * parent:getMatrixInSkeletonSpace())
+			else
+				bone.node:setMatrixInSkeletonSpace(boneMatrix)
+			end
 		end
 	end)
 	echoService:enableDeferredMode()
