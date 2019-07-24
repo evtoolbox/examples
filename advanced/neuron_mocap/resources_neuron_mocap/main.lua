@@ -1,0 +1,56 @@
+-------------------------------------------------------------------------------
+--                                                                           --
+-- Copyright 2019 EligoVision. Interactive Technologies                      --
+--                                                                           --
+-- Permission is hereby granted, free of charge, to any person obtaining a   --
+-- copy of this software and associated documentation files                  --
+-- (the "Software"), to deal in the Software without restriction, including  --
+-- without limitation the rights to use, copy, modify, merge, publish,       --
+-- distribute, sublicense, and/or sell copies of the Software, and to permit --
+-- persons to whom the Software is furnished to do so, subject to the        --
+-- following conditions:                                                     --
+--                                                                           --
+-- The above copyright notice and this permission notice shall be included   --
+-- in all copies or substantial portions of the Software.                    --
+--                                                                           --
+-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS   --
+-- OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF                --
+-- MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.    --
+-- IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY      --
+-- CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,      --
+-- TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE         --
+-- SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                    --
+--                                                                           --
+-------------------------------------------------------------------------------
+
+-- EV Toolbox 3.4.0
+
+CFG_SERVER_PORT = 12345
+
+local logger = set_logger("ev_evi.lua.neuronmocap")
+
+BoneNames	= {} -- Globals 'BoneNames' inited in BoneNames.lua
+Bones		= { --[[ { name -> string, node -> osgAnimation.Bone } ]]}
+
+require("registerPlugin.lua")
+require("BoneNames.lua")
+require("server.lua")
+
+EV.Logger.setCatPriority("ev_evi.lua.neuronmocap"					, "INFO");
+EV.Logger.setCatPriority("ev_evi.lua.neuronmocap.registerPlugins"	, "INFO");
+EV.Logger.setCatPriority("ev_evi.lua.neuronmocap.server"			, "DEBUG");
+
+local skeletonNode = reactorController:getReactorByName("skeleton").node
+SkinNode = EVosgUtil.findNamedClassNode("Character", skeletonNode, "Geode"):asGeometry()
+for i, boneName in ipairs(BoneNames) do
+	local node = EVosgUtil.findNamedClassNode(boneName, skeletonNode, "Bone")
+	if not node then
+		logger:critical("Cannot find bone '" .. boneName .. "'")
+		-- error()
+	else
+		logger:info("Bone '" .. boneName .. "' found!")
+		Bones[i] = { name = boneName, node = node }
+	end
+end
+
+createAndStartServer()
