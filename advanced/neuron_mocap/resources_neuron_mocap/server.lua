@@ -27,13 +27,6 @@
 
 local logger = set_logger("ev_evi.lua.neuronmocap.server")
 
-local function calculateMatrix(x, y, z, yRot, xRot, zRot)
-	return osg.Matrix.translate(osg.Vec3(x, y, z))
-		 * osg.Matrix.rotate(zRot, 0.0, 0.0, 1.0)
-		 * osg.Matrix.rotate(xRot, 1.0, 0.0, 0.0)
-		 * osg.Matrix.rotate(yRot, 0.0, 1.0, 0.0)
-end
-
 function createAndStartServer()
 	logger:info("Enabling server to recieve bones info...")
 	if not registerPlugin("neuronmocap") then
@@ -48,26 +41,18 @@ function createAndStartServer()
 		local frameDataMessage		= neuronmocap.FrameDataMessage(aRequest)
 		local dataSize				= frameDataMessage:data_size()
 
-		logger:debug("Recieved data size is ", dataSize)
+--		logger:debug("Recieved data size is ", dataSize)
 
 		for i, bone in ipairs(Bones) do
 			logger:trace("Update bone ", bone.name)
 			local boneIndex = (i - 1)*6
-			local boneMatrix = calculateMatrix(frameDataMessage:data(boneIndex + 0),
-											   frameDataMessage:data(boneIndex + 1),
-											   frameDataMessage:data(boneIndex + 2),
-											   frameDataMessage:data(boneIndex + 3),
-											   frameDataMessage:data(boneIndex + 4),
-											   frameDataMessage:data(boneIndex + 5))
-			
-			bone.node:setMatrix(boneMatrix)
-
-			local parent = bone.node:getBoneParent()
-			if parent then
-				bone.node:setMatrixInSkeletonSpace(boneMatrix * parent:getMatrixInSkeletonSpace())
-			else
-				bone.node:setMatrixInSkeletonSpace(boneMatrix)
-			end
+			bone.data = {	x  = frameDataMessage:data(boneIndex + 0)
+						,	y  = frameDataMessage:data(boneIndex + 1)
+						,	z  = frameDataMessage:data(boneIndex + 2)
+						,	ry = frameDataMessage:data(boneIndex + 3)
+						,	rx = frameDataMessage:data(boneIndex + 4)
+						,	rz = frameDataMessage:data(boneIndex + 5)
+						}
 		end
 	end)
 	echoService:enableDeferredMode()
