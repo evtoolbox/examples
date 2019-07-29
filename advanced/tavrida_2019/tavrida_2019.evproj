@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.2.0" version-extra="devel">
+ <presentationParams>
+  <parameter name="presenceInterval" value="0"/>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="lostTimeout" value="0.5"/>
+  <parameter name="detectors">
+   <field name="dashdot">
+    <field name="max_error" value="0.05"/>
+    <field name="pattern_size" value="32"/>
+    <field name="inversion" value="normal"/>
+   </field>
+   <field name="image">
+    <field name="grid_rows" value="4"/>
+    <field name="grid_cols" value="4"/>
+   </field>
+  </parameter>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="cam">
+   <field name="fx" value="auto"/>
+   <field name="fy" value="auto"/>
+   <field name="cx" value="auto"/>
+   <field name="cy" value="auto"/>
+   <field name="distortion" length="4">
+    <item index="1" value="auto"/>
+    <item index="2" value="auto"/>
+    <item index="3" value="auto"/>
+    <item index="4" value="auto"/>
+   </field>
+  </parameter>
+  <parameter name="useMainCamera" value="false"/>
+  <parameter name="clearColor">
+   <field name="x" value="0.054901960784314"/>
+   <field name="y" value="0.13725490196078"/>
+   <field name="z" value="0.16862745098039"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_tavrida_2019">
+  <resource id="5d382aa1-b5b-631-3e8-179" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="main.lua">
+   <filename value="main.lua"/>
+  </resource>
+  <resource id="5d383d3f-13e-2a1-dba-66c" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="registerPlugin.lua">
+   <filename value="registerPlugin.lua"/>
+  </resource>
+  <resource id="5d383d3f-d96-622-688-517" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="server.lua">
+   <filename value="server.lua"/>
+  </resource>
+  <resource id="5d388752-669-eeb-e57-de1" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="BonesInfo.lua">
+   <filename value="BonesInfo.lua"/>
+  </resource>
+  <resource id="5d3ee04d-526-3ca-975-b82" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Alice.FBX">
+   <filename value="Alice.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5d3ee06c-28b-e6e-48e-7de" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Card_02.FBX">
+   <filename value="Card_02.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5d3f3c81-3b8-485-485-225" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Queen.FBX">
+   <filename value="Queen.FBX"/>
+   <optimizations/>
+  </resource>
+ </resources>
+ <reactors>
+  <reactor id="5d381bc6-1796-8b7c-21c5" name="alice" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="model" value="5d3ee04d-526-3ca-975-b82"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5d38645b-7417-d7cb-55dd" name="camera_manipulator_helper01" type="camera_manipulator_helper">
+   <parameter name="kind" value="trackball"/>
+   <parameter name="homeEye">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeCenter">
+    <field name="x" value="0"/>
+    <field name="y" value="1"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeUp">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="autoComputeHomePosition" value="true"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="5d3f0f26-5bb4-9594-44b6" name="card_10b" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="2"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="model" value="5d3ee06c-28b-e6e-48e-7de"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5d3f3c6f-7ca8-e5ab-7569" name="queen" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="-2"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="model" value="5d3f3c81-3b8-485-485-225"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="ViewerReactor" name="Viewer" type="viewer">
+   <parameter name="displayType" value="MONITOR"/>
+   <parameter name="cameraManipulator" value="5d38645b-7417-d7cb-55dd"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="scene" name="Scene" type="node.scene">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="3">
+    <item index="1" value="5d381bc6-1796-8b7c-21c5"/>
+    <item index="2" value="5d3f0f26-5bb4-9594-44b6"/>
+    <item index="3" value="5d3f3c6f-7ca8-e5ab-7569"/>
+   </parameter>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+ </reactors>
+ <exportParameters last="exe">
+  <parameters format="exe" filename="/Users/KOS/EligoVision/github/evtoolbox_examples/advanced/neuron_mocap/neuron_mocap.exe" appName="neuron_mocap - EVI Windows App" appId="neuron.mocap" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="/Users/KOS/EligoVision/git/ev_evi/build/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//AppIcon.png" loadingImagePath="/Users/KOS/EligoVision/git/ev_evi/build/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="false" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true"/>
+ </exportParameters>
+</Project>
