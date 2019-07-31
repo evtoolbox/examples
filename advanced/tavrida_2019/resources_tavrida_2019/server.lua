@@ -43,7 +43,7 @@ function createAndStartServer()
 
 --		logger:debug("Recieved data size is ", dataSize)
 
-		for i, bone in ipairs(Bones) do
+		for i, bone in ipairs(BonesInfo) do
 			logger:trace("Update bone ", bone.name)
 			local boneIndex = (i - 1)*6
 			bone.data = {	x  = frameDataMessage:data(boneIndex + 0)
@@ -62,6 +62,10 @@ function createAndStartServer()
 	server_thread:start()
 
 	local remotedServerFrame = function()
+		-- for i, bone in ipairs(BonesInfo) do
+		-- 	bone.data = nil		-- should prevent redundant updates
+		-- end
+
 		echoService:process()
 	end
 	bus:subscribe(remotedServerFrame)

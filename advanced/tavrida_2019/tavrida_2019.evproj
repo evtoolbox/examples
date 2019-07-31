@@ -20,8 +20,8 @@
    <field name="y" value="false"/>
   </parameter>
   <parameter name="clipPlanes">
-   <field name="near" value="0.01"/>
-   <field name="far" value="10"/>
+   <field name="near" value="0.1"/>
+   <field name="far" value="100"/>
   </parameter>
   <parameter name="cam">
    <field name="fx" value="auto"/>
@@ -38,8 +38,8 @@
   <parameter name="useMainCamera" value="false"/>
   <parameter name="clearColor">
    <field name="x" value="0.054901960784314"/>
-   <field name="y" value="0.13725490196078"/>
-   <field name="z" value="0.16862745098039"/>
+   <field name="y" value="0.13333333333333"/>
+   <field name="z" value="0.16470588235294"/>
    <field name="w" value="1"/>
   </parameter>
  </presentationParams>
@@ -60,13 +60,39 @@
    <filename value="Alice.FBX"/>
    <optimizations/>
   </resource>
-  <resource id="5d3ee06c-28b-e6e-48e-7de" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Card_02.FBX">
-   <filename value="Card_02.FBX"/>
+  <resource id="5d3ee06c-28b-e6e-48e-7de" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Card.FBX">
+   <filename value="Card.FBX"/>
    <optimizations/>
   </resource>
   <resource id="5d3f3c81-3b8-485-485-225" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Queen.FBX">
    <filename value="Queen.FBX"/>
    <optimizations/>
+  </resource>
+  <resource id="5d401e56-1cb-858-677-ae7" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Worm.FBX">
+   <filename value="Worm.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5d4020f9-ce2-1ac-922-25e" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="particles.lua">
+   <filename value="particles.lua"/>
+  </resource>
+  <resource id="5d405d11-c68-25d-e88-95a" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Environment.FBX">
+   <filename value="Environment.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="5d407787-c48-972-118-edb" kind="image" local="true" forceExport="true" rawAssetsExport="false" name="particle.png">
+   <filename value="particle.png"/>
+  </resource>
+  <resource id="5d415ebb-7ce-cc8-b68-9a3" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Transformation.fbx">
+   <filename value="Transformation.fbx"/>
+   <optimizations/>
+  </resource>
+  <resource id="5d4170e2-1c3-5b7-daa-e94" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Card_Dance.FBX">
+   <filename value="Card_Dance.FBX"/>
+   <optimizations/>
+  </resource>
+  <resource id="OpenSans-Regular" kind="font" local="false" forceExport="true" rawAssetsExport="false" name="OpenSans-Regular.ttf">
+   <filename value="OpenSans-Regular.ttf"/>
+   <source value="${STUDIO_RESOURCES_DIR}/fonts/OpenSans-Regular.ttf"/>
   </resource>
  </resources>
  <reactors>
@@ -111,14 +137,14 @@
     <field name="z" value="1"/>
    </parameter>
    <parameter name="autoComputeHomePosition" value="true"/>
-   <field name="exportEnabled" value="true"/>
+   <field name="exportEnabled" value="false"/>
   </reactor>
   <reactor id="5d3f0f26-5bb4-9594-44b6" name="card_10b" type="node.model">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
    <parameter name="children" length="0"/>
    <parameter name="trans">
-    <field name="x" value="2"/>
+    <field name="x" value="0"/>
     <field name="y" value="0"/>
     <field name="z" value="0"/>
    </parameter>
@@ -141,7 +167,7 @@
    <parameter name="handleClick" value="true"/>
    <parameter name="children" length="0"/>
    <parameter name="trans">
-    <field name="x" value="-2"/>
+    <field name="x" value="0"/>
     <field name="y" value="0"/>
     <field name="z" value="0"/>
    </parameter>
@@ -159,24 +185,142 @@
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
+  <reactor id="5d401e5e-e56e-a232-148d" name="worm" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="model" value="5d401e56-1cb-858-677-ae7"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5d405cf7-d629-dc99-74e2" name="environment" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="model" value="5d405d11-c68-25d-e88-95a"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5d4156e1-916e-a397-6373" name="commander" type="counter">
+   <parameter name="initialValue" value="0"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="5d415e85-367a-da97-9935" name="transformation_effect" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="model" value="5d415ebb-7ce-cc8-b68-9a3"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5d416389-11b9-1ce2-dd13" name="character_switch" type="switch">
+   <parameter name="options" length="5">
+    <item index="1" value="alice"/>
+    <item index="2" value="worm"/>
+    <item index="3" value="card_10b"/>
+    <item index="4" value="queen"/>
+    <item index="5" value="nobody"/>
+   </parameter>
+   <parameter name="defaultOptionIndex" value="0"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
+  <reactor id="5d4170f0-4978-5c8d-ce95" name="card_dance" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="model" value="5d4170e2-1c3-5b7-daa-e94"/>
+   <field name="exportEnabled" value="false"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="System" name="System" type="system">
+   <parameter name="albumName" value="evi_app"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
   <reactor id="ViewerReactor" name="Viewer" type="viewer">
    <parameter name="displayType" value="MONITOR"/>
    <parameter name="cameraManipulator" value="5d38645b-7417-d7cb-55dd"/>
-   <field name="exportEnabled" value="true"/>
+   <field name="exportEnabled" value="false"/>
   </reactor>
   <reactor id="scene" name="Scene" type="node.scene">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="3">
-    <item index="1" value="5d381bc6-1796-8b7c-21c5"/>
-    <item index="2" value="5d3f0f26-5bb4-9594-44b6"/>
-    <item index="3" value="5d3f3c6f-7ca8-e5ab-7569"/>
+   <parameter name="children" length="7">
+    <item index="1" value="5d415e85-367a-da97-9935"/>
+    <item index="2" value="5d381bc6-1796-8b7c-21c5"/>
+    <item index="3" value="5d405cf7-d629-dc99-74e2"/>
+    <item index="4" value="5d401e5e-e56e-a232-148d"/>
+    <item index="5" value="5d3f0f26-5bb4-9594-44b6"/>
+    <item index="6" value="5d3f3c6f-7ca8-e5ab-7569"/>
+    <item index="7" value="5d4170f0-4978-5c8d-ce95"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
  </reactors>
- <exportParameters last="exe">
+ <exportParameters last="dir">
   <parameters format="exe" filename="/Users/KOS/EligoVision/github/evtoolbox_examples/advanced/neuron_mocap/neuron_mocap.exe" appName="neuron_mocap - EVI Windows App" appId="neuron.mocap" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="/Users/KOS/EligoVision/git/ev_evi/build/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//AppIcon.png" loadingImagePath="/Users/KOS/EligoVision/git/ev_evi/build/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="false" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true"/>
+  <parameters format="app" filename="/Users/KOS/EligoVision/github/evtoolbox_examples/advanced/tavrida_2019/tavrida_2019.app" appName="tavrida_2019 - EVI macOS App" appId="ru.ev.tavrida" arch="" version="1.0" build="1" configurationFile="" appIconPath="/Users/KOS/EligoVision/git/ev_evi/build/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//AppIcon.png" loadingImagePath="/Users/KOS/EligoVision/git/ev_evi/build/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="true" cameraDescription="Дополненная реальность ждет!" appStoreDistribution="false" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" category="None" copyright="Copyright 2019 EligoVision Ltd. All rights reserved."/>
+  <parameters format="dir" filename="/Users/KOS/EligoVision/github/evtoolbox_examples/advanced/tavrida_2019/tavrida_2019.package" frameMode="fullscreen" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true"/>
+  <parameters format="ipa" filename="/Users/KOS/EligoVision/github/evtoolbox_examples/advanced/tavrida_2019/tavrida_2019.ipa" appName="tavrida_2019 - EVI iOS App" appId="ru.eligovisiontavrida.2019" arch="" version="1.0" build="1" configurationFile="" appIconPath="/Users/KOS/EligoVision/git/ev_evi/build/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//AppIcon.png" loadingImagePath="/Users/KOS/EligoVision/git/ev_evi/build/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//LaunchImage.png" hmdSupport="false" runAfterExport="false" cameraDescription="Дополненная реальность ждет!" appStoreDistribution="false" photolibraryDescription="Снимки будут сохранены в Фото!" deviceMotionDescription="Необходимо для отслеживания движений" supportedOrientations.UIInterfaceOrientationPortrait="true" supportedOrientations.UIInterfaceOrientationPortraitUpsideDown="true" supportedOrientations.UIInterfaceOrientationLandscapeRight="true" supportedOrientations.UIInterfaceOrientationLandscapeLeft="true"/>
  </exportParameters>
 </Project>

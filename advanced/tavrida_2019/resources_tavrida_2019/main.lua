@@ -38,16 +38,16 @@ EV.Logger.setCatPriority("ev_evi.lua.neuronmocap"					, "INFO");
 EV.Logger.setCatPriority("ev_evi.lua.neuronmocap.registerPlugins"	, "INFO");
 EV.Logger.setCatPriority("ev_evi.lua.neuronmocap.server"			, "DEBUG");
 
-Bones		= { --[[ { name -> string, node -> osgAnimation.Bone, data -> {x, y, z, ry, rx, rz} }]]}
-
+-- NOTE: BonesInfo are filled by the server.lua
+-- TODO: Different characters (by name, char00 etc.)
 require("BonesInfo.lua")
 require("registerPlugin.lua")
 require("server.lua")
 
-local scene = reactorController:getReactorByName("Scene")
+require("particles.lua")
 
-scene.node:getOrCreateStateSet():setDefine("EV_GL_LIGHTING_DOUBLE_SIDED", osg.StateAttribute.ON)
-scene.node:setCullingActive(false)
+
+local scene = reactorController:getReactorByName("Scene")
 
 local function calcBoneMatrix(pos, ry, rx, rz)
 	-- NOTE: neuronmocap units are cm and degrees, we are in metres and radians
@@ -90,7 +90,7 @@ local function calcBoneMatrix(pos, ry, rx, rz)
 
 end
 
-local function mocapNode(skeletonNode)
+local function mocapNode(skeletonNode, enableParticles)
 	for i, boneInfo in ipairs(BonesInfo) do
 		local node = cast(EVosgUtil.findNamedClassNode(boneInfo.name, skeletonNode, "Bone"), osgAnimation.Bone)
 		if not node then
@@ -98,17 +98,29 @@ local function mocapNode(skeletonNode)
 			-- error()
 		else
 			logger:info("Bone '" .. boneInfo.name .. "' found!")
-			Bones[i] = { name = boneInfo.name, node = node, data = nil }
 
-			local initialBonePosition = boneInfo.name ~= "Hips" and osg.Vec3(0.0, 0.0, 0.0)*node:getMatrix()
+			local bonePosition = osg.Vec3(0.0, 0.0, 0.0)*node:getMatrix()
+			local initialBonePosition = boneInfo.name ~= "Hips" and bonePosition
+			local initialBoneOffsetY = boneInfo.name == "Hips" and bonePosition:y()*100 - 83.72 -- in cm
+			-- 'Upper Leg' + 'Lower Leg' + 'Heel Height' = 83.72 (cm) for Female160
+
+			if enableParticles == true then
+				if boneInfo.name == "LeftHand" or
+						boneInfo.name == "RightHand" or
+						boneInfo.name == "LeftFoot" or
+						boneInfo.name == "RightFoot" then
+					addParticles(node)
+				end
+			end
 
 			local updateBone = osg.NodeCallback(function(aNode, aNodeVisitor)
-				local data = Bones[i].data
+				local data = BonesInfo[i].data
 				if not data then
 					return
 				end
 
-				local position = initialBonePosition or osg.Vec3(data.x, data.y, data.z)*0.01
+				local position = initialBonePosition or
+						osg.Vec3(data.x, initialBoneOffsetY and data.y + initialBoneOffsetY or data.y, data.z)*0.01
 				local mat = calcBoneMatrix(position, data.ry, data.rx, data.rz)
 
 				node:setMatrix(mat)
@@ -119,8 +131,6 @@ local function mocapNode(skeletonNode)
 				else
 					node:setMatrixInSkeletonSpace(mat)
 				end
-
-				Bones[i].mat = nil	-- wait for update
 			end)
 
 			node:setUpdateCallback(updateBone)
@@ -129,17 +139,65 @@ local function mocapNode(skeletonNode)
 end
 
 local aliceNode = reactorController:getReactorByName("alice").node
-local card_10b = reactorController:getReactorByName("card_10b").node
-local queen = reactorController:getReactorByName("queen").node
+local card_10b	= reactorController:getReactorByName("card_10b").node
+local queen		= reactorController:getReactorByName("queen").node
+local worm		= reactorController:getReactorByName("worm").node
 
 bus:subscribeOnce(function()
-	mocapNode(aliceNode)
+	mocapNode(aliceNode, true)
 	mocapNode(card_10b)
 	mocapNode(queen)
+	mocapNode(worm)
 end)
 
 
-viewer:getCamera():setComputeNearFarMode(osg.CullSettings.DO_NOT_COMPUTE_NEAR_FAR)
+-- Graphics, effects
+
+local mainCamera = viewer:getCamera()
+mainCamera:setComputeNearFarMode(osg.CullSettings.DO_NOT_COMPUTE_NEAR_FAR)
+
+local fov, aspect, near, far = mainCamera:getProjectionMatrixAsPerspective()
+-- mirror
+mainCamera:setProjectionMatrix(osg.Matrix.perspective(25, aspect, near, far)*osg.Matrix.scale(osg.Vec3(-1.0, 1.0, 1.0)))
+mainCamera:setViewMatrixAsLookAt(
+	osg.Vec3(0.0, -15.0, 2.8)
+,	osg.Vec3(0.0, 0.0, 1.7)
+,	osg.Vec3(0.0, 0.0, 1.0)
+)
+
+scene.node:setCullingActive(false)
+
+local sceneStateSet = scene.node:getOrCreateStateSet()
+sceneStateSet:setDefine("EV_GL_LIGHTING_DOUBLE_SIDED", osg.StateAttribute.ON)
+
+-- Fog
+
+local fog = osg.Fog()
+fog:setMode(osg.Fog.LINEAR)
+fog:setUseRadialFog(true)
+fog:setColor(viewer:getCamera():getClearColor()*2)
+fog:setStart(12.0)
+fog:setEnd(25.0)
+sceneStateSet:setAttribute(fog, osg.StateAttribute.ON)
+
+-- Light tune
+
+lightSource:setReferenceFrame(osg.LightSource.RELATIVE_RF)
+lightSource:getLight():setPosition(osg.Vec4(-2.0, -6.0, 7.0, 1.0))	-- w = 1.0 => positional
+lightSource:getLight():setDiffuse(osg.Vec4(1.2, 1.2, 1.0, 1.0))
+lightSource:getLight():setAmbient(osg.Vec4(0.15, 0.15, 0.17, 1.0))
+
+-- Shadows
+
+local shadowedScene = osgShadow.ShadowedScene()
+EVosgUtil.insertNode(shadowedScene, scene.node)
+
+local shadowTechnique = EVosgShadow.MinimalBypassShadowMap(EVosgShadow.MinimalBypassShadowMap.Technique.PCSS)
+shadowTechnique:setTextureSize(1024, 1024)
+shadowTechnique:setLight(lightSource:getLight())
+
+shadowedScene:setShadowTechnique(shadowTechnique)
+
 
 createAndStartServer()
 
