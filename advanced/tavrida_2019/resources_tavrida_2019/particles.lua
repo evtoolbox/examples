@@ -25,10 +25,12 @@
 
 -- EV Toolbox 3.2.0-rc4
 
+local dancer = reactorController:getReactorByName("dancer_transform").node
+
 
 local template = osgParticle.Particle()
 template:setLifeTime(2.5)
-template:setSizeRange(0.15, 0.0)
+template:setSizeRange(0.2, 0.0)
 template:setMass(100.0)
 
 local system = osgParticle.ParticleSystem()
@@ -43,18 +45,19 @@ updater:addParticleSystem(system)
 sceneRoot:addChild(system)
 sceneRoot:addChild(updater)
 
+
 function addParticles(controlNode)
 
 	local emitter = osgParticle.ModularEmitter()
 	emitter:setParticleSystem(system)
 
 	local shooter = osgParticle.RadialShooter()
-	shooter:setInitialSpeedRange(0.0, 0.05)
-	shooter:setInitialRotationalSpeedRange(osg.Vec3(0, 0, 0), osg.Vec3(1, 1, 1))
+	shooter:setInitialSpeedRange(0.0, 0.01)
+	shooter:setInitialRotationalSpeedRange(osg.Vec3(0, 0, 0), osg.Vec3(1000, 1000, 1000))
 	emitter:setShooter(shooter)
 
 	local randomCounter = osgParticle.RandomRateCounter()
-	randomCounter:setRateRange(50, 70)
+	randomCounter:setRateRange(700, 700)
 	emitter:setCounter(randomCounter)
 
 
@@ -64,5 +67,5 @@ function addParticles(controlNode)
 	end))
 	particlesTransform:addChild(emitter)
 
-	sceneRoot:addChild(particlesTransform)
+	dancer:addChild(particlesTransform)
 end

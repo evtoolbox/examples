@@ -142,12 +142,14 @@ local aliceNode = reactorController:getReactorByName("alice").node
 local card_10b	= reactorController:getReactorByName("card_10b").node
 local queen		= reactorController:getReactorByName("queen").node
 local worm		= reactorController:getReactorByName("worm").node
+local dancer	= reactorController:getReactorByName("dancer").node
 
 bus:subscribeOnce(function()
-	mocapNode(aliceNode, true)
+	mocapNode(aliceNode)
 	mocapNode(card_10b)
 	mocapNode(queen)
 	mocapNode(worm)
+	mocapNode(dancer, true)
 end)
 
 
@@ -183,21 +185,22 @@ sceneStateSet:setAttribute(fog, osg.StateAttribute.ON)
 -- Light tune
 
 lightSource:setReferenceFrame(osg.LightSource.RELATIVE_RF)
-lightSource:getLight():setPosition(osg.Vec4(-2.0, -6.0, 7.0, 1.0))	-- w = 1.0 => positional
+lightSource:getLight():setPosition(osg.Vec4(5.0, -7.0, 7.0, 1.0))	-- w = 1.0 => positional
 lightSource:getLight():setDiffuse(osg.Vec4(1.2, 1.2, 1.0, 1.0))
 lightSource:getLight():setAmbient(osg.Vec4(0.15, 0.15, 0.17, 1.0))
 
--- Shadows
+-- Shadows (only for release on Linux machine)
 
-local shadowedScene = osgShadow.ShadowedScene()
-EVosgUtil.insertNode(shadowedScene, scene.node)
+if evi.os() == "linux" then
+	local shadowedScene = osgShadow.ShadowedScene()
+	EVosgUtil.insertNode(shadowedScene, scene.node)
 
-local shadowTechnique = EVosgShadow.MinimalBypassShadowMap(EVosgShadow.MinimalBypassShadowMap.Technique.PCSS)
-shadowTechnique:setTextureSize(1024, 1024)
-shadowTechnique:setLight(lightSource:getLight())
+	local shadowTechnique = EVosgShadow.MinimalBypassShadowMap(EVosgShadow.MinimalBypassShadowMap.Technique.PCSS)
+	shadowTechnique:setTextureSize(4096, 4096)
+	shadowTechnique:setLight(lightSource:getLight())
 
-shadowedScene:setShadowTechnique(shadowTechnique)
-
+	shadowedScene:setShadowTechnique(shadowTechnique)
+end
 
 createAndStartServer()
 
