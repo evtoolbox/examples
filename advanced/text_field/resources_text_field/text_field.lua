@@ -33,6 +33,8 @@ local textField = {
 ,	active		= false
 }
 
+local system = reactorController:getReactorByName("System")
+
 local function activate()
 	if textField.active then
 		return
@@ -40,6 +42,11 @@ local function activate()
 
 	textField.container.rect.color = osg.Vec4(0.0, 0.5, 0.5, 1.0)
 	textField.active = true
+
+	if system and evi.os() == "android" then
+		system:showVirtualKeyboard()
+	end
+
 	loginfo("text input activated")
 end
 
@@ -50,6 +57,11 @@ local function disactivate()
 
 	textField.container.rect.color = osg.Vec4(0.0, 0.0, 0.0, 1.0)
 	textField.active = false
+
+	if system and evi.os() == "android" then
+		system:hideVirtualKeyboard()
+	end
+
 	loginfo("text input disactivated")
 end
 
