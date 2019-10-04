@@ -43,7 +43,7 @@ local function activate()
 	textField.container.rect.color = osg.Vec4(0.0, 0.5, 0.5, 1.0)
 	textField.active = true
 
-	if system and evi.os() == "android" then
+	if system and evi.os() == "android" or evi.os() == "ios" then
 		system:showVirtualKeyboard()
 	end
 
@@ -58,7 +58,7 @@ local function disactivate()
 	textField.container.rect.color = osg.Vec4(0.0, 0.0, 0.0, 1.0)
 	textField.active = false
 
-	if system and evi.os() == "android" then
+	if system and evi.os() == "android" or evi.os() == "ios" then
 		system:hideVirtualKeyboard()
 	end
 
