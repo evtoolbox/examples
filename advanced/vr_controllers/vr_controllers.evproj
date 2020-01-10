@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Project version="3.2.0" version-extra="devel">
+<Project version="3.2.0" version-extra="devel_x64">
  <presentationParams>
   <parameter name="presenceInterval" value="0"/>
   <parameter name="enableStatistics" value="true"/>
@@ -44,9 +44,6 @@
   </parameter>
  </presentationParams>
  <resources dir="resources_vr_controllers">
-  <resource id="5de5355b-f5a-627-678-79c" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="main.lua">
-   <filename value="main.lua"/>
-  </resource>
   <resource id="5de64d08-2e7-adb-b7f-522" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Controller_L.fbx">
    <filename value="Controller_L.fbx"/>
    <optimizations>
@@ -118,27 +115,7 @@
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5de4e270-fc6c-4a8a-8791" name="camera_manipulator" type="camera_manipulator_helper">
-   <parameter name="kind" value="trackball"/>
-   <parameter name="homeEye">
-    <field name="x" value="0"/>
-    <field name="y" value="-0.75"/>
-    <field name="z" value="0.25"/>
-   </parameter>
-   <parameter name="homeCenter">
-    <field name="x" value="0"/>
-    <field name="y" value="0"/>
-    <field name="z" value="0"/>
-   </parameter>
-   <parameter name="homeUp">
-    <field name="x" value="0"/>
-    <field name="y" value="0"/>
-    <field name="z" value="1"/>
-   </parameter>
-   <parameter name="autoComputeHomePosition" value="false"/>
-   <field name="exportEnabled" value="true"/>
-  </reactor>
-  <reactor id="5dea528a-4c29-f619-27a2" name="vr_controller_left" type="vr_controller_helper">
+  <reactor id="5dea528a-4c29-f619-27a2" name="vr_controller_left" type="vr_controller">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
    <parameter name="children" length="2">
@@ -161,12 +138,13 @@
     <field name="z" value="1"/>
    </parameter>
    <parameter name="enabled" value="true"/>
-   <parameter name="kind" value="wvr"/>
-   <parameter name="deviceType" value="left_hand"/>
+   <parameter name="deviceType" value="controller_left"/>
+   <parameter name="autoShow" value="true"/>
+   <parameter name="autoHide" value="true"/>
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5dea528a-9764-c1f2-ae1e" name="vr_controller_right" type="vr_controller_helper">
+  <reactor id="5dea528a-9764-c1f2-ae1e" name="vr_controller_right" type="vr_controller">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
    <parameter name="children" length="2">
@@ -189,8 +167,9 @@
     <field name="z" value="1"/>
    </parameter>
    <parameter name="enabled" value="true"/>
-   <parameter name="kind" value="wvr"/>
-   <parameter name="deviceType" value="right_hand"/>
+   <parameter name="deviceType" value="controller_right"/>
+   <parameter name="autoShow" value="true"/>
+   <parameter name="autoHide" value="true"/>
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
@@ -312,8 +291,28 @@
    <parameter name="initialValue" value="0"/>
    <field name="exportEnabled" value="true"/>
   </reactor>
+  <reactor id="5dfb8456-1259-d39d-a18e" name="manipulator01" type="camera_manipulator">
+   <parameter name="kind" value="vr"/>
+   <parameter name="homeEye">
+    <field name="x" value="0"/>
+    <field name="y" value="-0.5"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeCenter">
+    <field name="x" value="0"/>
+    <field name="y" value="1"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeUp">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="autoComputeHomePosition" value="false"/>
+   <field name="exportEnabled" value="true"/>
+  </reactor>
   <reactor id="ViewerReactor" name="Viewer" type="viewer">
-   <parameter name="cameraManipulator" value="5de4e270-fc6c-4a8a-8791"/>
+   <parameter name="cameraManipulator" value="5dfb8456-1259-d39d-a18e"/>
    <field name="exportEnabled" value="true"/>
   </reactor>
   <reactor id="scene" name="Scene" type="node.scene">
@@ -328,6 +327,6 @@
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
  </reactors>
- <exportParameters last="apk">
+ <exportParameters>
  </exportParameters>
 </Project>
