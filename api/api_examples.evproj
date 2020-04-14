@@ -53,8 +53,41 @@
   <resource id="5e8d9b9a-468-695-211-638" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="osg_Geometry_example.lua">
    <filename value="osg_Geometry_example.lua"/>
   </resource>
+  <resource id="5e9553fd-5b5-a37-625-62d" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="ev_model.fbx">
+   <filename value="ev_model.fbx"/>
+   <optimizations/>
+  </resource>
+  <resource id="5e955903-c62-75c-ab3-a4e" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="osg_Camera_example.lua">
+   <filename value="osg_Camera_example.lua"/>
+  </resource>
  </resources>
  <reactors>
+  <reactor id="5e955391-947a-1125-14b9" name="logo_model" type="node.model">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="trans">
+    <field name="x" value="1.862645149231e-09"/>
+    <field name="y" value="9.2605128884315e-05"/>
+    <field name="z" value="0.0050848941318691"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.1"/>
+    <field name="y" value="0.1"/>
+    <field name="z" value="0.1"/>
+   </parameter>
+   <parameter name="model" value="5e9553fd-5b5-a37-625-62d"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5e9557d2-379e-5c37-eebb" name="timer" type="timer">
+   <field name="exportEnabled" value="true"/>
+  </reactor>
   <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
@@ -65,8 +98,9 @@
   <reactor id="scene" name="Scene" type="node.scene">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="1">
+   <parameter name="children" length="2">
     <item index="1" value="HeadUpDisplay"/>
+    <item index="2" value="5e955391-947a-1125-14b9"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
