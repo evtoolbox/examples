@@ -34,7 +34,7 @@ local transformation	= scaleMatrix
 						* rotationMatrix
 						* translationMatrix
 
-						timer:subscribeEvent("onAlarm", function()
+timer:subscribeEvent("onAlarm", function()
 	step = step % 2 + 1
 
 	mt:setMatrix(step == 1 and transformation or noTransformation)
