@@ -60,6 +60,12 @@
   <resource id="5e955903-c62-75c-ab3-a4e" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="osg_Camera_example.lua">
    <filename value="osg_Camera_example.lua"/>
   </resource>
+  <resource id="5e958177-26b-bc8-aa7-b1d" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="osg_PositionAttitudeTransform_example.lua">
+   <filename value="osg_PositionAttitudeTransform_example.lua"/>
+  </resource>
+  <resource id="5e95897b-12a-7b2-a7e-61e" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="osg_MatrixTransform_example.lua">
+   <filename value="osg_MatrixTransform_example.lua"/>
+  </resource>
  </resources>
  <reactors>
   <reactor id="5e955391-947a-1125-14b9" name="logo_model" type="node.model">

@@ -13,9 +13,9 @@ local center	= osg.Vec3(0.0, 0.0, 0.0)
 local up		= osg.Vec3(0.0, 0.0, 1.0)
 
 local viewMatrix = {
-	osg.Matrix.lookAt(osg.Vec3(0.0, distance, altitude), center, up),	-- Front
+	osg.Matrix.lookAt(osg.Vec3(0.0, -distance, altitude), center, up),	-- Front
 	osg.Matrix.lookAt(osg.Vec3(-distance, 0.0, altitude), center, up),	-- Left
-	osg.Matrix.lookAt(osg.Vec3(0.0, -distance, altitude), center, up),	-- Back
+	osg.Matrix.lookAt(osg.Vec3(0.0, distance, altitude), center, up),	-- Back
 	osg.Matrix.lookAt(osg.Vec3(distance, 0.0, altitude), center, up),	-- Rigth
 }
 
@@ -28,5 +28,6 @@ timer:subscribeEvent("onAlarm", function()
 	mainCamera:setViewMatrix(viewMatrix[currentMatrix])
 end)
 
+mainCamera:setClearColor(osg.Vec4(163/255.0, 182/255.0, 1.0, 1.0))	-- change clear color for convenience
 mainCamera:setViewMatrix(viewMatrix[currentMatrix])	-- initial positioning
 timer:start(period, timer.Mode.LOOP)
