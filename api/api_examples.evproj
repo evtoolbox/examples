@@ -81,6 +81,9 @@
   <resource id="5e9834f9-c5b-b9e-e61-a55" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="3.tif">
    <filename value="3.tif"/>
   </resource>
+  <resource id="5e984338-c14-ea4-222-8bc" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="osg_Switch_example.lua">
+   <filename value="osg_Switch_example.lua"/>
+  </resource>
  </resources>
  <reactors>
   <reactor id="5e955391-947a-1125-14b9" name="logo_model" type="node.model">
