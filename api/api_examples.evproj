@@ -84,6 +84,9 @@
   <resource id="5e984338-c14-ea4-222-8bc" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="osg_Switch_example.lua">
    <filename value="osg_Switch_example.lua"/>
   </resource>
+  <resource id="5e9846c6-215-115-679-b89" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="osg_Scissor_example.lua">
+   <filename value="osg_Scissor_example.lua"/>
+  </resource>
  </resources>
  <reactors>
   <reactor id="5e955391-947a-1125-14b9" name="logo_model" type="node.model">
@@ -208,13 +211,45 @@
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
+  <reactor id="5e984827-b17e-a3cd-91de" name="white_rect" type="node.rect">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="-1"/>
+   <parameter name="rect.position" value="center-bottom"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="100.000000%"/>
+    <field name="y" value="50.000000%"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
   <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="3">
+   <parameter name="children" length="4">
     <item index="1" value="5e982a79-4b38-a94e-8b83"/>
     <item index="2" value="5e9834a1-7aa7-7d5a-76ba"/>
     <item index="3" value="5e9834cb-e718-7192-348b"/>
+    <item index="4" value="5e984827-b17e-a3cd-91de"/>
    </parameter>
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
