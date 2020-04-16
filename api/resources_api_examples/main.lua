@@ -7,4 +7,5 @@
 -- require "osg_NodeCallback_example.lua"
 -- require "RTT_Camera_example.lua"
 -- require "osg_Switch_example.lua"
-require "osg_Scissor_example.lua"
+-- require "osg_Scissor_example.lua"
+require "osg_NodeVisitor_example.lua"
