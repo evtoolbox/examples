@@ -41,3 +41,5 @@ timer:subscribeEvent("onAlarm", function()
 end)
 
 timer:start(period, timer.Mode.LOOP)
+
+return pat

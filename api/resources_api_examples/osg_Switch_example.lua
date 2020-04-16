@@ -1,5 +1,5 @@
 -- Example of osg.Switch usage.
--- Creates RTT Camera and use ImageReactor with name "image_1" as holder for texture.
+-- Show one of 3 images each <period> seconds.
 
 local hud		= reactorController:getReactorByName("HeadUpDisplay") -- must be presented in the project
 local timer		= reactorController:getReactorByName("timer") -- must be presented in the project
@@ -8,9 +8,10 @@ local image_2	= reactorController:getReactorByName("image_2") -- must be present
 local image_3	= reactorController:getReactorByName("image_3") -- must be presented in the project
 local switch	= osg.Switch()
 
--- image_1:show()
--- image_2:show()
--- image_3:show()
+-- NOTE: ImageReactors must be explicitly enabled for correct work
+image_1:show()
+image_2:show()
+image_3:show()
 
 hud:freeze()	-- lock the object to change high-level objects hierarchy
 hud:removeChild(image_1)

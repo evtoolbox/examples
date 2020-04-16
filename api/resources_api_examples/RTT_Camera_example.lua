@@ -63,7 +63,7 @@ model.rotate	= osg.Vec3(0.0, 0.0, 0.0)
 
 -- create and setup camera
 local rttCamera = CreateRttCamera("rttCamera")
-rttCamera:setViewMatrixAsLookAt(osg.Vec3(0.2, 0.0, 0.0), osg.Vec3(0.0, 0.0, -0.3), osg.Vec3(0.0, 0.1, 0.0))
+rttCamera:setViewMatrixAsLookAt(osg.Vec3(0.2, 0.1, -0.2), osg.Vec3(0.0, 0.0, -0.3), osg.Vec3(0.0, 0.1, 0.0))
 
 scene.node:asGroup():addChild(rttCamera)
 scene:update()
