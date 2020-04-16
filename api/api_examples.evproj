@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Project version="3.2.1" version-extra="devel_x64">
+<Project version="3.2.1" version-extra="devel">
  <presentationParams>
   <parameter name="presenceInterval" value="0"/>
   <parameter name="enableStatistics" value="true"/>
@@ -69,6 +69,18 @@
   <resource id="5e9721e3-75d-933-c81-5a8" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="osg_NodeCallback_example.lua">
    <filename value="osg_NodeCallback_example.lua"/>
   </resource>
+  <resource id="5e982a15-47d-66a-b7e-734" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="RTT_Camera_example.lua">
+   <filename value="RTT_Camera_example.lua"/>
+  </resource>
+  <resource id="5e982b88-8e2-cbb-213-d23" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="1.tif">
+   <filename value="1.tif"/>
+  </resource>
+  <resource id="5e9834a9-d5b-97b-bd6-349" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="2.tif">
+   <filename value="2.tif"/>
+  </resource>
+  <resource id="5e9834f9-c5b-b9e-e61-a55" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="3.tif">
+   <filename value="3.tif"/>
+  </resource>
  </resources>
  <reactors>
   <reactor id="5e955391-947a-1125-14b9" name="logo_model" type="node.model">
@@ -97,10 +109,110 @@
   <reactor id="5e9557d2-379e-5c37-eebb" name="timer" type="timer">
    <field name="exportEnabled" value="true"/>
   </reactor>
-  <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud">
+  <reactor id="5e982a79-4b38-a94e-8b83" name="image_1" type="rect.image">
    <parameter name="visible" value="true"/>
    <parameter name="handleClick" value="true"/>
    <parameter name="children" length="0"/>
+   <parameter name="layer" value="-1"/>
+   <parameter name="rect.position" value="left-bottom"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="30.000000%"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="3.000000%"/>
+    <field name="y" value="3.000000%"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5e982b88-8e2-cbb-213-d23"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5e9834a1-7aa7-7d5a-76ba" name="image_2" type="rect.image">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-bottom"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="30.000000%"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="36.000000%"/>
+    <field name="y" value="3.000000%"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5e9834a9-d5b-97b-bd6-349"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="5e9834cb-e718-7192-348b" name="image_3" type="rect.image">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="0"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-bottom"/>
+   <parameter name="rect.size">
+    <field name="policy" value="simple"/>
+    <field name="x" value="30.000000%"/>
+    <field name="y" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="69.000000%"/>
+    <field name="y" value="3.000000%"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5e9834f9-c5b-b9e-e61-a55"/>
+   <field name="exportEnabled" value="true"/>
+   <field name="sectionItemCollapsed" value="false"/>
+  </reactor>
+  <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud">
+   <parameter name="visible" value="true"/>
+   <parameter name="handleClick" value="true"/>
+   <parameter name="children" length="3">
+    <item index="1" value="5e982a79-4b38-a94e-8b83"/>
+    <item index="2" value="5e9834a1-7aa7-7d5a-76ba"/>
+    <item index="3" value="5e9834cb-e718-7192-348b"/>
+   </parameter>
    <field name="exportEnabled" value="true"/>
    <field name="sectionItemCollapsed" value="false"/>
   </reactor>
