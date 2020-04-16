@@ -87,6 +87,9 @@
   <resource id="5e9846c6-215-115-679-b89" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="osg_Scissor_example.lua">
    <filename value="osg_Scissor_example.lua"/>
   </resource>
+  <resource id="5e988736-5d8-64a-e37-b23" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="osg_NodeVisitor_example.lua">
+   <filename value="osg_NodeVisitor_example.lua"/>
+  </resource>
  </resources>
  <reactors>
   <reactor id="5e955391-947a-1125-14b9" name="logo_model" type="node.model">
