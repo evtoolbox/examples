@@ -71,6 +71,7 @@
   </resource>
   <resource id="5eb5a7b7-888-9e3-159-e63" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="osgViewer_GraphicsWindow_example.lua">
    <filename value="osgViewer_GraphicsWindow_example.lua"/>
+  </resource>
   <resource id="5e982a15-47d-66a-b7e-734" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="RTT_Camera_example.lua">
    <filename value="RTT_Camera_example.lua"/>
   </resource>
