@@ -45,3 +45,5 @@ end
 
 local hud = reactorController:getReactorByName("HeadUpDisplay")	-- must be presented in the project
 hud.node:addChild(geometry)
+
+return geometry
