@@ -4,4 +4,6 @@
 -- require "osg_Camera_example.lua"
 -- require "osg_PositionAttitudeTransform_example.lua"
 -- require "osg_MatrixTransform_example.lua"
-require "osg_NodeCallback_example.lua"
+-- require "osg_NodeCallback_example.lua"
+
+require "osgViewer_GraphicsWindow_example.lua"
