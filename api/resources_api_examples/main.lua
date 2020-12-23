@@ -10,4 +10,4 @@
 -- require "osg_Scissor_example.lua"
 -- require "osg_NodeVisitor_example.lua"
 
-require "osgViewer_GraphicsWindow_MouseCursor_example.lua"
+-- require "osgViewer_GraphicsWindow_MouseCursor_example.lua"

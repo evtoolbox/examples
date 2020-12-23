@@ -5,7 +5,11 @@
 local origNode = osg.Group()
 origNode:setName("Original Node")
 origNode:setUpdateCallback(osg.NodeCallback(function(node, noveVisitor)
-	loginfo("Updating '" .. node:getName() .. "'") end))
+	loginfo("Updating '" .. node:getName() .. "'")
+
+	-- Since 3.3 must return bool
+	return true
+end))
 
 local clonedNode1 = origNode:clone(
 	osg.CopyOp(bit_or(osg.CopyOp.DEEP_COPY_NODES))):asNode()

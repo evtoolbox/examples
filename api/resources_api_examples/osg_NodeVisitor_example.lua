@@ -11,7 +11,7 @@ nv:setApplyNodeCb(function(aNode)
 	local prefix = ""
 	for i = 0, depth do prefix = prefix .. "  " end
 
-	loginfo(string.format("%s'%s' (%s.%s)", prefix, aNode:name(), aNode:libraryName(), aNode:className()))
+	loginfo(string.format("%s'%s' (%s.%s)", prefix, aNode:getName(), aNode:libraryName(), aNode:className()))
 
 	depth = depth + 1
 	nv:traverse(aNode)
