@@ -42,7 +42,7 @@ local function handle(intersections)
 		local nodePath = intersection:nodePath()
 		for _, reactor in ipairs(reactors) do
 			for i = nodePath:size() - 1, 0, -1 do
-				local nodeName = nodePath:at(i):name()
+				local nodeName = nodePath:at(i):getName()
 				if reactor.id == nodeName then
 					logdebug("Intersect", reactor.name)
 					lastSelectedReactor = reactor

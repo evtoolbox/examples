@@ -28,10 +28,10 @@ function fixRenderBin(aRootNode, aMask, aShift)
 	aShift = aShift or 0
 	local nv = osg.NodeVisitor(osg.NodeVisitor.TRAVERSE_ALL_CHILDREN)
 	nv:setApplyNodeCb(function(node)
-		local i = string.find(node:name(), aMask)
-		logerror("'" .. node:name() .. "'")
+		local i = string.find(node:getName(), aMask)
+		logerror("'" .. node:getName() .. "'")
 		logwarn(i, string.len(aMask))
-		local rb = i and tonumber(string.sub(node:name(), i + string.len(aMask)))
+		local rb = i and tonumber(string.sub(node:getName(), i + string.len(aMask)))
 		if rb then
 			node:getOrCreateStateSet():setRenderBinDetails(rb + aShift, "RenderBin", osg.StateSet.USE_RENDERBIN_DETAILS)
 		end

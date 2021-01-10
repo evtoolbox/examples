@@ -49,7 +49,7 @@ end
 
 local function onDownCb(nodePath)
 	local node = nodePath:at(nodePath:size() - 1)
-	loginfo("Down on '" .. node:name() .."'")
+	loginfo("Down on '" .. node:getName() .."'")
 	highlight(node)
 
 	return true
@@ -57,7 +57,7 @@ local function onDownCb(nodePath)
 
 local function onUpCb(nodePath)
 	local node = nodePath:at(nodePath:size() - 1)
-	loginfo("Up on '" .. node:name() .."'")
+	loginfo("Up on '" .. node:getName() .."'")
 	logwarn("onUpCb not realized!")
 
  	return true

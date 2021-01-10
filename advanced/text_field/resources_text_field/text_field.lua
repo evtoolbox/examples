@@ -269,7 +269,7 @@ viewer:addEventHandler(guiEventHandler)
 local pickHandlerObserver = EVosgGA.PickHandler.Observer()
 pickHandlerObserver:setOnDownCb(function(nodePath)
 	for i = nodePath:size() - 1, 0, -1 do
-		local nodeName = nodePath:at(i):name()
+		local nodeName = nodePath:at(i):getName()
 		if nodeName == textField.container.id then
 			activate()
 			return true		-- stop process
