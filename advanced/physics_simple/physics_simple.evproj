@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.3.0" version-extra="devel">
+ <presentationParams>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="useMainCamera" value="false"/>
+  <parameter name="clearColor">
+   <field name="x" value="0.44705882352941"/>
+   <field name="y" value="0.62352941176471"/>
+   <field name="z" value="0.81176470588235"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_physics_simple">
+  <resource internal="false" id="6012cc0a-dce-d11-111-4b2" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="main.lua">
+   <filename value="main.lua"/>
+  </resource>
+  <resource internal="false" id="605b5c08-557-ca5-dd6-ec9" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="physics_simple.lua">
+   <filename value="physics_simple.lua"/>
+  </resource>
+  <resource internal="true" id="OpenSans-Regular" kind="font" local="false" forceExport="true" rawAssetsExport="false" name="OpenSans-Regular.ttf">
+   <filename value="OpenSans-Regular.ttf"/>
+   <source value="${STUDIO_RESOURCES_DIR}/fonts/OpenSans-Regular.ttf"/>
+  </resource>
+ </resources>
+ <reactors>
+  <order>
+   <item id="System"/>
+   <item id="Viewer"/>
+   <item id="6012d707-2389-9459-8f3d"/>
+   <item id="6014253e-3351-e69f-3c3d"/>
+   <item id="Scene"/>
+  </order>
+  <reactor id="6012d707-2389-9459-8f3d" name="CameraManipulatorTrackball" type="camera_manipulator" enabled="true">
+   <parameter name="kind" value="trackball"/>
+   <parameter name="homeEye">
+    <field name="x" value="0"/>
+    <field name="y" value="-3"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="homeCenter">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeUp">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="autoComputeHomePosition" value="false"/>
+  </reactor>
+  <reactor id="6012d716-5814-2a5c-96ee" name="Rect" type="node.rect" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="300.000000%c"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.011764705882353"/>
+    <field name="green" value="0.27058823529412"/>
+    <field name="blue" value="0.25490196078431"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+  </reactor>
+  <reactor id="6014253e-3351-e69f-3c3d" name="CameraManipulatorVR" type="camera_manipulator" enabled="false">
+   <parameter name="kind" value="vr"/>
+   <parameter name="homeEye">
+    <field name="x" value="0"/>
+    <field name="y" value="-1"/>
+    <field name="z" value="1.6"/>
+   </parameter>
+   <parameter name="homeCenter">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="1.2"/>
+   </parameter>
+   <parameter name="homeUp">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="autoComputeHomePosition" value="false"/>
+  </reactor>
+  <reactor id="601abb00-5b6e-c4d5-7547" name="VRController" type="vr_controller" enabled="false">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="enabled" value="true"/>
+   <parameter name="deviceType" value="controller_right"/>
+   <parameter name="autoShow" value="true"/>
+   <parameter name="autoHide" value="true"/>
+  </reactor>
+  <reactor id="Scene" name="Scene" type="node.scene" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="6012d716-5814-2a5c-96ee"/>
+    <item value="601abb00-5b6e-c4d5-7547"/>
+   </parameter>
+  </reactor>
+  <reactor id="System" name="System" type="system" enabled="true">
+   <parameter name="albumName" value="evi_app"/>
+  </reactor>
+  <reactor id="Viewer" name="Viewer" type="viewer" enabled="true">
+   <parameter name="cameraManipulator" value="6012d707-2389-9459-8f3d"/>
+  </reactor>
+ </reactors>
+ <exportParameters/>
+ <workspace>
+  <preview platform="1"/>
+ </workspace>
+</Project>
