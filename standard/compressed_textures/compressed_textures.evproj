@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.3.0" version-extra="devel">
+ <presentationParams>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="useMainCamera" value="false"/>
+  <parameter name="clearColor">
+   <field name="x" value="0.3921568627451"/>
+   <field name="y" value="0.48627450980392"/>
+   <field name="z" value="0.52156862745098"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_compressed_textures">
+  <resource internal="false" id="5fc64dda-ecb-456-4e1-e9c" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_dxt_bc1a.ktx">
+   <filename value="compressed_dxt_bc1a.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc6518f-48c-141-17f-72f" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_dxt_bc3.ktx">
+   <filename value="compressed_dxt_bc3.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc6518f-686-dfb-d4f-83a" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_dxt_bc2.ktx">
+   <filename value="compressed_dxt_bc2.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc6518f-bab-d7f-81d-46f" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_dxt_bc1.ktx">
+   <filename value="compressed_dxt_bc1.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc66df7-edb-a75-4ff-874" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_etc1.ktx">
+   <filename value="compressed_etc1.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc66ed9-65d-f89-cdf-382" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_etc2.ktx">
+   <filename value="compressed_etc2.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc8a668-2ee-82e-442-4cd" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_astc_4x4.ktx">
+   <filename value="compressed_astc_4x4.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc8a668-3dd-53f-745-fe9" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_astc_12x12.ktx">
+   <filename value="compressed_astc_12x12.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc8a668-483-7d3-aa3-b94" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_astc_6x5.ktx">
+   <filename value="compressed_astc_6x5.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc8a668-5e2-5ee-4f2-56e" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_astc_10x10.ktx">
+   <filename value="compressed_astc_10x10.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc8a668-9a3-219-f5e-55f" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_astc_8x5.ktx">
+   <filename value="compressed_astc_8x5.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc8a668-9c3-bc8-b7b-58f" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_astc_8x6.ktx">
+   <filename value="compressed_astc_8x6.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc8a668-a41-6c8-fb2-c45" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_astc_6x6.ktx">
+   <filename value="compressed_astc_6x6.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc8a668-b26-62e-118-cb2" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_astc_10x5.ktx">
+   <filename value="compressed_astc_10x5.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc8a668-bee-ab9-8e5-ecf" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_astc_5x5.ktx">
+   <filename value="compressed_astc_5x5.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc8a668-c91-f1a-e73-e8a" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_astc_12x10.ktx">
+   <filename value="compressed_astc_12x10.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc8a668-cb5-79a-c3f-f44" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_astc_10x6.ktx">
+   <filename value="compressed_astc_10x6.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc8a668-ebc-cac-3b4-c44" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_astc_8x8.ktx">
+   <filename value="compressed_astc_8x8.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc8a668-f8c-aa6-46d-f4c" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_astc_5x4.ktx">
+   <filename value="compressed_astc_5x4.ktx"/>
+  </resource>
+  <resource internal="false" id="5fc8a7a3-28e-eb8-585-d9a" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="compressed_astc_10x8.ktx">
+   <filename value="compressed_astc_10x8.ktx"/>
+  </resource>
+ </resources>
+ <reactors>
+  <order>
+   <item id="5fc8d525-524c-baf6-e1e5"/>
+   <item id="Viewer"/>
+   <item id="Scene"/>
+  </order>
+  <reactor id="5fc64dc3-5cc7-5b96-bc99" name="dxt_bc3" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="20.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc6518f-48c-141-17f-72f"/>
+  </reactor>
+  <reactor id="5fc65325-9d92-78bd-f8bb" name="dxt_bc2" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="right-top"/>
+   <parameter name="rect.size">
+    <field name="x" value="20.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc6518f-686-dfb-d4f-83a"/>
+  </reactor>
+  <reactor id="5fc65329-2ec1-e126-9a81" name="dxt_bc1a" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-top"/>
+   <parameter name="rect.size">
+    <field name="x" value="20.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc64dda-ecb-456-4e1-e9c"/>
+  </reactor>
+  <reactor id="5fc6532a-b1c9-2598-2eb9" name="dxt_bc1-bad_alpha" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-top"/>
+   <parameter name="rect.size">
+    <field name="x" value="20.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="max_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc6518f-bab-d7f-81d-46f"/>
+  </reactor>
+  <reactor id="5fc66500-5865-6848-c1cb" name="astc_12x10" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="84.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc8a668-c91-f1a-e73-e8a"/>
+  </reactor>
+  <reactor id="5fc66dd1-6f1c-e6a1-3fdf" name="etc1-bad_alpha" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="20.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc66df7-edb-a75-4ff-874"/>
+  </reactor>
+  <reactor id="5fc66eb5-29e7-362a-2a57" name="etc2" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="20.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc66ed9-65d-f89-cdf-382"/>
+  </reactor>
+  <reactor id="5fc8a55d-363b-bce9-3884" name="astc_group" type="node.rect" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5fc8a6c0-e788-37ce-a3cf"/>
+    <item value="5fc8a6bf-2ddb-b2a4-82c4"/>
+    <item value="5fc8a6be-bbbf-7f4c-3433"/>
+    <item value="5fc8a6be-8be7-f999-9ea2"/>
+    <item value="5fc8a6bd-eb99-f6f3-c83e"/>
+    <item value="5fc8a6bc-a136-89e9-715c"/>
+    <item value="5fc8a6bb-7d2d-93c8-c1ab"/>
+    <item value="5fc8a6bb-219c-33ba-f7c3"/>
+    <item value="5fc8a6ba-271f-fe84-5b7a"/>
+    <item value="5fc8a6b1-1c4c-7122-31d2"/>
+    <item value="5fc8a6b0-f178-45e2-5645"/>
+    <item value="5fc8a6af-a7e5-b667-422a"/>
+    <item value="5fc66500-5865-6848-c1cb"/>
+    <item value="5fc8a761-8cc7-6222-1ed6"/>
+   </parameter>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-bottom"/>
+   <parameter name="rect.size">
+    <field name="x" value="100.000000%"/>
+    <field name="y" value="20.000000%"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+  </reactor>
+  <reactor id="5fc8a6af-a7e5-b667-422a" name="astc_10x10" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="77.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc8a668-5e2-5ee-4f2-56e"/>
+  </reactor>
+  <reactor id="5fc8a6b0-f178-45e2-5645" name="astc_10x8" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="70.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc8a7a3-28e-eb8-585-d9a"/>
+  </reactor>
+  <reactor id="5fc8a6b1-1c4c-7122-31d2" name="astc_10x6" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="63.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc8a668-cb5-79a-c3f-f44"/>
+  </reactor>
+  <reactor id="5fc8a6ba-271f-fe84-5b7a" name="astc_10x5" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="56.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc8a668-b26-62e-118-cb2"/>
+  </reactor>
+  <reactor id="5fc8a6bb-219c-33ba-f7c3" name="astc_8x8" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="49.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc8a668-ebc-cac-3b4-c44"/>
+  </reactor>
+  <reactor id="5fc8a6bb-7d2d-93c8-c1ab" name="astc_8x6" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="42.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc8a668-9c3-bc8-b7b-58f"/>
+  </reactor>
+  <reactor id="5fc8a6bc-a136-89e9-715c" name="astc_8x5" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="35.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc8a668-9a3-219-f5e-55f"/>
+  </reactor>
+  <reactor id="5fc8a6bd-eb99-f6f3-c83e" name="astc_6x6" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="28.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc8a668-a41-6c8-fb2-c45"/>
+  </reactor>
+  <reactor id="5fc8a6be-8be7-f999-9ea2" name="astc_6x5" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="21.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc8a668-483-7d3-aa3-b94"/>
+  </reactor>
+  <reactor id="5fc8a6be-bbbf-7f4c-3433" name="astc_5x5" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="14.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc8a668-bee-ab9-8e5-ecf"/>
+  </reactor>
+  <reactor id="5fc8a6bf-2ddb-b2a4-82c4" name="astc_5x4" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc8a668-f8c-aa6-46d-f4c"/>
+  </reactor>
+  <reactor id="5fc8a6c0-e788-37ce-a3cf" name="astc_4x4" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc8a668-2ee-82e-442-4cd"/>
+  </reactor>
+  <reactor id="5fc8a761-8cc7-6222-1ed6" name="astc_12x12" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="7.000000%"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="min_aspect"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="91.000000%"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5fc8a668-3dd-53f-745-fe9"/>
+  </reactor>
+  <reactor id="5fc8d525-524c-baf6-e1e5" name="CameraManipulatorReactorDelegate" type="camera_manipulator" enabled="true">
+   <parameter name="kind" value="multitouch"/>
+   <parameter name="homeEye">
+    <field name="x" value="0"/>
+    <field name="y" value="-1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="homeCenter">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeUp">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="autoComputeHomePosition" value="false"/>
+  </reactor>
+  <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5fc8a55d-363b-bce9-3884"/>
+    <item value="5fc6532a-b1c9-2598-2eb9"/>
+    <item value="5fc65329-2ec1-e126-9a81"/>
+    <item value="5fc65325-9d92-78bd-f8bb"/>
+    <item value="5fc64dc3-5cc7-5b96-bc99"/>
+    <item value="5fc66dd1-6f1c-e6a1-3fdf"/>
+   </parameter>
+  </reactor>
+  <reactor id="Scene" name="Scene" type="node.scene" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5fc66eb5-29e7-362a-2a57"/>
+    <item value="HeadUpDisplay"/>
+   </parameter>
+  </reactor>
+  <reactor id="Viewer" name="Viewer" type="viewer" enabled="true">
+   <parameter name="cameraManipulator" value="5fc8d525-524c-baf6-e1e5"/>
+  </reactor>
+ </reactors>
+ <workspace>
+  <preview platform="1"/>
+ </workspace>
+</Project>
