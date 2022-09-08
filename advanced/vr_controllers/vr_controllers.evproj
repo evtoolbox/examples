@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Project version="3.2.0" version-extra="devel_x64">
+<Project version="3.4.7" version-extra="devel">
  <presentationParams>
-  <parameter name="presenceInterval" value="0"/>
   <parameter name="enableStatistics" value="true"/>
-  <parameter name="lostTimeout" value="0.5"/>
-  <parameter name="detectors">
-   <field name="dashdot">
-    <field name="max_error" value="0.05"/>
-    <field name="pattern_size" value="32"/>
-    <field name="inversion" value="normal"/>
-   </field>
-   <field name="image">
-    <field name="grid_rows" value="4"/>
-    <field name="grid_cols" value="4"/>
-   </field>
-  </parameter>
   <parameter name="flipFrames">
    <field name="x" value="false"/>
    <field name="y" value="false"/>
@@ -22,18 +9,6 @@
   <parameter name="clipPlanes">
    <field name="near" value="0.01"/>
    <field name="far" value="10"/>
-  </parameter>
-  <parameter name="cam">
-   <field name="fx" value="auto"/>
-   <field name="fy" value="auto"/>
-   <field name="cx" value="auto"/>
-   <field name="cy" value="auto"/>
-   <field name="distortion" length="4">
-    <item index="1" value="auto"/>
-    <item index="2" value="auto"/>
-    <item index="3" value="auto"/>
-    <item index="4" value="auto"/>
-   </field>
   </parameter>
   <parameter name="useMainCamera" value="false"/>
   <parameter name="clearColor">
@@ -44,35 +19,55 @@
   </parameter>
  </presentationParams>
  <resources dir="resources_vr_controllers">
-  <resource id="5de64d08-2e7-adb-b7f-522" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Controller_L.fbx">
-   <filename value="Controller_L.fbx"/>
-   <optimizations>
-    <REMOVE_REDUNDANT_NODES inUse="true"/>
-    <SHARE_DUPLICATE_STATE inUse="true"/>
-    <MERGE_GEOMETRY inUse="true"/>
-    <CHECK_GEOMETRY inUse="true"/>
-    <MAKE_FAST_GEOMETRY inUse="true"/>
-    <MERGE_GEODES inUse="true"/>
-    <TEXTURE_ATLAS_BUILDER inUse="true"/>
-    <STATIC_OBJECT_DETECTION inUse="true"/>
-    <VERTEX_POSTTRANSFORM inUse="true"/>
-    <VERTEX_PRETRANSFORM inUse="true"/>
-   </optimizations>
-  </resource>
-  <resource id="5de64d0b-c2e-8d2-d3f-441" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Controller_R.fbx">
-   <filename value="Controller_R.fbx"/>
+  <resource internal="false" id="6319d1f3-dc4-bb3-cba-247" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Controller_Oculus_L.fbx">
+   <filename value="Controller_Oculus_L.fbx"/>
    <optimizations/>
   </resource>
-  <resource id="Play-Bold" kind="font" local="false" forceExport="false" rawAssetsExport="false" name="Play-Bold.ttf">
+  <resource internal="false" id="6319d1fb-46d-e51-f38-c66" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Controller_Oculus_R.fbx">
+   <filename value="Controller_Oculus_R.fbx"/>
+   <optimizations/>
+  </resource>
+  <resource internal="false" id="6319d21b-9df-6af-c39-8a1" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Controller_Pico3_L.fbx">
+   <filename value="Controller_Pico3_L.fbx"/>
+   <optimizations/>
+  </resource>
+  <resource internal="false" id="6319d242-186-aba-d38-412" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Controller_Pico3_R.fbx">
+   <filename value="Controller_Pico3_R.fbx"/>
+   <optimizations/>
+  </resource>
+  <resource internal="true" id="Play-Bold" kind="font" local="false" forceExport="false" rawAssetsExport="false" name="Play-Bold.ttf">
    <filename value="Play-Bold.ttf"/>
    <source value="${STUDIO_RESOURCES_DIR}/fonts/Play-Bold.ttf"/>
   </resource>
  </resources>
  <reactors>
-  <reactor id="5de4e21e-7f95-d49c-c8cc" name="hand_left_model" type="node.model">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="false"/>
-   <parameter name="children" length="0"/>
+  <order>
+   <item id="Viewer"/>
+   <item id="5dee543b-3abf-1921-558a"/>
+   <item id="Scene"/>
+   <item id="5dfb8456-1259-d39d-a18e"/>
+  </order>
+  <reactor id="Scene" name="Scene" type="node.scene" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5dea528a-4c29-f619-27a2"/>
+    <item value="5dea528a-9764-c1f2-ae1e"/>
+    <item value="5dee24f4-e598-77b7-96a3"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="Viewer" name="Viewer" type="viewer" enabled="true">
+   <parameter name="cameraManipulator" value="5dfb8456-1259-d39d-a18e"/>
+  </reactor>
+  <reactor id="5de4e21e-7f95-d49c-c8cc" name="controller_oculus_left_model" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000000F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
    <parameter name="trans">
     <field name="x" value="0"/>
     <field name="y" value="0"/>
@@ -88,14 +83,19 @@
     <field name="y" value="1"/>
     <field name="z" value="1"/>
    </parameter>
-   <parameter name="model" value="5de64d08-2e7-adb-b7f-522"/>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="6319d1f3-dc4-bb3-cba-247"/>
   </reactor>
-  <reactor id="5de4e21f-9a5b-14b4-aebc" name="hand_right_model" type="node.model">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="false"/>
-   <parameter name="children" length="0"/>
+  <reactor id="5de4e21f-9a5b-14b4-aebc" name="controller_oculus_right_model" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000000F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
    <parameter name="trans">
     <field name="x" value="0"/>
     <field name="y" value="0"/>
@@ -111,16 +111,22 @@
     <field name="y" value="1"/>
     <field name="z" value="1"/>
    </parameter>
-   <parameter name="model" value="5de64d0b-c2e-8d2-d3f-441"/>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="6319d1fb-46d-e51-f38-c66"/>
   </reactor>
-  <reactor id="5dea528a-4c29-f619-27a2" name="vr_controller_left" type="vr_controller">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="2">
-    <item index="1" value="5de4e21e-7f95-d49c-c8cc"/>
-    <item index="2" value="5dee23c4-fd6b-f57a-47a3"/>
+  <reactor id="5dea528a-4c29-f619-27a2" name="vr_controller_left" type="vr_controller" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="6319d204-2877-32fa-c3d7"/>
+    <item value="5de4e21e-7f95-d49c-c8cc"/>
+    <item value="5dee23c4-fd6b-f57a-47a3"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="-0.18143823174205"/>
@@ -141,15 +147,17 @@
    <parameter name="deviceType" value="controller_left"/>
    <parameter name="autoShow" value="true"/>
    <parameter name="autoHide" value="true"/>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <view expanded="true"/>
   </reactor>
-  <reactor id="5dea528a-9764-c1f2-ae1e" name="vr_controller_right" type="vr_controller">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="2">
-    <item index="1" value="5de4e21f-9a5b-14b4-aebc"/>
-    <item index="2" value="5dee1cdb-3a9d-29b8-45d5"/>
+  <reactor id="5dea528a-9764-c1f2-ae1e" name="vr_controller_right" type="vr_controller" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="6319d22a-3ed6-6648-8e96"/>
+    <item value="5de4e21f-9a5b-14b4-aebc"/>
+    <item value="5dee1cdb-3a9d-29b8-45d5"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="0.19461106807937"/>
@@ -170,13 +178,14 @@
    <parameter name="deviceType" value="controller_right"/>
    <parameter name="autoShow" value="true"/>
    <parameter name="autoHide" value="true"/>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <view expanded="true"/>
   </reactor>
-  <reactor id="5dee1cc9-a9fa-9574-9aaf" name="intersector_right" type="node.intersector">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="0"/>
+  <reactor id="5dee1cc9-a9fa-9574-9aaf" name="intersector_right" type="node.intersector" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
    <parameter name="segmentLength" value="2"/>
    <parameter name="visualizationEnabled" value="true"/>
    <parameter name="visualizationWidth" value="0.002"/>
@@ -186,14 +195,14 @@
     <field name="blue" value="0.53333333333333"/>
     <field name="alpha" value="1"/>
    </parameter>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5dee1cdb-3a9d-29b8-45d5" name="intersector_transform_right" type="node.transform">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="1">
-    <item index="1" value="5dee1cc9-a9fa-9574-9aaf"/>
+  <reactor id="5dee1cdb-3a9d-29b8-45d5" name="intersector_transform_right" type="node.transform" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5dee1cc9-a9fa-9574-9aaf"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="0.01"/>
@@ -210,13 +219,13 @@
     <field name="y" value="1"/>
     <field name="z" value="1"/>
    </parameter>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5dee23c4-19c5-8ad7-8c8f" name="intersector_left" type="node.intersector">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="0"/>
+  <reactor id="5dee23c4-19c5-8ad7-8c8f" name="intersector_left" type="node.intersector" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
    <parameter name="segmentLength" value="2"/>
    <parameter name="visualizationEnabled" value="true"/>
    <parameter name="visualizationWidth" value="0.002"/>
@@ -226,14 +235,14 @@
     <field name="blue" value="0"/>
     <field name="alpha" value="1"/>
    </parameter>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5dee23c4-fd6b-f57a-47a3" name="intersector_transform_left" type="node.transform">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="1">
-    <item index="1" value="5dee23c4-19c5-8ad7-8c8f"/>
+  <reactor id="5dee23c4-fd6b-f57a-47a3" name="intersector_transform_left" type="node.transform" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5dee23c4-19c5-8ad7-8c8f"/>
    </parameter>
    <parameter name="trans">
     <field name="x" value="-0.01"/>
@@ -250,13 +259,13 @@
     <field name="y" value="1"/>
     <field name="z" value="1"/>
    </parameter>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5dee24f4-e598-77b7-96a3" name="text" type="node.text3d">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="0"/>
+  <reactor id="5dee24f4-e598-77b7-96a3" name="text" type="node.text3d" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
    <parameter name="trans">
     <field name="x" value="0"/>
     <field name="y" value="0"/>
@@ -284,14 +293,11 @@
    </parameter>
    <parameter name="text.align" value="center"/>
    <parameter name="text.line_spacing" value="0"/>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5dee543b-3abf-1921-558a" name="hit_counter" type="counter">
+  <reactor id="5dee543b-3abf-1921-558a" name="hit_counter" type="counter" enabled="true">
    <parameter name="initialValue" value="0"/>
-   <field name="exportEnabled" value="true"/>
   </reactor>
-  <reactor id="5dfb8456-1259-d39d-a18e" name="manipulator01" type="camera_manipulator">
+  <reactor id="5dfb8456-1259-d39d-a18e" name="manipulator01" type="camera_manipulator" enabled="true">
    <parameter name="kind" value="vr"/>
    <parameter name="homeEye">
     <field name="x" value="0"/>
@@ -309,24 +315,66 @@
     <field name="z" value="1"/>
    </parameter>
    <parameter name="autoComputeHomePosition" value="false"/>
-   <field name="exportEnabled" value="true"/>
   </reactor>
-  <reactor id="ViewerReactor" name="Viewer" type="viewer">
-   <parameter name="cameraManipulator" value="5dfb8456-1259-d39d-a18e"/>
-   <field name="exportEnabled" value="true"/>
-  </reactor>
-  <reactor id="scene" name="Scene" type="node.scene">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="3">
-    <item index="1" value="5dea528a-4c29-f619-27a2"/>
-    <item index="2" value="5dea528a-9764-c1f2-ae1e"/>
-    <item index="3" value="5dee24f4-e598-77b7-96a3"/>
+  <reactor id="6319d204-2877-32fa-c3d7" name="controller_pico3_left_model" type="node.model" enabled="false">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
    </parameter>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="6319d21b-9df-6af-c39-8a1"/>
+  </reactor>
+  <reactor id="6319d22a-3ed6-6648-8e96" name="controller_pico3_right_model" type="node.model" enabled="false">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="6319d242-186-aba-d38-412"/>
   </reactor>
  </reactors>
- <exportParameters>
- </exportParameters>
+ <exportParameters/>
+ <workspace>
+  <preview platform="1"/>
+ </workspace>
 </Project>

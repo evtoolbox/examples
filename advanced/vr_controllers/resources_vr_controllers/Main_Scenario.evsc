@@ -23,7 +23,7 @@
     <event>onHit</event>
     <arguments>
      <argument name="reactorName" type="NodeReactorPlainId" value="5dee24f4-e598-77b7-96a3"/>
-     <argument name="missed" type="bool" value="false"/>
+     <argument name="missed" type="Bool" value="false"/>
     </arguments>
    </property>
   </object>
@@ -168,13 +168,13 @@
   <property name="id" type="long">2464203</property>
   <property name="relative_position" type="realpoint">-536.000000,-402.000000</property>
   <property name="reactor" type="reactor_info">
-   <reactor>scene</reactor>
+   <reactor>Scene</reactor>
   </property>
   <object type="Event">
    <property name="id" type="long">7046685</property>
    <property name="relative_position" type="realpoint">36.000000,106.000000</property>
    <property name="event" type="event_info">
-    <reactor>scene</reactor>
+    <reactor>Scene</reactor>
     <event>onFrame</event>
     <arguments/>
    </property>
@@ -219,7 +219,7 @@
     <event>onHit</event>
     <arguments>
      <argument name="reactorName" type="NodeReactorPlainId" value="5dee24f4-e598-77b7-96a3"/>
-     <argument name="missed" type="bool" value="false"/>
+     <argument name="missed" type="Bool" value="false"/>
     </arguments>
    </property>
   </object>
