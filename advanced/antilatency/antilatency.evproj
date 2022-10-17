@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.4.7" version-extra="devel">
+ <presentationParams>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="useMainCamera" value="true"/>
+  <parameter name="clearColor">
+   <field name="x" value="0"/>
+   <field name="y" value="0"/>
+   <field name="z" value="0"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_antilatency">
+  <resource internal="false" id="6246e3ee-32c-2e2-e1e-a28" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="main.lua">
+   <filename value="main.lua"/>
+  </resource>
+  <resource internal="false" id="627e9ba9-3e7-a1e-9a7-d25" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="antilatency.lua">
+   <filename value="antilatency.lua"/>
+  </resource>
+  <resource internal="true" id="DroidSansMono" kind="font" local="false" forceExport="false" rawAssetsExport="false" name="DroidSansMono.ttf">
+   <filename value="DroidSansMono.ttf"/>
+   <source value="${STUDIO_RESOURCES_DIR}/fonts/DroidSansMono.ttf"/>
+  </resource>
+  <resource internal="true" id="Play-Bold" kind="font" local="false" forceExport="false" rawAssetsExport="false" name="Play-Bold.ttf">
+   <filename value="Play-Bold.ttf"/>
+   <source value="${STUDIO_RESOURCES_DIR}/fonts/Play-Bold.ttf"/>
+  </resource>
+ </resources>
+ <reactors>
+  <order>
+   <item id="System"/>
+   <item id="6246df5b-dc5a-441d-a429"/>
+   <item id="Viewer"/>
+   <item id="Scene"/>
+  </order>
+  <reactor id="6246df5b-dc5a-441d-a429" name="CameraManipulator" type="camera_manipulator" enabled="true">
+   <parameter name="kind" value="multitouch"/>
+   <parameter name="homeEye">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="2.4"/>
+   </parameter>
+   <parameter name="homeCenter">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeUp">
+    <field name="x" value="0"/>
+    <field name="y" value="1"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="autoComputeHomePosition" value="false"/>
+  </reactor>
+  <reactor id="6256e85c-6633-66f6-7feb" name="Text3d_EV" type="node.text3d" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="text.value" value="EV TOOLBOX "/>
+   <parameter name="text.font_id" value="Play-Bold"/>
+   <parameter name="text.font_size" value="0.02"/>
+   <parameter name="text.font_depth" value="0.005"/>
+   <parameter name="text.color">
+    <field name="red" value="0.90196078431373"/>
+    <field name="green" value="0.38039215686275"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center"/>
+   <parameter name="text.line_spacing" value="0"/>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="6260417d-8b53-fdac-425b" name="Text3d_AL" type="node.text3d" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="-0.02"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="text.value" value="+&#10;ANTILATENCY"/>
+   <parameter name="text.font_id" value="Play-Bold"/>
+   <parameter name="text.font_size" value="0.02"/>
+   <parameter name="text.font_depth" value="0.005"/>
+   <parameter name="text.color">
+    <field name="red" value="0.21960784313725"/>
+    <field name="green" value="0.7921568627451"/>
+    <field name="blue" value="0.23529411764706"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center"/>
+   <parameter name="text.line_spacing" value="0"/>
+  </reactor>
+  <reactor id="626041cc-1be8-1872-afea" name="TransformNode" type="node.transform" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="6256e85c-6633-66f6-7feb"/>
+    <item value="6260417d-8b53-fdac-425b"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="7.4122334074606"/>
+    <field name="y" value="7.4122334074606"/>
+    <field name="z" value="7.4122334074606"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="627e2338-5b97-3f56-e313" name="tracking_info" type="rect.text" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-top"/>
+   <parameter name="rect.size">
+    <field name="x" value="100.000000%c"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="1.000000%"/>
+    <field name="y" value="-1.000000%w"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.value" value="Tracking info:"/>
+   <parameter name="text.font_id" value="DroidSansMono"/>
+   <parameter name="text.font_size" value="4.000000%vw"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="left-top"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+  </reactor>
+  <reactor id="627e3a2f-488e-9618-6aba" name="DevKit_plane" type="node.rect" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="100.000000%c"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.2"/>
+    <field name="green" value="0.81960784313725"/>
+    <field name="blue" value="0.47843137254902"/>
+    <field name="alpha" value="0.5"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+  </reactor>
+  <reactor id="627e3a3d-d384-12ba-c46d" name="plane_xz" type="node.transform" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="627e3a2f-488e-9618-6aba"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="2.4"/>
+    <field name="y" value="2.4"/>
+    <field name="z" value="2.4"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="627e2338-5b97-3f56-e313"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="Scene" name="Scene" type="node.scene" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="626041cc-1be8-1872-afea"/>
+    <item value="HeadUpDisplay"/>
+    <item value="627e3a3d-d384-12ba-c46d"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="System" name="System" type="system" enabled="true">
+   <parameter name="albumName" value="evi_app"/>
+  </reactor>
+  <reactor id="Viewer" name="Viewer" type="viewer" enabled="true">
+   <parameter name="cameraManipulator" value="6246df5b-dc5a-441d-a429"/>
+  </reactor>
+ </reactors>
+ <exportParameters last="apk">
+  <parameters format="apk" filename="/root/EligoVision/github/evtoolbox_examples/advanced/antilatency.apk" appName="ev_antilatency" appId="ru.eligovision.antilatency" arch="" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/git/ev_evi/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/root/EligoVision/git/ev_evi/build/src/ev_studio/studio_data/LaunchImage.png" category="" copyright="" runAfterExport="false" frameMode="" supportedOrientations="1" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" samples="0" targetPlatform="1" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" retinaSupport="true" appStoreDistribution="false" bundleName="stereo_on_moverio - EVI Android App" cameraDescription="" photolibraryDescription="" deviceMotionDescription="" usageHardwareCamera="optional" usageARCore="optional" gradleOpt="" selectedPresetId="user" abis="arm64-v8a" targetApi="30">
+   <presets>
+    <preset id="user" name="User Preset">
+     <files>
+      <file name="AndroidManifest.xml" path="/root/EligoVision/git/ev_evi/data/ev_studio/android/antilatency/AndroidManifest.xml.in"/>
+      <file name="build.gradle" path="/root/EligoVision/git/ev_evi/data/ev_studio/android/antilatency/build.gradle.in"/>
+      <file name="gradle.properties" path="${ANDROID_DATA_DIR}/gradle.properties.in"/>
+      <file name="local.properties" path="${ANDROID_DATA_DIR}/local.properties.in"/>
+     </files>
+    </preset>
+   </presets>
+  </parameters>
+  <parameters format="dir" filename="/root/EligoVision/github/evtoolbox_examples/advanced/stereo_on_moverio/stereo_on_moverio.package" appName="stereo_on_moverio - Directory Package" appId="stereo.on.moverio" arch="" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/git/ev_evi/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/root/EligoVision/git/ev_evi/build/src/ev_studio/studio_data//LaunchImage.png" category="" copyright="" runAfterExport="false" frameMode="window" supportedOrientations="1" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" samples="0" targetPlatform="1" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" retinaSupport="true" appStoreDistribution="false" bundleName="stereo_on_moverio - Directory Package" cameraDescription="" photolibraryDescription="" deviceMotionDescription=""/>
+  <parameters format="exe" filename="/root/EligoVision/github/evtoolbox_examples/advanced/stereo_on_moverio/stereo_on_moverio.exe" appName="stereo_on_moverio" appId="stereo.on.moverio" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/git/ev_evi/build/src/ev_studio/studio_data//AppIcon.ico" loadingImagePath="/root/EligoVision/git/ev_evi/build/src/ev_studio/studio_data//LaunchImage.png" category="" copyright="" runAfterExport="false" frameMode="window" supportedOrientations="1" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" samples="0" targetPlatform="1" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" retinaSupport="true" appStoreDistribution="false" bundleName="stereo_on_moverio - EVI Windows App" cameraDescription="" photolibraryDescription="" deviceMotionDescription=""/>
+ </exportParameters>
+ <workspace>
+  <preview platform="1"/>
+ </workspace>
+</Project>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<chart owner="EV_Studio" version="1.0">
+ <object type="Reactor">
+  <property name="id" type="long">1227478</property>
+  <property name="relative_position" type="realpoint">-448.000000,-115.000000</property>
+  <property name="reactor" type="reactor_info">
+   <reactor>System</reactor>
+  </property>
+  <object type="Event">
+   <property name="id" type="long">8387480</property>
+   <property name="relative_position" type="realpoint">36.000000,44.000000</property>
+   <property name="event" type="event_info">
+    <reactor>System</reactor>
+    <event>onApplicationStart</event>
+    <arguments>
+     <argument name="OsType" type="system.OsType"/>
+    </arguments>
+   </property>
+  </object>
+  <object type="Event">
+   <property name="id" type="long">1619541</property>
+   <property name="relative_position" type="realpoint">36.000000,74.000000</property>
+   <property name="event" type="event_info">
+    <reactor>System</reactor>
+    <event>onApplicationResume</event>
+    <arguments/>
+   </property>
+  </object>
+ </object>
+ <object type="Reactor">
+  <property name="id" type="long">6852987</property>
+  <property name="relative_position" type="realpoint">99.000000,-24.000000</property>
+  <property name="reactor" type="reactor_info">
+   <reactor>6246e5a4-ed3c-e315-54f2</reactor>
+  </property>
+  <object type="Action">
+   <property name="id" type="long">567573</property>
+   <property name="relative_position" type="realpoint">0.000000,136.000000</property>
+   <property name="action" type="action_info">
+    <reactor>6246e5a4-ed3c-e315-54f2</reactor>
+    <action>playAnimation</action>
+    <arguments>
+     <argument name="animationName" type="node.model.AnimationName" value="Take 001"/>
+     <argument name="animationPlayMode" type="node.model.AnimationPlayMode" value="LOOP"/>
+     <argument name="stopOthers" type="Bool" value="false"/>
+     <argument name="fromBeginning" type="Bool" value="false"/>
+    </arguments>
+   </property>
+  </object>
+ </object>
+ <object type="Connection">
+  <property name="id" type="long">2077496</property>
+  <property name="relative_position" type="realpoint">-864.000000,-473.000000</property>
+  <property name="source" type="long">8387480</property>
+  <property name="source_offset" type="realpoint">1.021097,0.500000</property>
+  <property name="target" type="long">567573</property>
+  <property name="target_offset" type="realpoint">-0.029126,0.481481</property>
+  <property name="priority" type="long">0</property>
+ </object>
+</chart>

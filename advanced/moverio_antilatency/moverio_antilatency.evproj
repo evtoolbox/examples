@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.4.7" version-extra="devel">
+ <presentationParams>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="useMainCamera" value="false"/>
+  <parameter name="clearColor">
+   <field name="x" value="0"/>
+   <field name="y" value="0"/>
+   <field name="z" value="0"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_moverio_antilatency">
+  <resource internal="false" id="6246e3ee-32c-2e2-e1e-a28" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="main.lua">
+   <filename value="main.lua"/>
+  </resource>
+  <resource internal="false" id="6246e5bd-c4f-457-1bb-314" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="ev_model.fbx">
+   <filename value="ev_model.fbx"/>
+   <optimizations/>
+  </resource>
+  <resource internal="false" id="6256dd90-af1-f97-38d-b47" kind="image" local="true" forceExport="false" rawAssetsExport="true" name="background.png">
+   <filename value="background.png"/>
+  </resource>
+  <resource internal="false" id="627ea114-8c8-229-2f7-576" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="antilatency.lua">
+   <filename value="antilatency.lua"/>
+  </resource>
+  <resource internal="true" id="Play-Bold" kind="font" local="false" forceExport="false" rawAssetsExport="false" name="Play-Bold.ttf">
+   <filename value="Play-Bold.ttf"/>
+   <source value="${STUDIO_RESOURCES_DIR}/fonts/Play-Bold.ttf"/>
+  </resource>
+ </resources>
+ <reactors>
+  <order>
+   <item id="System"/>
+   <item id="6246df5b-dc5a-441d-a429"/>
+   <item id="Viewer"/>
+   <item id="Scene"/>
+  </order>
+  <reactor id="6246df5b-dc5a-441d-a429" name="CameraManipulator" type="camera_manipulator" enabled="false">
+   <parameter name="kind" value="trackball"/>
+   <parameter name="homeEye">
+    <field name="x" value="0"/>
+    <field name="y" value="-0.5"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeCenter">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeUp">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="autoComputeHomePosition" value="false"/>
+  </reactor>
+  <reactor id="6246e5a4-ed3c-e315-54f2" name="Model" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="-0.025530124036128"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="180"/>
+    <field name="z" value="180"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.5"/>
+    <field name="y" value="0.5"/>
+    <field name="z" value="0.5"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="6246e5bd-c4f-457-1bb-314"/>
+  </reactor>
+  <reactor id="6256e85c-6633-66f6-7feb" name="Text3d" type="node.text3d" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x00000010"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="-0.026110610425518"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="text.value" value="EV TOOLBOX&#10;[ ON MOVERIO ]"/>
+   <parameter name="text.font_id" value="Play-Bold"/>
+   <parameter name="text.font_size" value="0.02"/>
+   <parameter name="text.font_depth" value="0.005"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center"/>
+   <parameter name="text.line_spacing" value="0"/>
+  </reactor>
+  <reactor id="Scene" name="Scene" type="node.scene" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="6246e5a4-ed3c-e315-54f2"/>
+    <item value="6256e85c-6633-66f6-7feb"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="System" name="System" type="system" enabled="true">
+   <parameter name="albumName" value="evi_app"/>
+  </reactor>
+  <reactor id="Viewer" name="Viewer" type="viewer" enabled="false">
+   <parameter name="cameraManipulator" value="6246df5b-dc5a-441d-a429"/>
+  </reactor>
+ </reactors>
+ <exportParameters last="apk">
+  <parameters format="apk" filename="/root/EligoVision/github/evtoolbox_examples/advanced/moverio_antilatency/moverio_alt.apk" appName="moverio_alt" appId="ru.eligovision.moverio_alt" arch="" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/git/ev_evi/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/root/EligoVision/git/ev_evi/build/src/ev_studio/studio_data/LaunchImage.png" category="" copyright="" runAfterExport="false" frameMode="" supportedOrientations="1" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" samples="0" targetPlatform="1" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" retinaSupport="true" appStoreDistribution="false" bundleName="stereo_on_moverio - EVI Android App" cameraDescription="" photolibraryDescription="" deviceMotionDescription="" usageHardwareCamera="optional" usageARCore="optional" gradleOpt="" selectedPresetId="user" abis="arm64-v8a" targetApi="30">
+   <presets>
+    <preset id="user" name="User Preset">
+     <files>
+      <file name="AndroidManifest.xml" path="/root/EligoVision/git/ev_evi/data/ev_studio/android/moverio/AndroidManifest.xml.in"/>
+      <file name="build.gradle" path="/root/EligoVision/git/ev_evi/data/ev_studio/android/moverio/build.gradle.in"/>
+      <file name="gradle.properties" path="${ANDROID_DATA_DIR}/gradle.properties.in"/>
+      <file name="local.properties" path="${ANDROID_DATA_DIR}/local.properties.in"/>
+     </files>
+    </preset>
+   </presets>
+  </parameters>
+  <parameters format="dir" filename="/root/EligoVision/github/evtoolbox_examples/advanced/stereo_on_moverio/stereo_on_moverio.package" appName="stereo_on_moverio - Directory Package" appId="stereo.on.moverio" arch="" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/git/ev_evi/build/src/ev_studio/studio_data//AppIcon.png" loadingImagePath="/root/EligoVision/git/ev_evi/build/src/ev_studio/studio_data//LaunchImage.png" category="" copyright="" runAfterExport="false" frameMode="window" supportedOrientations="1" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" samples="0" targetPlatform="1" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" retinaSupport="true" appStoreDistribution="false" bundleName="stereo_on_moverio - Directory Package" cameraDescription="" photolibraryDescription="" deviceMotionDescription=""/>
+  <parameters format="exe" filename="/root/EligoVision/github/evtoolbox_examples/advanced/stereo_on_moverio/stereo_on_moverio.exe" appName="stereo_on_moverio" appId="stereo.on.moverio" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="/root/EligoVision/git/ev_evi/build/src/ev_studio/studio_data//AppIcon.ico" loadingImagePath="/root/EligoVision/git/ev_evi/build/src/ev_studio/studio_data//LaunchImage.png" category="" copyright="" runAfterExport="false" frameMode="window" supportedOrientations="1" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" samples="0" targetPlatform="1" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" retinaSupport="true" appStoreDistribution="false" bundleName="stereo_on_moverio - EVI Windows App" cameraDescription="" photolibraryDescription="" deviceMotionDescription=""/>
+ </exportParameters>
+ <workspace>
+  <preview platform="1"/>
+ </workspace>
+</Project>
