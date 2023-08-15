@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<chart owner="EV_Studio" version="1.0">
+ <object type="Reactor">
+  <property name="id" type="long">2615218</property>
+  <property name="relative_position" type="realpoint">166.000000,-115.000000</property>
+  <property name="reactor" type="reactor_info">
+   <reactor>Viewer</reactor>
+  </property>
+  <object type="Action">
+   <property name="id" type="long">3696886</property>
+   <property name="relative_position" type="realpoint">0.000000,74.000000</property>
+   <property name="action" type="action_info">
+    <reactor>Viewer</reactor>
+    <action>setCameraManipulator</action>
+    <arguments>
+     <argument name="cameraManipulator" type="Camera_manipulatorReactorId" value="637e143a-1f69-f817-c6d8"/>
+     <argument name="resetPosition" type="Bool" value="false"/>
+    </arguments>
+   </property>
+  </object>
+ </object>
+ <object type="Reactor">
+  <property name="id" type="long">3911309</property>
+  <property name="relative_position" type="realpoint">-378.000000,-34.000000</property>
+  <property name="reactor" type="reactor_info">
+   <reactor>System</reactor>
+  </property>
+  <object type="Event">
+   <property name="id" type="long">6914330</property>
+   <property name="relative_position" type="realpoint">36.000000,44.000000</property>
+   <property name="event" type="event_info">
+    <reactor>System</reactor>
+    <event>onApplicationStart</event>
+    <arguments>
+     <argument name="OsType" type="system.OsType" value="android"/>
+    </arguments>
+   </property>
+  </object>
+  <object type="Event">
+   <property name="id" type="long">6482327</property>
+   <property name="relative_position" type="realpoint">36.000000,74.000000</property>
+   <property name="event" type="event_info">
+    <reactor>System</reactor>
+    <event>onApplicationStart</event>
+    <arguments>
+     <argument name="OsType" type="system.OsType" value="ios"/>
+    </arguments>
+   </property>
+  </object>
+ </object>
+ <object type="Connection">
+  <property name="id" type="long">2143597</property>
+  <property name="relative_position" type="realpoint">-635.000000,-243.000000</property>
+  <property name="source" type="long">6914330</property>
+  <property name="source_offset" type="realpoint">1.024272,0.500000</property>
+  <property name="target" type="long">3696886</property>
+  <property name="target_offset" type="realpoint">-0.026549,0.500000</property>
+  <property name="priority" type="long">0</property>
+ </object>
+ <object type="Connection">
+  <property name="id" type="long">6147643</property>
+  <property name="relative_position" type="realpoint">-635.000000,-243.000000</property>
+  <property name="source" type="long">6482327</property>
+  <property name="source_offset" type="realpoint">1.024272,0.500000</property>
+  <property name="target" type="long">3696886</property>
+  <property name="target_offset" type="realpoint">-0.026786,0.500000</property>
+  <property name="priority" type="long">0</property>
+ </object>
+</chart>
