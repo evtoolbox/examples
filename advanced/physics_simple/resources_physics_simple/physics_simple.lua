@@ -144,12 +144,16 @@ local function addRigidBody(drawable, shape)
 	scene.node:addChild(drawableTransform)
 
 	syncDrawableTransform(motionState1, drawableTransform)
-	local nc = osg.NodeCallback(function(node, nodeVisitor)
+	-- NOTE: Do not specify parameters (in callback function) if you don't need it.
+	--       Performance will be better and garbagecollector will be happy [for EV Toolbox 3.4.7 and newer].
+	local nc = osg.NodeCallback(function(--[[node, nodeVisitor]])
 		if rb:isActive() then
 			syncDrawableTransform(motionState1, drawableTransform)
 		else
 			bus:subscribeOnce(function()
 				physicsWorld:removeCollisionObject(rb)
+				drawableTransform:setUpdateCallback(nil)		-- Importrant for GC
+
 				scene.node:removeChild(drawableTransform)
 			end)
 		end
