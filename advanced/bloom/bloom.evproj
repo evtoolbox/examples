@@ -25,32 +25,8 @@
   <resource internal="false" id="637e1061-ed4-82d-7cd-ef8" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="bloom.lua">
    <filename value="bloom.lua"/>
   </resource>
-  <resource internal="false" id="637e13bb-684-a78-21d-94d" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="teapot_blender.fbx">
-   <filename value="teapot_blender.fbx"/>
-   <optimizations/>
-  </resource>
-  <resource internal="false" id="637e38f2-2a2-3db-fbd-f66" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="composite_max.fbx">
-   <filename value="composite_max.fbx"/>
-   <optimizations/>
-  </resource>
-  <resource internal="false" id="637e3979-ffd-dba-9e7-161" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="standart_max_refl_only.fbx">
-   <filename value="standart_max_refl_only.fbx"/>
-   <optimizations/>
-  </resource>
-  <resource internal="false" id="637f8aad-29a-cf6-456-c9d" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="Controller_Oculus_L.fbx">
-   <filename value="Controller_Oculus_L.fbx"/>
-   <optimizations/>
-  </resource>
-  <resource internal="false" id="637fae84-2ec-ec9-df3-256" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="ev_model.fbx">
-   <filename value="ev_model.fbx"/>
-   <optimizations/>
-  </resource>
   <resource internal="false" id="6380b1b8-815-69a-958-747" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="standart_max_opacity.fbx">
    <filename value="standart_max_opacity.fbx"/>
-   <optimizations/>
-  </resource>
-  <resource internal="false" id="6389c03f-387-1ef-bc4-695" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="max_standart_selfillumination.fbx">
-   <filename value="max_standart_selfillumination.fbx"/>
    <optimizations/>
   </resource>
   <resource internal="true" id="OpenSans-Regular" kind="font" local="false" forceExport="true" rawAssetsExport="false" name="OpenSans-Regular.ttf">
