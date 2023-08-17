@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Project version="3.2.0" version-extra="devel">
+<Project version="3.4.11" version-extra="devel">
  <presentationParams>
-  <parameter name="presenceInterval" value="0"/>
   <parameter name="enableStatistics" value="true"/>
-  <parameter name="lostTimeout" value="0.5"/>
-  <parameter name="detectors">
-   <field name="dashdot">
-    <field name="max_error" value="0.05"/>
-    <field name="pattern_size" value="32"/>
-    <field name="inversion" value="normal"/>
-   </field>
-   <field name="image">
-    <field name="grid_rows" value="4"/>
-    <field name="grid_cols" value="4"/>
-   </field>
-  </parameter>
   <parameter name="flipFrames">
    <field name="x" value="false"/>
    <field name="y" value="false"/>
@@ -22,18 +9,6 @@
   <parameter name="clipPlanes">
    <field name="near" value="0.01"/>
    <field name="far" value="10"/>
-  </parameter>
-  <parameter name="cam">
-   <field name="fx" value="auto"/>
-   <field name="fy" value="auto"/>
-   <field name="cx" value="auto"/>
-   <field name="cy" value="auto"/>
-   <field name="distortion" length="4">
-    <item index="1" value="auto"/>
-    <item index="2" value="auto"/>
-    <item index="3" value="auto"/>
-    <item index="4" value="auto"/>
-   </field>
   </parameter>
   <parameter name="useMainCamera" value="false"/>
   <parameter name="clearColor">
@@ -44,28 +19,53 @@
   </parameter>
  </presentationParams>
  <resources dir="resources_round_rect">
-  <resource id="5c51ca39-824-b4b-629-ea8" kind="script" local="true" forceExport="true" name="main.lua">
+  <resource internal="false" id="5c51ca39-824-b4b-629-ea8" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="main.lua">
    <filename value="main.lua"/>
   </resource>
-  <resource id="5c51ce0f-6c3-f45-4a8-333" kind="script" local="true" forceExport="true" name="RoundRectangle.lua">
+  <resource internal="false" id="5c51ce0f-6c3-f45-4a8-333" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="RoundRectangle.lua">
    <filename value="RoundRectangle.lua"/>
   </resource>
-  <resource id="Play-Bold" kind="font" local="false" forceExport="false" name="Play-Bold.ttf">
+  <resource internal="true" id="Play-Bold" kind="font" local="false" forceExport="false" rawAssetsExport="false" name="Play-Bold.ttf">
    <filename value="Play-Bold.ttf"/>
    <source value="${STUDIO_RESOURCES_DIR}/fonts/Play-Bold.ttf"/>
   </resource>
  </resources>
  <reactors>
-  <reactor id="5c51c8a2-c2d4-87f2-2675" name="rectangle" type="node.rect">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="0"/>
+  <order>
+   <item id="5c52fb80-baad-9879-4d2f"/>
+   <item id="Scene"/>
+  </order>
+  <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5c51c8a2-c2d4-87f2-2675"/>
+    <item value="5c53015e-7fc5-39bb-b3aa"/>
+   </parameter>
+  </reactor>
+  <reactor id="Scene" name="Scene" type="node.scene" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="HeadUpDisplay"/>
+   </parameter>
+  </reactor>
+  <reactor id="5c51c8a2-c2d4-87f2-2675" name="rectangle" type="node.rect" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
    <parameter name="layer" value="0.01"/>
    <parameter name="rect.position" value="center-center"/>
    <parameter name="rect.size">
-    <field name="policy" value="simple"/>
     <field name="x" value="50.000000%v"/>
     <field name="y" value="25.000000%vw"/>
+    <field name="policy" value="simple"/>
    </parameter>
    <parameter name="rect.color">
     <field name="red" value="0.30588235294118"/>
@@ -84,23 +84,22 @@
     <field name="left" value="keep-aspect"/>
    </parameter>
    <parameter name="rect.scalePolicy" value="inherit"/>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
   </reactor>
-  <reactor id="5c52fb80-baad-9879-4d2f" name="randomizer" type="counter">
+  <reactor id="5c52fb80-baad-9879-4d2f" name="randomizer" type="counter" enabled="true">
    <parameter name="initialValue" value="0"/>
-   <field name="exportEnabled" value="true"/>
   </reactor>
-  <reactor id="5c53015e-7fc5-39bb-b3aa" name="text" type="rect.text">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="false"/>
-   <parameter name="children" length="0"/>
+  <reactor id="5c53015e-7fc5-39bb-b3aa" name="text" type="rect.text" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000000F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
    <parameter name="layer" value="0.02"/>
    <parameter name="rect.position" value="center-center"/>
    <parameter name="rect.size">
-    <field name="policy" value="simple"/>
     <field name="x" value="100.000000%c"/>
     <field name="y" value="keep-aspect"/>
+    <field name="policy" value="simple"/>
    </parameter>
    <parameter name="rect.color">
     <field name="red" value="0"/>
@@ -119,7 +118,6 @@
     <field name="left" value="keep-aspect"/>
    </parameter>
    <parameter name="rect.scalePolicy" value="inherit"/>
-   <parameter name="text.value" value="RoundRect"/>
    <parameter name="text.font_id" value="Play-Bold"/>
    <parameter name="text.font_size" value="3.000000%v"/>
    <parameter name="text.color">
@@ -129,31 +127,13 @@
     <field name="alpha" value="1"/>
    </parameter>
    <parameter name="text.align" value="center-center"/>
-   <parameter name="text.auto_wrap"/>
+   <parameter name="text.auto_wrap" value="false"/>
    <parameter name="text.line_spacing" value="0.15"/>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
-  </reactor>
-  <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="2">
-    <item index="1" value="5c51c8a2-c2d4-87f2-2675"/>
-    <item index="2" value="5c53015e-7fc5-39bb-b3aa"/>
-   </parameter>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
-  </reactor>
-  <reactor id="scene" name="Scene" type="node.scene">
-   <parameter name="visible" value="true"/>
-   <parameter name="handleClick" value="true"/>
-   <parameter name="children" length="1">
-    <item index="1" value="HeadUpDisplay"/>
-   </parameter>
-   <field name="exportEnabled" value="true"/>
-   <field name="sectionItemCollapsed" value="false"/>
+   <parameter name="text.value" value="RoundRect"/>
   </reactor>
  </reactors>
- <exportParameters last="apk">
- </exportParameters>
+ <exportParameters last="apk"/>
+ <workspace>
+  <preview platform="1"/>
+ </workspace>
 </Project>

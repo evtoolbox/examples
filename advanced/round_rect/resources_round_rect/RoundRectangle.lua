@@ -121,6 +121,6 @@ uniform float RoundRectangle_smoothEdge0;
 	component:addShader(fshader);
 
 	self._shaderAttribute = osg.ShaderAttribute()
-	self._shaderAttribute:setType(10000 + 1)
+	self._shaderAttribute:setType(osg.StateAttribute.Type(10000 + 1))
 	self._shaderAttribute:setShaderComponent(component)
 end
