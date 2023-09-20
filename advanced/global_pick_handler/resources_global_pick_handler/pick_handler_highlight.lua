@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
 --                                                                           --
--- Copyright 2018 EligoVision. Interactive Technologies                      --
+-- Copyright 2018-2023 EligoVision. Interactive Technologies                 --
 --                                                                           --
 -- Permission is hereby granted, free of charge, to any person obtaining a   --
 -- copy of this software and associated documentation files                  --
@@ -58,14 +58,14 @@ local function onDownCb(nodePath)
 local function onUpCb(nodePath)
 	local node = nodePath:at(nodePath:size() - 1)
 	loginfo("Up on '" .. node:getName() .."'")
-	logwarn("onUpCb not realized!")
+	-- logwarn("onUpCb not realized!")
 
  	return true
 end
 
- local observer = EVosgGA.PickHandler.Observer()
- observer:setOnDownCb(onDownCb)
- observer:setOnUpCb(onUpCb)
+local observer = EVosgGA.PickHandler.Observer()
+observer:setOnDownCb(onDownCb)
+observer:setOnUpCb(onUpCb)
 
 -- NOTE: pickHandler is global
  pickHandler:registerObserver(observer)
