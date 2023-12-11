@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.4.12">
+ <presentationParams>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="useMainCamera" value="true"/>
+  <parameter name="clearColor">
+   <field name="x" value="0.7"/>
+   <field name="y" value="0.7"/>
+   <field name="z" value="0.7"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_arkit_arobject">
+  <resource internal="false" id="65771057-1d1-dad-34e-526" kind="config" local="true" forceExport="false" rawAssetsExport="true" name="Pico4.arobject">
+   <filename value="Pico4.arobject"/>
+  </resource>
+  <resource internal="false" id="65771072-e1b-c92-318-b8d" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="arkit_arobject.lua">
+   <filename value="arkit_arobject.lua"/>
+  </resource>
+  <resource internal="false" id="6577124e-2b8-c28-b92-a23" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="main.lua">
+   <filename value="main.lua"/>
+  </resource>
+  <resource internal="true" id="Play-Bold" kind="font" local="false" forceExport="false" rawAssetsExport="false" name="Play-Bold.ttf">
+   <filename value="Play-Bold.ttf"/>
+   <source value="${STUDIO_RESOURCES_DIR}/fonts/Play-Bold.ttf"/>
+  </resource>
+  <resource internal="true" id="Play-Regular" kind="font" local="false" forceExport="false" rawAssetsExport="false" name="Play-Regular.ttf">
+   <filename value="Play-Regular.ttf"/>
+   <source value="${STUDIO_RESOURCES_DIR}/fonts/Play-Regular.ttf"/>
+  </resource>
+ </resources>
+ <reactors>
+  <order>
+   <item id="Scene"/>
+  </order>
+  <reactor id="Scene" name="Scene" type="node.scene" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="65771092-35ec-bad1-1c7f"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="65771092-35ec-bad1-1c7f" name="arobject_transform" type="node.transform" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000000F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="65773ceb-2cb4-7a96-dcaa"/>
+    <item value="65771096-f655-ef9c-16af"/>
+   </parameter>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="65771096-f655-ef9c-16af" name="model_2" type="node.text3d" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000000F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0.2"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="text.value" value="HELMET"/>
+   <parameter name="text.font_id" value="Play-Bold"/>
+   <parameter name="text.font_size" value="0.05"/>
+   <parameter name="text.font_depth" value="0.005"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="0.31764705882353"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center"/>
+   <parameter name="text.line_spacing" value="0"/>
+  </reactor>
+  <reactor id="65773ceb-2cb4-7a96-dcaa" name="model_1" type="node.text3d" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="text.value" value="!"/>
+   <parameter name="text.font_id" value="Play-Regular"/>
+   <parameter name="text.font_size" value="0.25"/>
+   <parameter name="text.font_depth" value="0.01"/>
+   <parameter name="text.color">
+    <field name="red" value="0.42352941176471"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center"/>
+   <parameter name="text.line_spacing" value="0"/>
+  </reactor>
+ </reactors>
+ <exportParameters last="ipa">
+  <parameters format="ipa" filename="/tmp/arkit_arobject.ipa" appName="arkit_arobject" appId="ru.eligovision.arkit.arobject" arch="" version="1.0" build="1" configurationFile="" appIconPath="/Applications/EV Studio 3.4.12 Advanced.app/Contents/MacOS/../Resources/studio_data//AppIcon.png" loadingImagePath="/Applications/EV Studio 3.4.12 Advanced.app/Contents/MacOS/../Resources/studio_data//LaunchImage.png" category="" copyright="" supportedOrientations="1" appStoreDistribution="false" bundleName="arkit_arobject - EVI iOS App" cameraDescription="Дополненная реальность ждет!" photolibraryDescription="Снимки будут сохранены в Фото!" deviceMotionDescription="Необходимо для отслеживания движений" abis="armv7s,arm64"/>
+ </exportParameters>
+ <workspace>
+  <preview platform="1"/>
+ </workspace>
+</Project>
