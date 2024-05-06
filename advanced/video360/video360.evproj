@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.4.12">
+ <presentationParams>
+  <parameter name="enableStatistics" value="false"/>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="useMainCamera" value="false"/>
+  <parameter name="clearColor">
+   <field name="x" value="0"/>
+   <field name="y" value="0"/>
+   <field name="z" value="0"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_video360">
+  <resource internal="false" id="64ae816c-f4e-3c3-614-6d6" kind="video" local="true" forceExport="false" rawAssetsExport="true" name="videoplayback (1).webm">
+   <filename value="videoplayback (1).webm"/>
+  </resource>
+  <resource internal="false" id="64ae8214-899-1a2-adb-adf" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="main.lua">
+   <filename value="main.lua"/>
+  </resource>
+  <resource internal="false" id="64ae8632-915-ade-99f-fc4" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="sphere.fbx">
+   <filename value="sphere.fbx"/>
+  </resource>
+  <resource internal="false" id="6634d950-27b-61a-a55-446" kind="video" local="true" forceExport="false" rawAssetsExport="false" name="360.webm">
+   <filename value="360.webm"/>
+  </resource>
+ </resources>
+ <reactors>
+  <order>
+   <item id="Viewer"/>
+   <item id="64ae8235-b62d-8fcd-f948"/>
+   <item id="64ae8154-d568-fac7-9675"/>
+   <item id="Scene"/>
+  </order>
+  <reactor id="Scene" name="Scene" type="node.scene" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="64ae8102-64e6-fa3c-7614"/>
+    <item value="64aea7b9-5665-34f1-4818"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="Viewer" name="Viewer" type="viewer" enabled="true">
+   <parameter name="cameraManipulator" value="64ae8235-b62d-8fcd-f948"/>
+  </reactor>
+  <reactor id="64ae8102-64e6-fa3c-7614" name="sphere_equirectangular" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="180"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1000"/>
+    <field name="y" value="1000"/>
+    <field name="z" value="1000"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="64ae8632-915-ade-99f-fc4"/>
+  </reactor>
+  <reactor id="64ae8154-d568-fac7-9675" name="video360" type="rect.video" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000000F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="100.000000%c"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="6634d950-27b-61a-a55-446"/>
+   <parameter name="volume" value="1"/>
+   <parameter name="playMode" value="loop"/>
+  </reactor>
+  <reactor id="64ae8235-b62d-8fcd-f948" name="CameraManipulator" type="camera_manipulator" enabled="true">
+   <parameter name="kind" value="trackball"/>
+   <parameter name="homeEye">
+    <field name="x" value="0"/>
+    <field name="y" value="-1e-07"/>
+    <field name="z" value="-220"/>
+   </parameter>
+   <parameter name="homeCenter">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="-220"/>
+   </parameter>
+   <parameter name="homeUp">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="autoComputeHomePosition" value="false"/>
+  </reactor>
+  <reactor id="64aea7b9-5665-34f1-4818" name="VRController" type="vr_controller" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x00000010"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="enabled" value="true"/>
+   <parameter name="deviceType" value="controller_right"/>
+   <parameter name="autoShow" value="false"/>
+   <parameter name="autoHide" value="false"/>
+  </reactor>
+ </reactors>
+ <exportParameters last="apk">
+ </exportParameters>
+ <workspace>
+  <preview platform="1"/>
+ </workspace>
+</Project>
