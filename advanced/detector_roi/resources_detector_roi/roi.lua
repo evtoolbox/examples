@@ -30,10 +30,10 @@ local logger = set_lua_logger("detector_roi")
 
 local width, height = 0.26, 0.3
 
-local pixelThreshold, threshold = 30, 0.3	-- Default is 30 [0, 255] and 0.2 (20%)
+local pixelThreshold, activationThreshold, deactivationThreshold = 30, 0.3, 0.05	-- Default is 30 [0, 255], 0.2 (20%), 0.15 (15%)
 
 local marker_l = evar.MarkerROI(1, evar.Rectd(0.0, 0.0, width, height))
-local marker_c = evar.MarkerROI(2, evar.Rectd(0.37, 0.0, width, height), pixelThreshold, threshold)
+local marker_c = evar.MarkerROI(2, evar.Rectd(0.37, 0.0, width, height), pixelThreshold, activationThreshold, deactivationThreshold)
 local marker_r = evar.MarkerROI(3, evar.Rectd(0.74, 0.0, width, height))
 
 trackingSystem:initROIPipeline()
@@ -43,7 +43,7 @@ trackingSystem.roiClassifier:addMarker(marker_r)
 
 
 local function changeColor(rect_reactor, marker)
-	local c = marker:isActive() and osg.Vec4(0.0, 0.5, 0.0, marker:value()) or osg.Vec4(0.5, 0.0, 0.0, marker:threshold())
+	local c = marker:isActive() and osg.Vec4(0.0, 0.5, 0.0, marker:value()) or osg.Vec4(0.5, 0.0, 0.0, marker:activationThreshold())
 	rect_reactor.rect.color = c
 end
 
