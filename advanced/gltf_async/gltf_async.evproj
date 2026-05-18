@@ -19,9 +19,8 @@
   </parameter>
  </presentationParams>
  <resources dir="resources_gltf_async">
-  <resource internal="false" id="69f8a07b-557-efa-d3a-528" kind="model" local="false" forceExport="false" rawAssetsExport="false" name="CompareMetallic.glb">
+  <resource internal="false" id="69f8a07b-557-efa-d3a-528" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="CompareMetallic.glb">
    <filename value="CompareMetallic.glb"/>
-   <source value="/root/github/glTF-Sample-Assets/Models/CompareMetallic/glTF-Binary/CompareMetallic.glb"/>
   </resource>
   <resource internal="false" id="69fafccf-9a9-fbd-587-c85" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="main.lua">
    <filename value="main.lua"/>
@@ -234,7 +233,7 @@
    <parameter name="text.align" value="left-center"/>
    <parameter name="text.auto_wrap" value="true"/>
    <parameter name="text.line_spacing" value="0.15"/>
-   <parameter name="text.value" value="Нажмите на кнопку и дождитесь загрузки модели из интернета"/>
+   <parameter name="text.value" value="Нажмите на кнопку и дождитесь загрузки модели из И&#10;нтернета"/>
    <view expanded="true"/>
   </reactor>
  </reactors>
