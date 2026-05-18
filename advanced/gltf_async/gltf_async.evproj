@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.7.0" version-extra="devel">
+ <presentationParams>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="useMainCamera" value="false"/>
+  <parameter name="clearColor">
+   <field name="x" value="0.031372549019608"/>
+   <field name="y" value="0.11372549019608"/>
+   <field name="z" value="0.12549019607843"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_gltf_async">
+  <resource internal="false" id="69f8a07b-557-efa-d3a-528" kind="model" local="false" forceExport="false" rawAssetsExport="false" name="CompareMetallic.glb">
+   <filename value="CompareMetallic.glb"/>
+   <source value="/root/github/glTF-Sample-Assets/Models/CompareMetallic/glTF-Binary/CompareMetallic.glb"/>
+  </resource>
+  <resource internal="false" id="69fafccf-9a9-fbd-587-c85" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="main.lua">
+   <filename value="main.lua"/>
+  </resource>
+  <resource internal="true" id="DFG_LUT" kind="image" local="false" forceExport="false" rawAssetsExport="false" name="DFG_LUT.dds">
+   <filename value="DFG_LUT.dds"/>
+   <source value="${STUDIO_RESOURCES_DIR}/lighting/ibl/DFG_LUT.dds"/>
+  </resource>
+  <resource internal="true" id="Rubik-Bold" kind="font" local="false" forceExport="false" rawAssetsExport="false" name="Rubik-Bold.ttf">
+   <filename value="Rubik-Bold.ttf"/>
+   <source value="${STUDIO_RESOURCES_DIR}/fonts/Rubik-Bold.ttf"/>
+  </resource>
+  <resource internal="true" id="Rubik-Light" kind="font" local="false" forceExport="false" rawAssetsExport="false" name="Rubik-Light.ttf">
+   <filename value="Rubik-Light.ttf"/>
+   <source value="${STUDIO_RESOURCES_DIR}/fonts/Rubik-Light.ttf"/>
+  </resource>
+  <resource internal="true" id="interior_ibl" kind="image" local="false" forceExport="false" rawAssetsExport="false" name="interior_ibl.ktx">
+   <filename value="interior_ibl.ktx"/>
+   <source value="${STUDIO_RESOURCES_DIR}/lighting/ibl/interior/interior_ibl.ktx"/>
+  </resource>
+  <resource internal="true" id="interior_sh" kind="config" local="false" forceExport="false" rawAssetsExport="false" name="interior_sh.txt">
+   <filename value="interior_sh.txt"/>
+   <source value="${STUDIO_RESOURCES_DIR}/lighting/ibl/interior/interior_sh.txt"/>
+  </resource>
+ </resources>
+ <reactors>
+  <order>
+   <item id="System"/>
+   <item id="Viewer"/>
+   <item id="6a06ee72-4dc5-2ad6-14c8"/>
+   <item id="69f89f82-dc4b-b3cb-a247"/>
+   <item id="Scene"/>
+  </order>
+  <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="6a0af2f7-f248-639d-66d1"/>
+    <item value="6a0aeed0-156d-66ac-c996"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="Scene" name="Scene" type="node.scene" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="69f89fa3-6628-7732-fac3"/>
+    <item value="HeadUpDisplay"/>
+   </parameter>
+   <parameter name="environmentMap" value="interior"/>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="System" name="System" type="system" enabled="true">
+   <parameter name="albumName" value="evi_app"/>
+  </reactor>
+  <reactor id="Viewer" name="Viewer" type="viewer" enabled="true">
+   <parameter name="cameraManipulator" value="69f89f82-dc4b-b3cb-a247"/>
+  </reactor>
+  <reactor id="69f89f82-dc4b-b3cb-a247" name="CameraManipulator" type="camera_manipulator" enabled="true">
+   <parameter name="kind" value="trackball"/>
+   <parameter name="homeEye">
+    <field name="x" value="0"/>
+    <field name="y" value="-2.5"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeCenter">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeUp">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="autoComputeHomePosition" value="false"/>
+  </reactor>
+  <reactor id="69f89fa3-6628-7732-fac3" name="ModelNetwork" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="69f8a07b-557-efa-d3a-528"/>
+  </reactor>
+  <reactor id="6a06ee72-4dc5-2ad6-14c8" name="MultitouchManipulator" type="camera_manipulator" enabled="true">
+   <parameter name="kind" value="multitouch"/>
+   <parameter name="homeEye">
+    <field name="x" value="0"/>
+    <field name="y" value="-2.5"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeCenter">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeUp">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="autoComputeHomePosition" value="false"/>
+  </reactor>
+  <reactor id="6a0aeed0-156d-66ac-c996" name="btn_next" type="rect.text" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.03"/>
+   <parameter name="rect.position" value="right-bottom"/>
+   <parameter name="rect.size">
+    <field name="x" value="150.000000%c"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0.77647058823529"/>
+    <field name="green" value="0.27450980392157"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000%h"/>
+    <field name="y" value="10.000000%"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="2.000000%"/>
+    <field name="right" value="1.000000%"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.font_id" value="Rubik-Bold"/>
+   <parameter name="text.font_size" value="2.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <parameter name="text.value" value="ДАЛЕЕ"/>
+  </reactor>
+  <reactor id="6a0af2f7-f248-639d-66d1" name="status" type="rect.text" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-bottom"/>
+   <parameter name="rect.size">
+    <field name="x" value="98.000000%"/>
+    <field name="y" value="110.000000%c"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000%"/>
+    <field name="y" value="0.000000%"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.500000%"/>
+    <field name="right" value="1.000000%"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.font_id" value="Rubik-Light"/>
+   <parameter name="text.font_size" value="1.500000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="left-center"/>
+   <parameter name="text.auto_wrap" value="true"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <parameter name="text.value" value="Нажмите на кнопку и дождитесь загрузки модели из интернета"/>
+   <view expanded="true"/>
+  </reactor>
+ </reactors>
+ <exportParameters last="apk">
+  <parameters format="apk" appName="SceneClicktest" appId="ru.eligovision.SceneClicktest" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.apk" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" usageHardwareCamera="optional" usageARCore="optional" gradleOpt="" selectedPresetId="general" abis="arm64-v8a" minApi="24" targetApi="36">
+   <presets>
+    <preset id="user" name="User Preset">
+     <files>
+      <file name="AndroidManifest.xml" path="${ANDROID_DATA_DIR}/AndroidManifest.xml.in"/>
+      <file name="build.gradle" path="${ANDROID_DATA_DIR}/build.gradle.in"/>
+      <file name="gradle.properties" path="${ANDROID_DATA_DIR}/gradle.properties.in"/>
+      <file name="local.properties" path="${ANDROID_DATA_DIR}/local.properties.in"/>
+     </files>
+    </preset>
+   </presets>
+  </parameters>
+  <parameters format="app" appName="SceneClicktest - EVI macOS App" appId="SceneClicktest" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.app" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="None" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false" retinaSupport="true" bundleName="SceneClicktest - EVI macOS App" cameraDescription="Дополненная реальность ждет!"/>
+  <parameters format="dir" appName="SceneClicktest - Directory Package" appId="SceneClicktest" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.package" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false"/>
+  <parameters format="eva" appName="SceneClicktest - EVA Archive" appId="SceneClicktest" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.eva" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false"/>
+  <parameters format="exe" appName="SceneClicktest - EVI Windows App" appId="SceneClicktest" arch="x64" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.exe" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false" targetPlatform="1"/>
+  <parameters format="ipa" appName="SceneClicktest - EVI iOS App" appId="SceneClicktest" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.ipa" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" appStoreDistribution="false" bundleName="SceneClicktest - EVI iOS App" cameraDescription="Дополненная реальность ждет!" photolibraryDescription="Снимки будут сохранены в Фото!" deviceMotionDescription="Необходимо для отслеживания движений"/>
+  <parameters format="rpm" name="ru.eligovision.eviapp" version="0.0.1" summary="" license="" arch="armv7hl" description="" verboseName="EVI APP" verboseNameRu="" cert="${STUDIO_DATA_DIR}/aurora/cert/regular_cert.pem" key="${STUDIO_DATA_DIR}/aurora/cert/regular_key.pem" dirname="${PROJECT_DIR}" qmldir="${STUDIO_DATA_DIR}/aurora/template.adv.qml" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" coverIcon="${STUDIO_DATA_DIR}/AppIcon.png" permissions="Audio;Camera;DeviceInfo;UserDirs" orientations="All"/>
+ </exportParameters>
+ <workspace>
+  <preview platform="1"/>
+ </workspace>
+</Project>
