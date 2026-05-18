@@ -170,7 +170,7 @@
    </parameter>
    <parameter name="rect.shift">
     <field name="x" value="0.000000%h"/>
-    <field name="y" value="10.000000%"/>
+    <field name="y" value="15.000000%"/>
    </parameter>
    <parameter name="rect.padding">
     <field name="top" value="2.000000%"/>
@@ -201,7 +201,7 @@
    <parameter name="layer" value="0.01"/>
    <parameter name="rect.position" value="center-bottom"/>
    <parameter name="rect.size">
-    <field name="x" value="98.000000%"/>
+    <field name="x" value="90.000000%"/>
     <field name="y" value="110.000000%c"/>
     <field name="policy" value="simple"/>
    </parameter>
@@ -217,8 +217,8 @@
    </parameter>
    <parameter name="rect.padding">
     <field name="top" value="0.500000%"/>
-    <field name="right" value="1.000000%"/>
-    <field name="bottom" value="keep-aspect"/>
+    <field name="right" value="5.000000%"/>
+    <field name="bottom" value="2.500000%"/>
     <field name="left" value="keep-aspect"/>
    </parameter>
    <parameter name="rect.scalePolicy" value="inherit"/>
@@ -233,12 +233,12 @@
    <parameter name="text.align" value="left-center"/>
    <parameter name="text.auto_wrap" value="true"/>
    <parameter name="text.line_spacing" value="0.15"/>
-   <parameter name="text.value" value="Нажмите на кнопку и дождитесь загрузки модели из И&#10;нтернета"/>
+   <parameter name="text.value" value="Нажмите на кнопку и дождитесь загрузки модели из Интернета"/>
    <view expanded="true"/>
   </reactor>
  </reactors>
- <exportParameters last="apk">
-  <parameters format="apk" appName="SceneClicktest" appId="ru.eligovision.SceneClicktest" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.apk" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" usageHardwareCamera="optional" usageARCore="optional" gradleOpt="" selectedPresetId="general" abis="arm64-v8a" minApi="24" targetApi="36">
+ <exportParameters last="ipa">
+  <parameters format="apk" appName="gltf_async" appId="ru.eligovision.gltfasync" arch="" version="3.7" build="370" filename="${PROJECT_DIR}/gltf_async.apk" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" usageHardwareCamera="optional" usageARCore="optional" gradleOpt="" selectedPresetId="general" abis="arm64-v8a" minApi="24" targetApi="36">
    <presets>
     <preset id="user" name="User Preset">
      <files>
@@ -250,12 +250,12 @@
     </preset>
    </presets>
   </parameters>
-  <parameters format="app" appName="SceneClicktest - EVI macOS App" appId="SceneClicktest" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.app" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="None" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false" retinaSupport="true" bundleName="SceneClicktest - EVI macOS App" cameraDescription="Дополненная реальность ждет!"/>
+  <parameters format="app" appName="gltf_async" appId="ru.eligovision.gltfasync" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/gltf_async.app" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="None" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false" retinaSupport="true" bundleName="gltf_async" cameraDescription="Дополненная реальность ждет!"/>
   <parameters format="dir" appName="SceneClicktest - Directory Package" appId="SceneClicktest" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.package" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false"/>
   <parameters format="eva" appName="SceneClicktest - EVA Archive" appId="SceneClicktest" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.eva" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false"/>
   <parameters format="exe" appName="SceneClicktest - EVI Windows App" appId="SceneClicktest" arch="x64" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.exe" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false" targetPlatform="1"/>
-  <parameters format="ipa" appName="SceneClicktest - EVI iOS App" appId="SceneClicktest" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.ipa" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" appStoreDistribution="false" bundleName="SceneClicktest - EVI iOS App" cameraDescription="Дополненная реальность ждет!" photolibraryDescription="Снимки будут сохранены в Фото!" deviceMotionDescription="Необходимо для отслеживания движений"/>
-  <parameters format="rpm" name="ru.eligovision.eviapp" version="0.0.1" summary="" license="" arch="armv7hl" description="" verboseName="EVI APP" verboseNameRu="" cert="${STUDIO_DATA_DIR}/aurora/cert/regular_cert.pem" key="${STUDIO_DATA_DIR}/aurora/cert/regular_key.pem" dirname="${PROJECT_DIR}" qmldir="${STUDIO_DATA_DIR}/aurora/template.adv.qml" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" coverIcon="${STUDIO_DATA_DIR}/AppIcon.png" permissions="Audio;Camera;DeviceInfo;UserDirs" orientations="All"/>
+  <parameters format="ipa" appName="gltf_async" appId="ru.eligovision.gltfasync" arch="" version="3.7" build="370" filename="${PROJECT_DIR}/gltf_async.ipa" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="13" appStoreDistribution="false" bundleName="SceneClicktest - EVI iOS App" cameraDescription="Дополненная реальность ждет!" photolibraryDescription="Снимки будут сохранены в Фото!" deviceMotionDescription="Необходимо для отслеживания движений"/>
+  <parameters format="rpm" name="ru.eligovision.gltfasync" version="3.7.0" summary="" license="" arch="armv7hl" description="" verboseName="gltf_async" verboseNameRu="" cert="${STUDIO_DATA_DIR}/aurora/cert/regular_cert.pem" key="${STUDIO_DATA_DIR}/aurora/cert/regular_key.pem" dirname="${PROJECT_DIR}" qmldir="${STUDIO_DATA_DIR}/aurora/template.adv.qml" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" coverIcon="${STUDIO_DATA_DIR}/AppIcon.png" permissions="Audio;Camera;DeviceInfo;UserDirs" orientations="All"/>
  </exportParameters>
  <workspace>
   <preview platform="1"/>

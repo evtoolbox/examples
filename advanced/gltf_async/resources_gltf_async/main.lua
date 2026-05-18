@@ -141,7 +141,7 @@ btnNextReactor:subscribeEvent("onDown", function()
 	modelNetReactor.model = modelNetResource
 
 	statusReactor.rect.color = osg.Vec4(0.9, 0.2, 0.0, 1.0)
-	statusReactor.text.value = "Загружатся:\n" .. url
+	statusReactor.text.value = "Загружается:\n" .. url
 
 	index = index + 1
 	if index > #models_glb then
