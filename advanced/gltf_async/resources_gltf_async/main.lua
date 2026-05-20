@@ -10,7 +10,7 @@ local statusReactor		= reactorController:getReactorByName("status")
 local models_glb = {
 	-- "ABeautifulGame/glTF-Binary-KTX-ETC1S-Draco/ABeautifulGame.glb"
 	"ABeautifulGame/glTF-Binary/ABeautifulGame.glb"
-,	"AlphaBlendModeTest/glTF-Binary/AlphaBlendModeTst.glb"
+,	"AlphaBlendModeTest/glTF-Binary/AlphaBlendModeTest.glb"
 ,	"AnimatedColorsCube/glTF-Binary/AnimatedColorsCube.glb"
 ,	"AnimatedMorphCube/glTF-Binary/AnimatedMorphCube.glb"
 ,	"AnimationPointerUVs/glTF-Binary/AnimationPointerUVs.glb"
