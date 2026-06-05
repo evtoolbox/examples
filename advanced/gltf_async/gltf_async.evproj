@@ -37,13 +37,17 @@
    <filename value="Rubik-Light.ttf"/>
    <source value="${STUDIO_RESOURCES_DIR}/fonts/Rubik-Light.ttf"/>
   </resource>
-  <resource internal="true" id="interior_ibl" kind="image" local="false" forceExport="false" rawAssetsExport="false" name="interior_ibl.ktx">
-   <filename value="interior_ibl.ktx"/>
-   <source value="${STUDIO_RESOURCES_DIR}/lighting/ibl/interior/interior_ibl.ktx"/>
+  <resource internal="true" id="forest_ibl" kind="image" local="false" forceExport="false" rawAssetsExport="false" name="forest_ibl.ktx">
+   <filename value="forest_ibl.ktx"/>
+   <source value="${STUDIO_RESOURCES_DIR}/lighting/ibl/forest/forest_ibl.ktx"/>
   </resource>
-  <resource internal="true" id="interior_sh" kind="config" local="false" forceExport="false" rawAssetsExport="false" name="interior_sh.txt">
-   <filename value="interior_sh.txt"/>
-   <source value="${STUDIO_RESOURCES_DIR}/lighting/ibl/interior/interior_sh.txt"/>
+  <resource internal="true" id="forest_sh" kind="config" local="false" forceExport="false" rawAssetsExport="false" name="forest_sh.txt">
+   <filename value="forest_sh.txt"/>
+   <source value="${STUDIO_RESOURCES_DIR}/lighting/ibl/forest/forest_sh.txt"/>
+  </resource>
+  <resource internal="true" id="forest_skybox" kind="image" local="false" forceExport="false" rawAssetsExport="false" name="forest_skybox.ktx">
+   <filename value="forest_skybox.ktx"/>
+   <source value="${STUDIO_RESOURCES_DIR}/lighting/ibl/forest/forest_skybox.ktx"/>
   </resource>
  </resources>
  <reactors>
@@ -74,7 +78,8 @@
     <item value="69f89fa3-6628-7732-fac3"/>
     <item value="HeadUpDisplay"/>
    </parameter>
-   <parameter name="environmentMap" value="interior"/>
+   <parameter name="environmentMap" value="forest"/>
+   <parameter name="displaySkybox" value="true"/>
    <view expanded="true"/>
   </reactor>
   <reactor id="System" name="System" type="system" enabled="true">
@@ -129,6 +134,7 @@
    <parameter name="gpuInstancing" value="auto"/>
    <parameter name="gpuInstancesMinCount" value="50"/>
    <parameter name="model" value="69f8a07b-557-efa-d3a-528"/>
+   <view expanded="true"/>
   </reactor>
   <reactor id="6a06ee72-4dc5-2ad6-14c8" name="MultitouchManipulator" type="camera_manipulator" enabled="true">
    <parameter name="kind" value="multitouch"/>
@@ -237,8 +243,8 @@
    <view expanded="true"/>
   </reactor>
  </reactors>
- <exportParameters last="ipa">
-  <parameters format="apk" appName="gltf_async" appId="ru.eligovision.gltfasync" arch="" version="3.7" build="370" filename="${PROJECT_DIR}/gltf_async.apk" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" usageHardwareCamera="optional" usageARCore="optional" gradleOpt="" selectedPresetId="general" abis="arm64-v8a" minApi="24" targetApi="36">
+ <exportParameters last="rpm">
+  <parameters format="apk" appName="GLTF Viewer" appId="ru.eligovision.gltfasync" arch="" version="3.7" build="370" filename="${PROJECT_DIR}/gltf_async.apk" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" usageHardwareCamera="optional" usageARCore="optional" gradleOpt="" selectedPresetId="general" abis="arm64-v8a" minApi="24" targetApi="36">
    <presets>
     <preset id="user" name="User Preset">
      <files>
@@ -250,12 +256,10 @@
     </preset>
    </presets>
   </parameters>
-  <parameters format="app" appName="gltf_async" appId="ru.eligovision.gltfasync" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/gltf_async.app" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="None" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false" retinaSupport="true" bundleName="gltf_async" cameraDescription="Дополненная реальность ждет!"/>
-  <parameters format="dir" appName="SceneClicktest - Directory Package" appId="SceneClicktest" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.package" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false"/>
-  <parameters format="eva" appName="SceneClicktest - EVA Archive" appId="SceneClicktest" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.eva" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false"/>
-  <parameters format="exe" appName="SceneClicktest - EVI Windows App" appId="SceneClicktest" arch="x64" version="1.0" build="1" filename="${PROJECT_DIR}/SceneClicktest.exe" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false" targetPlatform="1"/>
-  <parameters format="ipa" appName="gltf_async" appId="ru.eligovision.gltfasync" arch="" version="3.7" build="370" filename="${PROJECT_DIR}/gltf_async.ipa" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="13" appStoreDistribution="false" bundleName="SceneClicktest - EVI iOS App" cameraDescription="Дополненная реальность ждет!" photolibraryDescription="Снимки будут сохранены в Фото!" deviceMotionDescription="Необходимо для отслеживания движений"/>
-  <parameters format="rpm" name="ru.eligovision.gltfasync" version="3.7.0" summary="" license="" arch="armv7hl" description="" verboseName="gltf_async" verboseNameRu="" cert="${STUDIO_DATA_DIR}/aurora/cert/regular_cert.pem" key="${STUDIO_DATA_DIR}/aurora/cert/regular_key.pem" dirname="${PROJECT_DIR}" qmldir="${STUDIO_DATA_DIR}/aurora/template.adv.qml" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" coverIcon="${STUDIO_DATA_DIR}/AppIcon.png" permissions="Audio;Camera;DeviceInfo;UserDirs" orientations="All"/>
+  <parameters format="app" appName="GLTF Viewer" appId="ru.eligovision.gltfasync" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/gltf_async.app" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="None" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false" retinaSupport="true" bundleName="GLTF Viewer" cameraDescription="Дополненная реальность ждет!"/>
+  <parameters format="exe" appName="GLTF Viewer" appId="ru.eligovision.gltfasync" arch="x64" version="1.0" build="1" filename="${PROJECT_DIR}/gltf_async.exe" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false" targetPlatform="1"/>
+  <parameters format="ipa" appName="GLTF Viewer" appId="ru.eligovision.gltfasync" arch="" version="3.7" build="370" filename="${PROJECT_DIR}/gltf_async.ipa" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="13" appStoreDistribution="false" bundleName="SceneClicktest - EVI iOS App" cameraDescription="Дополненная реальность ждет!" photolibraryDescription="Снимки будут сохранены в Фото!" deviceMotionDescription="Необходимо для отслеживания движений"/>
+  <parameters format="rpm" name="ru.eligovision.gltfasync" version="3.7.0" summary="Асинхронная загрузка GLTF из интернета" license="MIT" arch="aarch64" description="Асинхронная загрузка GLTF из интернета." verboseName="GLTF Viewer" verboseNameRu="GLTF Viewer" cert="${STUDIO_DATA_DIR}/aurora/cert/regular_cert.pem" key="${STUDIO_DATA_DIR}/aurora/cert/regular_key.pem" dirname="${PROJECT_DIR}" qmldir="${STUDIO_DATA_DIR}/aurora/template.adv.qml" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" coverIcon="${STUDIO_DATA_DIR}/AppIcon.png" permissions="Audio;Camera;DeviceInfo;Internet;UserDirs" orientations="All"/>
  </exportParameters>
  <workspace>
   <preview platform="1"/>
